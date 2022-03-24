@@ -2,8 +2,8 @@
 
 <h3 align="center">小巧实用的工具类库</h3>
 
-[![NPM version](https://img.shields.io/npm/v/@hanwenbo/utils.js.svg?style=flat)](https://npmjs.org/package/@hanwenbo/utils.js)
-[![NPM downloads](http://img.shields.io/npm/dm/@hanwenbo/utils.js.svg?style=flat)](https://npmjs.org/package/@hanwenbo/utils.js)
+[![NPM version](https://img.shields.io/npm/v/@hanwenbo/utilsjs.svg?style=flat)](https://npmjs.org/package/@hanwenbo/utilsjs)
+[![NPM downloads](http://img.shields.io/npm/dm/@hanwenbo/utilsjs.svg?style=flat)](https://npmjs.org/package/@hanwenbo/utilsjs)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org)
 
 ## ✨ 特性
@@ -16,10 +16,10 @@
 
 ```
 # npm 安装
-npm install @hanwenbo/utils.js --save
+npm install @hanwenbo/utilsjs --save
 
 # yarn 安装 推荐
-yarn add  @hanwenbo/utils.js
+yarn add  @hanwenbo/utilsjs
 ```
 
 **可独立安装每个独立的功能包**
@@ -36,7 +36,7 @@ import isFunction from '@hanwenbo/某包';
 <!-- start-directory -->
 |包名|描述|
 |---|---|
-|[@hanwenbo/array](https://github.com/hanwenbo/utils.js/tree/master/./packages/array/)|常用的数组操作|
+|[@hanwenbo/array](https://github.com/hanwenbo/utilsjs/tree/master/./packages/array/)|常用的数组操作|
 
 <!-- end-directory -->
 
@@ -44,10 +44,10 @@ import isFunction from '@hanwenbo/某包';
 
 ```
 # 克隆项目到本地
-git clone git@github.com:hanwenbo/utils.js.git
+git clone git@github.com:hanwenbo/utilsjs.git
 
 # 切换到项目目录
-cd ./utils.js
+cd ./utilsjs
 
 # 安装依赖
 yarn bootstarp

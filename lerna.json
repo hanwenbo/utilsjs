@@ -6,7 +6,7 @@
     "packages/*"
   ],
   "changelog": {
-    "repo": "@hanwenbo/utils.js",
+    "repo": "@hanwenbo/utilsjs",
     "labels": {
       "pr(enhancement)": ":rocket: Enhancement",
       "pr(bug)": ":bug: Bug Fix",

@@ -1,7 +1,7 @@
 {
-  "name": "@hanwenbo/utils.js",
+  "name": "@hanwenbo/utilsjs",
   "description": "小巧实用的工具类库",
-  "repository": "git@github.com:hanwenbo/utils.js.git",
+  "repository": "git@github.com:hanwenbo/utilsjs.git",
   "author": "9476400@qq.com",
   "license": "MIT",
   "private": true,
