@@ -23,7 +23,7 @@ async function update() {
 
     directoryContent =
       directoryContent +
-      `|[${packageInfo.name}](https://github.com/hanwenbo/jsutils/tree/master/${dir})|${packageInfo.description}|\n`;
+      `|[${packageInfo.name}](https://github.com/hanwenbo/utils.js/tree/master/${dir})|${packageInfo.description}|\n`;
   });
 
   readme = readme.replace(
