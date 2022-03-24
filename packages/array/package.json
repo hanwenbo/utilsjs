@@ -1,0 +1,20 @@
+{
+  "name": "@hanwenbo/array",
+  "version": "0.0.1",
+  "description": "常用的数组操作",
+  "author": "9476400@qq.com",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "es"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "smart-arraytotree": "^1.1.2"
+  }
+}
