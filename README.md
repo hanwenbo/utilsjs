@@ -51,5 +51,9 @@ cd ./utilsjs
 
 # 安装依赖
 yarn bootstarp
+
+# 发布
+npm login --registry https://registry.npmjs.org
+npm run release --registry https://registry.npmjs.org
 ```
 
