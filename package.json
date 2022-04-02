@@ -16,7 +16,7 @@
     "test:object": "walrus test packages/object",
     "test:ui-web": "walrus test packages/ui-web",
     "prerelease": "npm run build",
-    "release": "release --commit-message '🔖 chore(release): publish' --skip-build",
+    "release": "release --commit-message '🔖 chore(release): publish'",
     "site:start": "dumi dev",
     "site:build": "dumi build"
   },
