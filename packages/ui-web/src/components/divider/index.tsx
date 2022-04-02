@@ -1,6 +1,6 @@
 // @ts-ignore
 import {View, StyleSheet} from "react-native-web";
-import React, {forwardRef} from "react"
+import React, {forwardRef, Ref} from "react"
 import {GenericStyleProp} from "react-native-web/types";
 import {ViewStyle} from "react-native-web/exports/View/types";
 
@@ -11,8 +11,8 @@ type PropsType = {
   childrenStyle?: GenericStyleProp<ViewStyle>,
   children?: React.ReactNode,
 }
-const Divider = ({style, startStyle, endStyle, childrenStyle, children, ...props}: PropsType) => {
-  return <View {...props} style={[styles.divider, style]}>
+const Divider = ({style, startStyle, endStyle, childrenStyle, children, ...props}: PropsType, ref: Ref<any>) => {
+  return <View {...props} style={[styles.divider, style]} ref={ref}>
     <View style={[styles.start, startStyle]} />
     {!!children && <View style={[styles.children, childrenStyle]}>{children}</View>}
     <View style={[styles.end, endStyle]} />
@@ -25,7 +25,6 @@ const startEnd = {
   position: "absolute",
   top: "50%",
   width: '50%',
-  borderBottom: 0,
   backgroundColor: "#0000000f",
   height: 1,
 }
@@ -38,8 +37,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     whiteSpace: "nowrap",
     textAlign: "center",
-    borderTop: 0,
-    borderTopColor: "#0000000f",
     width: '100%',
   },
   start: {
@@ -54,7 +51,7 @@ const styles = StyleSheet.create({
     position: "relative",
     zIndex: 1,
     borderWidth: 15,
-    borderColor: '#FFFFFF',
+    borderColor: "#FFFFFF",
     backgroundColor: "#FFFFFF",
   },
 })
