@@ -21,3 +21,5 @@ dist
 .DS_Store
 install-state.gz
 lerna-debug.log
+
+.umi

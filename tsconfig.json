@@ -17,6 +17,7 @@
     "noImplicitReturns": true,
     "suppressImplicitAnyIndexErrors": true,
     "moduleResolution": "node",
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "jsx": "react"
   }
 }

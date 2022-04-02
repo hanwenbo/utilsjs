@@ -13,14 +13,21 @@
     "lint:commit": "walrus commitlint --env HUSKY_GIT_PARAMS",
     "readme": "node scripts/update-readme.js",
     "test:array": "walrus test packages/array",
+    "test:object": "walrus test packages/object",
+    "test:ui-web": "walrus test packages/ui-web",
     "prerelease": "npm run build",
-    "release": "release --commit-message '🔖 chore(release): publish' --skip-build"
+    "release": "release --commit-message '🔖 chore(release): publish' --skip-build",
+    "site:start": "dumi dev",
+    "site:build": "dumi build"
   },
   "devDependencies": {
+    "@types/react": "^17.0.43",
+    "@types/react-native": "^0.67.3",
     "@walrus/cli": "1.3.4",
     "@walrus/preset-lint": "1.1.8",
     "@walrus/release-cli": "1.0.5",
     "@walrus/test": "1.3.0",
+    "dumi": "^1.1.40",
     "father-build": "1.20.4",
     "globby": "^13.1.1",
     "husky": "5.1.2",

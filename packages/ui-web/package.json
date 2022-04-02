@@ -1,0 +1,25 @@
+{
+  "name": "@hanwenbo/ui-web",
+  "version": "0.0.1",
+  "description": "常用基础组件",
+  "author": "9476400@qq.com",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "es"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "react-native-web": "^0.17.7"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.43",
+    "@types/react-dom": "^17.0.14",
+    "@types/react-native-web": "github:gtechnologies/react-native-web-ts-types"
+  }
+}
