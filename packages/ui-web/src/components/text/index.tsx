@@ -6,7 +6,7 @@ import {GenericStyleProp} from "react-native-web/types";
 import {TextStyle} from "react-native-web/exports/Text/types";
 
 type PropsType = {
-  style: GenericStyleProp<TextStyle>
+  style?: GenericStyleProp<TextStyle>
 }
 const Text = ({style, ...props}: PropsType) => {
   const _style = {...style, ...extractTypographyValue(props), color: extractColorValue(props)}

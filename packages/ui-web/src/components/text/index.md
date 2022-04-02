@@ -1,3 +1,7 @@
+---
+title: Text
+---
+
 ```jsx
 import React from 'react';
 import Text from './index';
