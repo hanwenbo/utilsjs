@@ -37,6 +37,8 @@ import isFunction from '@hanwenbo/某包';
 |包名|描述|
 |---|---|
 |[@hanwenbo/array](https://github.com/hanwenbo/utilsjs/tree/master/./packages/array/)|常用的数组操作|
+|[@hanwenbo/object](https://github.com/hanwenbo/utilsjs/tree/master/./packages/object/)|常用的对象操作|
+|[@hanwenbo/ui-web](https://github.com/hanwenbo/utilsjs/tree/master/./packages/ui-web/)|常用基础组件|
 
 <!-- end-directory -->
 
@@ -55,5 +57,8 @@ yarn bootstarp
 # 发布
 npm login --registry https://registry.npmjs.org
 npm run release --registry https://registry.npmjs.org
+
+如果错过了发布 可以使用强行发布
+npx lerna publish --force-publish
 ```
 
