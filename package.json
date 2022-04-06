@@ -34,5 +34,9 @@
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "deepmerge": "^4.2.2",
+    "remax": "^2.15.13"
+  }
 }

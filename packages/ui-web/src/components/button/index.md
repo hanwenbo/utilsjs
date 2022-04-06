@@ -8,43 +8,136 @@ import Button from "./index"
 import View from "../view"
 import ButtonStyle from "../../style/button"
 import ViewStyle from "../../style/view"
+import { Input } from 'remax/one';
+import ThemeManager from "../../style/themeManager";
 
+ThemeManager.loadTheme({
+  View: {
+    mb: {
+      marginBottom: 10
+    },
+  },
+  Button: {
+    mb: {
+      marginBottom: 10
+    },
+    primary: {},
+    Text: {
+      primary: {
+        color: "#FFFFFF"
+      },
+    },
+  }
+})
 export default () => {
-  ViewStyle.loadView({
-    row: {
-      flexDirection: "row"
-    },
-  })
-  ButtonStyle.loadButton({
-    primary: {
-      backgroundColor: "red",
-      paddingHorizontal:15,
-      paddingVertical:10,
-      borderRadius:5,
-    },
-  });
-  ButtonStyle.loadButtonText({
-    primary: {
-      color:'#FFFFFF',
-    },
-  });
   return <View>
-    <Button>
-      可点击
-    </Button>
-    <Button disabled>
-      不可以点击
-    </Button>
     <View row>
-      <Button loading primary>
-        加载中
+      <Button mb>
+        可点击
       </Button>
     </View>
     <View row>
-    <Button primary>
-      可点击
-    </Button>
+      <Button disabled mb>
+        不可以点击
+      </Button>
+    </View>
+    <View row>
+      <Button loading primary mb>
+        加载中
+      </Button>
+    </View>
+    <View row mb>
+      <Button primary mb>
+        可点击
+      </Button>
+    </View>
+    <View row mb middle>
+      <Button primary mini>
+        Mini
+      </Button>
+      <Button primary small>
+        Mini
+      </Button>
+      <Button primary middle>
+        Mini
+      </Button>
+      <Button primary large>
+        Mini
+      </Button>
+    </View>
+    <View row mb middle>
+      <Button default mini>
+        Mini
+      </Button>
+      <Button default small>
+        Mini
+      </Button>
+      <Button default middle>
+        Mini
+      </Button>
+      <Button default large>
+        Mini
+      </Button>
+    </View>
+    <View row mb middle>
+      <Button success mini>
+        Mini
+      </Button>
+      <Button success small>
+        Mini
+      </Button>
+      <Button success middle>
+        Mini
+      </Button>
+      <Button success large>
+        Mini
+      </Button>
+    </View>
+    <View row mb middle>
+      <Button danger mini>
+        Mini
+      </Button>
+      <Button danger small>
+        Mini
+      </Button>
+      <Button danger middle>
+        Mini
+      </Button>
+      <Button danger large>
+        Mini
+      </Button>
+    </View>
+    <View row mb middle>
+      <Button warning mini>
+        Mini
+      </Button>
+      <Button warning small>
+        Mini
+      </Button>
+      <Button warning middle>
+        Mini
+      </Button>
+      <Button warning large>
+        Mini
+      </Button>
+    </View>
+    <View row mb middle>
+      <Button link>
+        Link
+      </Button>
+      <Button dashed>
+        Dashed
+      </Button>
+    </View>
+    <View row mb middle>
+      <Button primary round>
+        圆角
+      </Button>
+      <Button primary rectangular>
+        方块
+      </Button>
     </View>
   </View>
 }
 ```
+
