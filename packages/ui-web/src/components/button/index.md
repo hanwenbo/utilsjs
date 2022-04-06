@@ -4,12 +4,7 @@ title: Button
 
 ```jsx
 import React from 'react';
-import Button from "./index"
-import View from "../view"
-import ButtonStyle from "../../style/button"
-import ViewStyle from "../../style/view"
-import { Input } from 'remax/one';
-import ThemeManager from "../../style/themeManager";
+import { Space, Divider, Button, View, ThemeManager, Text } from "@hanwenbo/ui-web"
 
 ThemeManager.loadTheme({
   View: {

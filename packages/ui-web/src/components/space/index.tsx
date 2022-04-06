@@ -32,7 +32,6 @@ const Space = ({
   const childrenCount = React.Children.count(children)
   const lastItemStyle = {marginRight: 0}
 
-
   return <View style={[styles.main, _style]}>
     {React.Children.map(children, (child, index) => {
       const isLast = childrenCount === index + 1

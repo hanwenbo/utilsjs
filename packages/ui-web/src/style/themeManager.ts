@@ -3,6 +3,13 @@ import _ from "@hanwenbo/object";
 import merge from "deepmerge";
 
 export const theme = {
+  Text: {
+    h1: {fontSize: 38, lineHeight: 46, color: "#000", fontWeight: "600"},
+    h2: {fontSize: 30, lineHeight: 40, color: "#000", fontWeight: "600"},
+    h3: {fontSize: 30, lineHeight: 32, color: "#000", fontWeight: "600"},
+    h4: {fontSize: 20, lineHeight: 28, color: "#000", fontWeight: "600"},
+    h5: {fontSize: 16, lineHeight: 24, color: "#000", fontWeight: "600"},
+  },
   // 没有大写开头
   // button的样式
   Button: {

@@ -1,7 +1,7 @@
 // @ts-ignore
 import {Text as RNText} from "react-native-web";
 import React, {forwardRef, Ref} from "react"
-import {extractTypographyValue, extractColorValue} from "../../common/modifiers"
+import {extractStyle} from "../../common/modifiers"
 import {GenericStyleProp} from "react-native-web/types";
 import {TextStyle} from "react-native-web/exports/Text/types";
 
@@ -11,7 +11,7 @@ type PropsType = {
 }
 
 const Text = ({style, ...props}: PropsType, ref: Ref<any>) => {
-  const _style = {...style, ...extractTypographyValue(props), color: extractColorValue(props)}
+  const _style = {...extractStyle('Text', props), ...style}
   return <RNText {...props} style={_style} ref={ref} />
 }
 export {Text}; // For tests

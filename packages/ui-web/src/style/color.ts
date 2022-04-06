@@ -18,6 +18,10 @@ export class Color {
       this[key] = value;
     });
   }
+
+  getColor(key: string): string {
+    return this[key];
+  }
 }
 
 const colorObject = new Color();

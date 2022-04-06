@@ -4,26 +4,12 @@ title: Divider
 
 ```jsx
 import React from 'react';
-import Text from '../text';
-import View from '../view'
-import Typography from "../../style/typography"
-import Color from "../../style/color"
-import Divider from "./index"
+import { Space, Divider, Button, View, ThemeManager, Text } from "@hanwenbo/ui-web"
 
 export default () => {
-  Typography.loadTypographies({
-    heading: { fontSize: 16, fontWeight: "600" },
-    subheading: { fontSize: 14 },
-    body: { fontSize: 14 },
-    description: { fontSize: 14, color: "#666" },
-    h4: { fontSize: 20, lineHeight: 28, color: "#000", fontWeight: "600" },
-    ml15: { marginLeft: 15 },
-  });
-  Color.loadColors({
-    blue: "blue",
-    red: "red",
-  })
-  return <View>
+  return <View style={{
+      backgroundColor:"#f8f8f8"
+  }}>
     <Divider
       style={{
         justifyContent: "flex-start",

@@ -4,13 +4,7 @@ title: Space
 
 ```jsx
 import React from 'react';
-import Button from "../button/index"
-import View from "../view"
-import ViewStyle from "../../style/view"
-import { Input } from 'remax/one';
-import ThemeManager from "../../style/themeManager";
-import { Space } from "./index"
-import Text from "../text"
+import { Space, Divider, Button, View, ThemeManager, Text } from "@hanwenbo/ui-web"
 
 const DemoBlock = ({ title = null, children }) => {
   return <View>
@@ -21,7 +15,7 @@ const DemoBlock = ({ title = null, children }) => {
 export default () => {
   return <View style={{
     width: 375,
-    backgroundColor:"#f8f8f8",
+    backgroundColor: "#f8f8f8",
   }}>
     <DemoBlock title={'水平方向'}>
       <Space>
@@ -64,7 +58,7 @@ export default () => {
 
     <DemoBlock title='主轴对齐方式'>
       <Space style={{
-          justifyContent:"center",
+        justifyContent: "center",
       }}>
         <Button>1</Button>
         <Button>
@@ -78,7 +72,7 @@ export default () => {
 
     <DemoBlock title='交叉轴对齐方式'>
       <Space style={{
-          alignItems:"flex-end",
+        alignItems: "flex-end",
       }}>
         <Button>1</Button>
         <Button>

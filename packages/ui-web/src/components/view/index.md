@@ -4,14 +4,18 @@ title: View
 
 ```jsx
 import React from 'react';
-import ViewStyle from "../../style/view"
-import View from "./index"
+import { View, ThemeManager } from "@hanwenbo/ui-web"
 
 export default () => {
-  ViewStyle.loadView({
-    body: { backgroundColor: 'red', width: 100, height: 100 },
+  ThemeManager.loadTheme({
+    View: {
+      body: {
+        width: 100,
+        height: 100,
+        backgroundColor: 'red'
+      }
+    }
   });
-
   return <View>
     <View body />
   </View>
