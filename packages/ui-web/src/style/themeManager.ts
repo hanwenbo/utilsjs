@@ -9,6 +9,7 @@ export const theme = {
     default: {
       borderWidth: 1,
       borderColor: Colors.border,
+      backgroundColor: Colors.white
     },
     primary: {
       backgroundColor: Colors.primary,
@@ -26,11 +27,11 @@ export const theme = {
       backgroundColor: Colors.warning,
       borderColor: Colors.warning,
     },
-    dashed:{
-      borderStyle:"dashed",
+    dashed: {
+      borderStyle: "dashed",
     },
-    link:{
-      borderWidth:0
+    link: {
+      borderWidth: 0
     },
     mini: {
       paddingHorizontal: 12,
@@ -53,26 +54,25 @@ export const theme = {
       borderRadius: 5,
     },
     // shape
-    round:{
-      borderRadius:100
+    round: {
+      borderRadius: 100
     },
-    rectangular:{
-      borderRadius:0,
+    rectangular: {
+      borderRadius: 0,
     },
     Text: {
-      default: {
-      },
+      default: {},
       primary: {
-        color:"#FFFFFF",
+        color: "#FFFFFF",
       },
       success: {
-        color:"#FFFFFF",
+        color: "#FFFFFF",
       },
       danger: {
-        color:"#FFFFFF",
+        color: "#FFFFFF",
       },
       warning: {
-        color:"#FFFFFF",
+        color: "#FFFFFF",
       },
       mini: {
         fontSize: 12,
@@ -86,9 +86,14 @@ export const theme = {
       large: {
         fontSize: 18,
       },
-      link:{
+      link: {
         color: Colors.primary,
       }
+    }
+  },
+  Space: {
+    vertical: {
+      flexDirection: "column",
     }
   },
   View: {
@@ -116,6 +121,7 @@ class ThemeManager {
 }
 
 const themeManager = new ThemeManager();
+themeManager.loadTheme(theme)
 
 export const getComponentTheme = (key: string): object => {
   return themeManager[key] = themeManager[key] || {};
