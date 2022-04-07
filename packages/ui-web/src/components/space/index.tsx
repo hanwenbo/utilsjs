@@ -32,10 +32,11 @@ const Space = ({
   const childrenCount = React.Children.count(children)
   const lastItemStyle = {marginRight: 0}
 
-  return <View style={[styles.main, _style]}>
+  // zIndex: "initial" 解决多个Mask层级错乱问题
+  return <View style={[styles.main, _style, {zIndex: "initial"}]}>
     {React.Children.map(children, (child, index) => {
       const isLast = childrenCount === index + 1
-      let itemStyles = [styles.item, {marginRight: gap}]
+      let itemStyles = [styles.item, {marginRight: gap, zIndex: "initial"}]
       if (isLast) {
         itemStyles.push(lastItemStyle)
       }

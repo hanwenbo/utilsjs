@@ -2,35 +2,62 @@
 import {StyleSheet, TouchableOpacity, ActivityIndicator, View} from "react-native-web";
 import React, {forwardRef, Ref, useState} from "react"
 import {extractStyle} from "../../common/modifiers"
-import {GenericStyleProp} from "react-native-web/types";
-import {ViewStyle} from "react-native-web/exports/View/types";
 import {useSpring, animated} from '@react-spring/web'
 import {useUnmountedRef} from 'ahooks'
-import ReactDOM from 'react-dom';
+import {useShouldRender} from '../../utils/should-render'
+import {mergeProps} from "../../utils/with-default-props";
+import {
+  renderToContainer,
+  GetContainer,
+} from '../../utils/render-to-container'
+import {
+  PropagationEvent,
+  withStopPropagation,
+} from '../../utils/with-stop-propagation'
+import {NativeProps, withNativeProps} from '../../utils/native-props'
+import {renderToBody} from "../../utils/render-to-body"
+import ReactDOM from "react-dom";
 
 export type MaskProps = {
-  style?: GenericStyleProp<ViewStyle>,
   children?: any | null | undefined;
-  visible?: boolean,
-  destroyOnClose?: Function,
-  onMaskClick?: (event: any) => void | null | undefined,
-  afterShow?: Function,
-  afterClose?: Function,
-  disableBodyScroll?:boolean,
-}
+  visible?: boolean
+  onMaskClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
+  destroyOnClose?: boolean
+  forceRender?: boolean
+  disableBodyScroll?: boolean
+  color?: 'black' | 'white'
+  opacity?: 'default' | 'thin' | 'thick' | number
+  getContainer?: GetContainer
+  afterShow?: () => void
+  afterClose?: () => void
+  stopPropagation?: PropagationEvent[],
+} & NativeProps
 const Mask = ({
-                style = null,
+                style = {},
                 visible = false,
                 children = null,
                 destroyOnClose,
                 onMaskClick,
                 afterShow,
                 afterClose,
-                ...props
+                ...p
               }: MaskProps, ref: Ref<any>) => {
 
-  props['default'] = true
+  const defaultProps = {
+    default: true,
+    visible: true,
+    destroyOnClose: false,
+    forceRender: false,
+    color: 'black',
+    opacity: 'default',
+    disableBodyScroll: true,
+    getContainer: null,
+    stopPropagation: ['click'],
+  }
+
+  let props = mergeProps(defaultProps, p)
   let _style = {...extractStyle('Mask', props), ...style}
+
   const [active, setActive] = useState(visible)
   const unmountedRef = useUnmountedRef()
   const {opacity} = useSpring({
@@ -55,41 +82,45 @@ const Mask = ({
       }
     },
   })
-  const portalContainer = document.body
 
-  const node = <animated.div
-    ref={ref}
-    style={{
-      ...{
-        zIndex: 1000,
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width:'100%',
-        height:"100%"
-      },
-      opacity,
-      display: active ? 'unset' : 'none',
-    }}
-  >
-    {/*{onMaskClick && (*/}
-    {/*  <TouchableOpacity activeOpacity={1} onPress={onMaskClick}>*/}
-    {/*    <View*/}
-    {/*      style={[styles.button,_style]}*/}
-    {/*    />*/}
-    {/*  </TouchableOpacity>*/}
-    {/*)}*/}
-    <TouchableOpacity activeOpacity={1} onPress={onMaskClick}>
-      <View
-        style={[styles.button,_style]}
-      />
-    </TouchableOpacity>
-    <View style={styles.content}>
-      {children}
-    </View>
-  </animated.div>
+  const shouldRender = useShouldRender(
+    active,
+    props.forceRender,
+    props.destroyOnClose
+  )
 
-  return ReactDOM.createPortal(node, portalContainer)
+  const node = withStopPropagation(
+    props.stopPropagation,
+    withNativeProps(
+      props, <animated.div
+        role={'mask'}
+        ref={ref}
+        style={{
+          ...{
+            zIndex: 1000,
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: "100%"
+          },
+          opacity,
+          display: active ? 'unset' : 'none',
+        }}
+      >
+        <TouchableOpacity activeOpacity={1} onPress={onMaskClick}>
+          <View
+            style={[styles.button, _style]}
+          />
+        </TouchableOpacity>
+        <View style={styles.content}>
+          {children}
+        </View>
+      </animated.div>
+    )
+  )
+  // return shouldRender && ReactDOM.createPortal(node, document.body)
+  return renderToContainer(props.getContainer, node)
 }
 export {Mask}; // For tests
 export default forwardRef(Mask)

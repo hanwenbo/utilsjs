@@ -4,13 +4,13 @@ title: Mask
 
 ```jsx
 import React, { useState } from 'react'
-import { Space, Divider, Button, View, ThemeManager, Text,Mask } from "@hanwenbo/ui-web"
+import { Space, Divider, Button, View, ThemeManager, Text, Mask } from "@hanwenbo/ui-web"
 
 const DemoBlock = ({ title = null, children }) => {
-  return <View>
+  return <div>
     <Text>{title}</Text>
     {children}
-  </View>
+  </div>
 }
 
 // 基础用法
@@ -29,8 +29,8 @@ const WithContent = () => {
   const [visible, setVisible] = useState(false)
   return (
     <>
-      <Mask 
-        visible={visible} 
+      <Mask
+        visible={visible}
         onMaskClick={() => setVisible(false)}
       >
         <View style={{
@@ -46,7 +46,7 @@ const WithContent = () => {
           marginLeft: -75,
           background: "#fff",
           borderRadius: 16,
-          padding:20
+          padding: 20
         }}>
           <Text>这是一个自定义的遮罩层</Text>
         </View>
@@ -95,7 +95,7 @@ const CustomOpacity = () => {
         visible={visible}
         onMaskClick={() => setVisible(false)}
         style={{
-          backgroundColor:"red"
+          backgroundColor: "red"
         }}
       />
       <Button onPress={() => setVisible(true)}>显示自定义透明度的遮罩层</Button>
@@ -111,7 +111,7 @@ const White = () => {
       <Button onPress={() => setVisible(true)}>显示白色的遮罩层</Button>
       <Mask
         style={{
-          backgroundColor:"white"
+          backgroundColor: "white"
         }}
         visible={visible}
         onMaskClick={() => setVisible(false)}
@@ -122,9 +122,7 @@ const White = () => {
 
 export default () => {
   return <View style={{
-    width: 375,
     backgroundColor: "#f8f8f8",
-    position:'relative'
   }}>
     <DemoBlock title='基础用法'>
       <Simple />

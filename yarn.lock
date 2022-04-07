@@ -2368,6 +2368,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@floating-ui/core@npm:^0.6.1":
+  version: 0.6.1
+  resolution: "@floating-ui/core@npm:0.6.1"
+  checksum: 6761c4ced6c1ee8f5166b2d869ad4de6285ae36b9649d83adfcba82dc3c4e019b6020903073e20c0ddacf76e8078b5e2e43b1c82f7472ca0b52f1025c3a8f72b
+  languageName: node
+  linkType: hard
+
+"@floating-ui/dom@npm:^0.4.2":
+  version: 0.4.4
+  resolution: "@floating-ui/dom@npm:0.4.4"
+  dependencies:
+    "@floating-ui/core": ^0.6.1
+  checksum: 1031cf3b5c18a9fe1edafafac1920ce882e50767a7b16ffed35807ccb84f5ff72b8247d94c7c680f6e8d913a0efe2d8906e051dbfa49c2633d2fc809d77e69b6
+  languageName: node
+  linkType: hard
+
 "@gar/promisify@npm:^1.0.1, @gar/promisify@npm:^1.1.3":
   version: 1.1.3
   resolution: "@gar/promisify@npm:1.1.3"
@@ -2413,11 +2429,15 @@ __metadata:
     "@walrus/preset-lint": 1.1.8
     "@walrus/release-cli": 1.0.5
     "@walrus/test": 1.3.0
+    antd-mobile: ^5.10.0
     deepmerge: ^4.2.2
     dumi: ^1.1.40
+    f2-touchemulator: ^0.0.1
     father-build: 1.20.4
     globby: ^13.1.1
     husky: 5.1.2
+    lorem-ipsum: ^2.0.4
+    qrcode.react: ^3.0.1
     remax: ^2.15.13
     typescript: 4.5.2
   languageName: unknown
@@ -4608,6 +4628,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/big.js@npm:^6.1.3":
+  version: 6.1.3
+  resolution: "@types/big.js@npm:6.1.3"
+  checksum: bf52e25c1d91daf5f88e7c49d03465ac9ce537cb09697c7677e70f9a09727156f4278987959769aabbfcce9e225c50713ccd594ab0c3835a7712d8635f323f7c
+  languageName: node
+  linkType: hard
+
 "@types/cacheable-request@npm:^6.0.1":
   version: 6.0.2
   resolution: "@types/cacheable-request@npm:6.0.2"
@@ -4964,6 +4991,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-is@npm:^17.0.3":
+  version: 17.0.3
+  resolution: "@types/react-is@npm:17.0.3"
+  dependencies:
+    "@types/react": "*"
+  checksum: 6abb7c47d54f012272650df8a962a28bd82f219291e5ef8b4dfa7fe0bb98ae243b060bf9fbe8ceff6213141794855a006db194b490b00ffd15842ae19d0ce1f0
+  languageName: node
+  linkType: hard
+
 "@types/react-native-web@github:gtechnologies/react-native-web-ts-types":
   version: 0.0.1
   resolution: "@types/react-native-web@https://github.com/gtechnologies/react-native-web-ts-types.git#commit=f4a362196536d0e6eb8650c732cd17d3b64035d4"
@@ -5043,6 +5079,13 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: 823f3fc6219f59dff7a005ca33adbac70e7ef7a5e15a844c40ba36247c007bd1e1fbfc784052336f60ecbee09f06b7c6c7433e8cece3a87247061bbac74b2576
+  languageName: node
+  linkType: hard
+
+"@types/resize-observer-browser@npm:^0.1.7":
+  version: 0.1.7
+  resolution: "@types/resize-observer-browser@npm:0.1.7"
+  checksum: 0377eaac8bb7a17b983b49a156006032380b459bfebefc54a5aa2f7f8a9786d2b60723e8837c61ef733330b478f4f26293e9edbdc8006238e4f80c878c56c988
   languageName: node
   linkType: hard
 
@@ -5652,6 +5695,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@use-gesture/core@npm:10.2.11":
+  version: 10.2.11
+  resolution: "@use-gesture/core@npm:10.2.11"
+  checksum: 8631cabe6d1a0dae4436a2176cdb915e129c364b391a8914cfe95600098f6f5bc2d88cb255e7d858f6518ecd5b677104e7e4ef93c19b60ea94002f717dd9a915
+  languageName: node
+  linkType: hard
+
+"@use-gesture/react@npm:^10.2.10":
+  version: 10.2.11
+  resolution: "@use-gesture/react@npm:10.2.11"
+  dependencies:
+    "@use-gesture/core": 10.2.11
+  peerDependencies:
+    react: ">= 16.8.0"
+  checksum: 157b08a8588c49db49239a971f49954f2b6bcbbe296caf4562c3a4e61221ed071759144082b3dd55631f22afedc1b8f6b068b38e51bfe303ac18ed513f5f4f71
+  languageName: node
+  linkType: hard
+
 "@walrus/cli-utils@npm:1.5.0":
   version: 1.5.0
   resolution: "@walrus/cli-utils@npm:1.5.0"
@@ -6230,7 +6291,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ahooks@npm:^3.3.0":
+"ahooks@npm:^3.1.14, ahooks@npm:^3.3.0":
   version: 3.3.0
   resolution: "ahooks@npm:3.3.0"
   dependencies:
@@ -6453,6 +6514,40 @@ __metadata:
   version: 0.2.2
   resolution: "antd-mobile-icons@npm:0.2.2"
   checksum: a2eedba8a0e97cd758d03f4255d8fe6acce97ce6e64a25cad03ff8732123b104786e6fb8d8b7743b0b936979b4ad5a7ca3e9d60952b08d264ec71d3d34561344
+  languageName: node
+  linkType: hard
+
+"antd-mobile-v5-count@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "antd-mobile-v5-count@npm:1.0.1"
+  checksum: 5e16eb0d689c19f50a748b917d532752e1b412f3c9aa4c35f7462c611f40b224037ccbb9f6bea507380e53e44b8fffeef729c2db9b8fe69d458cc878bdf52946
+  languageName: node
+  linkType: hard
+
+"antd-mobile@npm:^5.10.0":
+  version: 5.10.0
+  resolution: "antd-mobile@npm:5.10.0"
+  dependencies:
+    "@floating-ui/dom": ^0.4.2
+    "@react-spring/web": ^9.4.4
+    "@types/big.js": ^6.1.3
+    "@types/react-is": ^17.0.3
+    "@types/resize-observer-browser": ^0.1.7
+    "@use-gesture/react": ^10.2.10
+    ahooks: ^3.1.14
+    antd-mobile-icons: ^0.2.2
+    antd-mobile-v5-count: ^1.0.1
+    big.js: ^6.1.1
+    classnames: ^2.3.1
+    dayjs: ^1.11.0
+    lodash: ^4.17.21
+    rc-field-form: ^1.24.0
+    react-is: ^17.0.2
+    staged-components: ^1.1.2
+    tslib: ^2.3.1
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0
+  checksum: 0346402b64bc779b02fc0cfdeec39095e8ce805543af8f1ba7b9d87d1bb7cef46f161cbca0c7e27723452ec1e71d37e1dfecf9d06a42b24ada54810eae8e6854
   languageName: node
   linkType: hard
 
@@ -6767,6 +6862,13 @@ __metadata:
   version: 1.0.1
   resolution: "async-limiter@npm:1.0.1"
   checksum: 2b849695b465d93ad44c116220dee29a5aeb63adac16c1088983c339b0de57d76e82533e8e364a93a9f997f28bbfc6a92948cefc120652bd07f3b59f8d75cf2b
+  languageName: node
+  linkType: hard
+
+"async-validator@npm:^4.0.2":
+  version: 4.0.7
+  resolution: "async-validator@npm:4.0.7"
+  checksum: c4a764fb7f7bb1e777a9e47d0b405cf9add9db017793363ebdeb3d6f3e6f19bf0b4256a710a76d357ae18acdae102b3c3e0fbde8d72cc27eca7ce27ea439c3f7
   languageName: node
   linkType: hard
 
@@ -7328,6 +7430,13 @@ __metadata:
   version: 5.2.2
   resolution: "big.js@npm:5.2.2"
   checksum: b89b6e8419b097a8fb4ed2399a1931a68c612bce3cfd5ca8c214b2d017531191070f990598de2fc6f3f993d91c0f08aa82697717f6b3b8732c9731866d233c9e
+  languageName: node
+  linkType: hard
+
+"big.js@npm:^6.1.1":
+  version: 6.1.1
+  resolution: "big.js@npm:6.1.1"
+  checksum: ba5db278e7d6700d7f92b7421e851bb65b6336d90b882869696c50574623c6be31f81500c3195fb1b391045163ffe62745e1c2bc30b35cb15e1b3e3ed135266b
   languageName: node
   linkType: hard
 
@@ -8244,7 +8353,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"classnames@npm:2.x, classnames@npm:^2.2.1, classnames@npm:^2.2.5, classnames@npm:^2.2.6":
+"classnames@npm:2.x, classnames@npm:^2.2.1, classnames@npm:^2.2.5, classnames@npm:^2.2.6, classnames@npm:^2.3.1":
   version: 2.3.1
   resolution: "classnames@npm:2.3.1"
   checksum: 14db8889d56c267a591f08b0834989fe542d47fac659af5a539e110cc4266694e8de86e4e3bbd271157dbd831361310a8293e0167141e80b0f03a0f175c80960
@@ -8601,7 +8710,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^2.18.0, commander@npm:^2.19.0, commander@npm:^2.20.0":
+"commander@npm:^2.17.1, commander@npm:^2.18.0, commander@npm:^2.19.0, commander@npm:^2.20.0":
   version: 2.20.3
   resolution: "commander@npm:2.20.3"
   checksum: ab8c07884e42c3a8dbc5dd9592c606176c7eb5c1ca5ff274bcf907039b2c41de3626f684ea75ccf4d361ba004bbaff1f577d5384c155f3871e456bdf27becf9e
@@ -9558,7 +9667,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:^1.9.1":
+"dayjs@npm:^1.11.0, dayjs@npm:^1.9.1":
   version: 1.11.0
   resolution: "dayjs@npm:1.11.0"
   checksum: 2d36f6d71345114cdcd89147adf9e05b4f8fe81684e08c8bf1f86b140aa0b86ecc3cae661a9348d96feb7fbefd03e1bc3697303688e95209670abcb36b4ece15
@@ -11106,6 +11215,13 @@ __metadata:
   version: 1.4.1
   resolution: "extsprintf@npm:1.4.1"
   checksum: a2f29b241914a8d2bad64363de684821b6b1609d06ae68d5b539e4de6b28659715b5bea94a7265201603713b7027d35399d10b0548f09071c5513e65e8323d33
+  languageName: node
+  linkType: hard
+
+"f2-touchemulator@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "f2-touchemulator@npm:0.0.1"
+  checksum: c4c405e3329382e2c0975b36c428f043f459bed2c32406d8864e8068011c8435fb983fd08a911bddc17153d8f1eb69302ec1e7fb6c4f7a437c69584b167795d3
   languageName: node
   linkType: hard
 
@@ -15847,6 +15963,17 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"lorem-ipsum@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "lorem-ipsum@npm:2.0.4"
+  dependencies:
+    commander: ^2.17.1
+  bin:
+    lorem-ipsum: dist/bin/lorem-ipsum.bin.js
+  checksum: 5f3864bfaef504922f2109a645783307f79fbadcce780b5c24e24de64fe5c63090aa3831b389d21072cea9a3d0a9fa959da5e20fab584a912d2f085d3936b197
+  languageName: node
+  linkType: hard
+
 "loud-rejection@npm:^1.0.0":
   version: 1.6.0
   resolution: "loud-rejection@npm:1.6.0"
@@ -19881,6 +20008,15 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"qrcode.react@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "qrcode.react@npm:3.0.1"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 107bb08a9cb0077de982dc3204484f9e43f204141d02c587cffaf31c8ff94d1237a62e67e1938a94a8be25ae62b6db9d810eab0b42bac15db364e4a77c72fd28
+  languageName: node
+  linkType: hard
+
 "qs@npm:6.9.7":
   version: 6.9.7
   resolution: "qs@npm:6.9.7"
@@ -20045,6 +20181,20 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"rc-field-form@npm:^1.24.0":
+  version: 1.25.0
+  resolution: "rc-field-form@npm:1.25.0"
+  dependencies:
+    "@babel/runtime": ^7.8.4
+    async-validator: ^4.0.2
+    rc-util: ^5.8.0
+  peerDependencies:
+    react: ">=16.9.0"
+    react-dom: ">=16.9.0"
+  checksum: 3c4441241b480bb208490ddb61a1a401249b6533839908c532b81752169ba774a88511c811cee1062649ef5119df071736fdc49d558638c75224c12b0925ff70
+  languageName: node
+  linkType: hard
+
 "rc-menu@npm:~9.5.1":
   version: 9.5.3
   resolution: "rc-menu@npm:9.5.3"
@@ -20167,6 +20317,20 @@ fsevents@~2.1.2:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
   checksum: 40dcc17a978d65ef2cb59eb5b3b1eb11f2a8e77ebfce9d773ee74d35480e93c665f158286c75a6ade9af687c1e96c1500d693fc3153a94b600ee3a1cf5422fe4
+  languageName: node
+  linkType: hard
+
+"rc-util@npm:^5.8.0":
+  version: 5.19.6
+  resolution: "rc-util@npm:5.19.6"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+    react-is: ^16.12.0
+    shallowequal: ^1.1.0
+  peerDependencies:
+    react: ">=16.9.0"
+    react-dom: ">=16.9.0"
+  checksum: 15505cbfc51be9d697a5a19d98a7c1db7f22d4d623af51430ccd15c84d3cc5e6ba2c957fdc536fcbcd055820f0391a55d4fdb63d8913c79fe862f7e7386873bf
   languageName: node
   linkType: hard
 
@@ -22382,6 +22546,15 @@ resolve@~1.1.6:
   languageName: node
   linkType: hard
 
+"staged-components@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "staged-components@npm:1.1.2"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0
+  checksum: 0296e516a9c9fb8184b57827a0e0232cc65894b2f8ac2adcaf30f709a35c73ba7919c5748bf66a921a6dbc1a63c4045f3985f694f620e045ca81bd178e41a6eb
+  languageName: node
+  linkType: hard
+
 "state-toggle@npm:^1.0.0":
   version: 1.0.3
   resolution: "state-toggle@npm:1.0.3"
@@ -23642,7 +23815,7 @@ resolve@~1.1.6:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.2.0":
+"tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.2.0, tslib@npm:^2.3.1":
   version: 2.3.1
   resolution: "tslib@npm:2.3.1"
   checksum: de17a98d4614481f7fcb5cd53ffc1aaf8654313be0291e1bfaee4b4bb31a20494b7d218ff2e15017883e8ea9626599b3b0e0229c18383ba9dce89da2adf15cb9

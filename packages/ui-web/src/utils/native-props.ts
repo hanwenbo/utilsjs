@@ -2,7 +2,6 @@ import React from 'react'
 import type { CSSProperties, ReactElement } from 'react'
 
 export interface NativeProps<S extends string = never> {
-  className?: string
   style?: CSSProperties & Partial<Record<S, string>>
   tabIndex?: number
 }

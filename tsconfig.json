@@ -5,6 +5,10 @@
     "target": "esnext",
     "lib": ["esnext", "dom"],
 
+    "paths": {
+      "demos": ["src/demos/index.ts"],
+    },
+
     /* Strict Type-Checking Options */
     "strict": true,
     "noImplicitAny": true,

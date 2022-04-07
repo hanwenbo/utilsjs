@@ -2,88 +2,36 @@
 title: Popup
 ---
 
-```jsx
-import React from 'react';
-import { Space, Divider, Button, View, ThemeManager, Text } from "@hanwenbo/ui-web"
+# Popup 弹出层
 
-const DemoBlock = ({ title = null, children }) => {
-  return <View>
-    <Text>{title}</Text>
-    {children}
-  </View>
-}
-export default () => {
-  return <View style={{
-    width: 375,
-    backgroundColor: "#f8f8f8",
-  }}>
-    <DemoBlock title={'水平方向'}>
-      <Space>
-        <Button>按钮1</Button>
-        <Button>按钮2</Button>
-        <Button>按钮3</Button>
-      </Space>
-    </DemoBlock>
-    <DemoBlock title='换行'>
-      <Space wrap>
-        <Button>按钮1</Button>
-        <Button>按钮2</Button>
-        <Button>按钮3</Button>
-        <Button>按钮4</Button>
-        <Button>按钮5</Button>
-        <Button>按钮6</Button>
-        <Button>按钮7</Button>
-        <Button>按钮8</Button>
-        <Button>按钮9</Button>
-        <Button>按钮10</Button>
-        <Button>按钮11</Button>
-      </Space>
-    </DemoBlock>
-    <DemoBlock title='垂直方向的间距'>
-      <Space vertical>
-        <Button>按钮1</Button>
-        <Button>按钮2</Button>
-        <Button>按钮3</Button>
-      </Space>
-    </DemoBlock>
+<code src="./demos/demo1.tsx"></code>
 
-    <DemoBlock title='自定义间距大小'>
-      <Space gap={35}>
-        <Button>按钮1</Button>
-        <Button>按钮2</Button>
-        <Button>按钮3</Button>
-      </Space>
-    </DemoBlock>
+<code src="./demos/demo2.tsx"></code>
 
+### 属性
 
-    <DemoBlock title='主轴对齐方式'>
-      <Space style={{
-        justifyContent: "center",
-      }}>
-        <Button>1</Button>
-        <Button>
-          2<br />2
-        </Button>
-        <Button>
-          3<br />3<br />3
-        </Button>
-      </Space>
-    </DemoBlock>
+| 属性            | 说明                                                                        | 类型                                                               | 默认值          |
+| --------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------ | --------------- |
+| visible         | 是否可见                                                                    | `boolean`                                                          | `false`         |
+| mask            | 是否展示蒙层                                                                | `boolean`                                                          | `true`          |
+| onMaskClick     | 点击蒙层触发                                                                | `(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void` | -               |
+| destroyOnClose  | 不可见时卸载内容                                                            | `boolean`                                                          | `false`         |
+| forceRender     | 强制渲染内容                                                                | `boolean`                                                          | `false`         |
+| getContainer    | 指定挂载的 `HTML` 节点，默认为 `body`，如果为 `null` 的话，会渲染到当前节点 | `HTMLElement \| () => HTMLElement \| null`                         | `document.body` |
+| afterShow       | 完全展示后触发                                                              | `() => void`                                                       | -               |
+| afterClose      | 完全关闭后触发                                                              | `() => void`                                                       | -               |
+| position        | 指定弹出的位置                                                              | `'bottom' \| 'top' \| 'left' \| 'right'`                           | `'bottom'`      |
+| className       | 容器类名                                                                    | `string`                                                           | -               |
+| style           | 容器样式                                                                    | `React.CSSProperties`                                              | -               |
+| bodyClassName   | 内容区域类名                                                                | `string`                                                           | -               |
+| bodyStyle       | 内容区域样式                                                                | `React.CSSProperties`                                              | -               |
+| maskClassName   | 遮罩类名                                                                    | `string`                                                           | -               |
+| maskStyle       | 遮罩样式                                                                    | `React.CSSProperties`                                              | -               |
+| onClick         | 点击时触发，常用于阻止事件冒泡                                              | `(event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void`    | -               |
+| stopPropagation | 阻止某些事件的冒泡                                                          | `PropagationEvent[]`                                               | `['click']`     |
 
-    <DemoBlock title='交叉轴对齐方式'>
-      <Space style={{
-        alignItems: "flex-end",
-      }}>
-        <Button>1</Button>
-        <Button>
-          2<br />2
-        </Button>
-        <Button>
-          3<br />3<br />3
-        </Button>
-      </Space>
-    </DemoBlock>
-  </View>
-}
-```
+### CSS 变量
 
+| 属性      | 说明             | 默认值 | 全局变量              |
+| --------- | ---------------- | ------ | --------------------- |
+| --z-index | 元素的 `z-index` | `1000` | `--adm-popup-z-index` |

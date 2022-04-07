@@ -7,6 +7,8 @@ import Divider from "./components/divider"
 import Grid from "./components/grid"
 import Modal from "./components/modal"
 import Mask from "./components/mask"
+import SafeArea from "./components/safe-area"
+import Popup from "./components/popup"
 
 import ThemeManager from "./style/themeManager"
 import ColorManager from "./style/color"
@@ -20,6 +22,8 @@ export {
   Grid,
   Modal,
   Mask,
+  SafeArea,
+  Popup,
   ThemeManager,
   ColorManager
 }
@@ -32,5 +36,7 @@ export default {
   Divider,
   Grid,
   Modal,
-  Mask
+  Mask,
+  SafeArea,
+  Popup
 }
