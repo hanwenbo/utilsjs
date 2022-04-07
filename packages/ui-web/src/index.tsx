@@ -4,6 +4,10 @@ import View from "./components/view"
 import Button from "./components/button"
 import Space from "./components/space"
 import Divider from "./components/divider"
+import Grid from "./components/grid"
+import Modal from "./components/modal"
+import Mask from "./components/mask"
+
 import ThemeManager from "./style/themeManager"
 import ColorManager from "./style/color"
 
@@ -13,6 +17,9 @@ export {
   Button,
   Space,
   Divider,
+  Grid,
+  Modal,
+  Mask,
   ThemeManager,
   ColorManager
 }
@@ -23,4 +30,7 @@ export default {
   Button,
   Space,
   Divider,
+  Grid,
+  Modal,
+  Mask
 }

@@ -13,7 +13,8 @@ type PropsType = {
   disabled?: boolean,
   loading?: boolean,
   children?: any | null | undefined;
-  loadingProps?: object
+  loadingProps?: object,
+  [key: string]: any,
 }
 const Button = ({
                   style = null,
@@ -33,6 +34,8 @@ const Button = ({
   if (disabled || loading) {
     wrapperProps['onPress'] = undefined
     wrapperProps['activeOpacity'] = 1
+  }else{
+    wrapperProps['onPress'] = onPress
   }
   const defaultProps = {
     middle: true,

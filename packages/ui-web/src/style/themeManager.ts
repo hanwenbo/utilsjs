@@ -114,6 +114,19 @@ export const theme = {
       justifyContent: "center",
     },
   },
+  Mask:{
+    default: {
+      backgroundColor: "rgba(0,0,0,0.5)",
+    },
+    thin:{
+      backgroundColor: "rgba(0,0,0,0.35)",
+    },
+    thick:{
+      backgroundColor: "rgba(0,0,0,0.75)",
+    },
+  },
+  Modal:{
+  }
 }
 
 class ThemeManager {

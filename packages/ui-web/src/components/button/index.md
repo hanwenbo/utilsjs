@@ -26,6 +26,9 @@ ThemeManager.loadTheme({
 })
 export default () => {
   return <View>
+    <Button>
+      块
+    </Button>
     <View row>
       <Button mb>
         可点击

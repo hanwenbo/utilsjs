@@ -43,7 +43,7 @@ const Space = ({
         itemStyles.push({marginBottom: gap})
       }
       if (props?.vertical) {
-        itemStyles.push({marginBottom: gap, marginRight: 0, flexDirection: "column"})
+        itemStyles.push({marginBottom: gap, marginRight: 0})
       }
       return (
         child !== null &&
@@ -62,6 +62,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   item: {
-    flexDirection: 'row',
+    flexDirection:'row',
   },
 })
