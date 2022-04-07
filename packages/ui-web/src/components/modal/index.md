@@ -108,7 +108,11 @@ export default () => {
             Modal.confirm({
               content: '是否提交申请',
               onConfirm: async () => {
-                throw new Error()
+                try {
+                  throw new Error()
+                } catch (e) {
+                  console.warn(e)
+                }
               },
             })
           }

@@ -1,5 +1,5 @@
 ---
-title: Space
+title: Dialog
 ---
 
 ```jsx

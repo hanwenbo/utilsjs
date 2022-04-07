@@ -1,5 +1,5 @@
 ---
-title: Space
+title: Grid
 ---
 
 ```jsx
