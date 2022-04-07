@@ -14,12 +14,6 @@ export function withNativeProps<P extends NativeProps>(
     ...element.props,
   }
 
-  if (props.style) {
-    p.style = {
-      ...p.style,
-      ...props.style,
-    }
-  }
   if (props.tabIndex !== undefined) {
     p.tabIndex = props.tabIndex
   }
