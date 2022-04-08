@@ -11,6 +11,9 @@ import SafeArea from "./components/safe-area"
 import Popup from "./components/popup"
 import AutoCenter from "./components/auto-center"
 import Slider from "./components/slider"
+import TextArea from "./components/text-area"
+
+
 import ThemeManager from "./style/themeManager"
 import ColorManager from "./style/color"
 
@@ -27,6 +30,7 @@ export {
   Popup,
   AutoCenter,
   Slider,
+  TextArea,
   ThemeManager,
   ColorManager
 }
@@ -43,5 +47,6 @@ export default {
   SafeArea,
   Popup,
   AutoCenter,
-  Slider
+  Slider,
+  TextArea
 }

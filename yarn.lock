@@ -2439,6 +2439,7 @@ __metadata:
     lorem-ipsum: ^2.0.4
     qrcode.react: ^3.0.1
     remax: ^2.15.13
+    testing: ^2.0.1
     typescript: 4.5.2
   languageName: unknown
   linkType: soft
@@ -15924,6 +15925,13 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"log@npm:1.4.0":
+  version: 1.4.0
+  resolution: "log@npm:1.4.0"
+  checksum: a9db7c809b8eb3b644223650f28964a5d33178ab56155d2956af7cc1e4ab667203cb76eadfa0fb0e8ab11494645ccd26bd4d936916765c081cfeba9e4fd5d3c4
+  languageName: node
+  linkType: hard
+
 "logical-not@npm:^1.0.1":
   version: 1.0.9
   resolution: "logical-not@npm:1.0.9"
@@ -23444,6 +23452,15 @@ resolve@~1.1.6:
     glob: ^7.1.4
     minimatch: ^3.0.4
   checksum: 3b34a3d77165a2cb82b34014b3aba93b1c4637a5011807557dc2f3da826c59975a5ccad765721c4648b39817e3472789f9b0fa98fc854c5c1c7a1e632aacdc28
+  languageName: node
+  linkType: hard
+
+"testing@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "testing@npm:2.0.1"
+  dependencies:
+    log: 1.4.0
+  checksum: 29794d5867781be56bec54f39b3c336576be314728c346fcdfb2fbbcbea5cfd5b4e1262202c370886c23d238bb87da38cb765e5b4dd53baf29ef1700e6f37a07
   languageName: node
   linkType: hard
 
