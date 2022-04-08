@@ -2,18 +2,19 @@ import Color from "../style/color"
 import Obj from "@hanwenbo/object"
 import themeManager from "../style/themeManager";
 
-export function extractStyle(componentName:string|string[],props: any): object | undefined {
+export function extractStyle(componentName: string | string[], props: any): object | undefined {
   let attr: any;
   let _themeManager = themeManager
-  if(Array.isArray(componentName)){
-    componentName.forEach((name)=>{
+  if (Array.isArray(componentName)) {
+    componentName.forEach((name) => {
       _themeManager = _themeManager[name]
     })
-  }else{
+  } else {
     _themeManager = themeManager[componentName]
   }
-  Obj.forEach(_themeManager, (key, value) => {
-    if (props[key] === true) {
+  Obj.forEach(props, (key) => {
+    const value = _themeManager[key]
+    if (typeof key === "string" && !!value) {
       attr = {...attr, ...value};
     }
   });

@@ -4,6 +4,11 @@ import merge from "deepmerge";
 
 export const theme = {
   Text: {
+    default: {},
+    primary: {color: Colors.primary},
+    success: {color: Colors.success},
+    danger: {color: Colors.danger},
+    warning: {color: Colors.warning},
     h1: {fontSize: 38, lineHeight: 46, color: "#000", fontWeight: "600"},
     h2: {fontSize: 30, lineHeight: 40, color: "#000", fontWeight: "600"},
     h3: {fontSize: 30, lineHeight: 32, color: "#000", fontWeight: "600"},
@@ -114,19 +119,18 @@ export const theme = {
       justifyContent: "center",
     },
   },
-  Mask:{
+  Mask: {
     default: {
       backgroundColor: "rgba(0,0,0,0.5)",
     },
-    thin:{
+    thin: {
       backgroundColor: "rgba(0,0,0,0.35)",
     },
-    thick:{
+    thick: {
       backgroundColor: "rgba(0,0,0,0.75)",
     },
   },
-  Modal:{
-  }
+  Modal: {}
 }
 
 class ThemeManager {

@@ -8,25 +8,16 @@ import { Space, Divider, Button, View, ThemeManager, Text } from "@hanwenbo/ui-w
 
 export default () => {
   return <View style={{
-      backgroundColor:"#f8f8f8"
+    backgroundColor: "#f8f8f8"
   }}>
-    <Divider
-      style={{
-        justifyContent: "flex-start",
-      }}
-      childrenStyle={{
-        marginLeft: 15
-      }}
-    ><Text h4>我只是想工作高效一些</Text></Divider>
-    <Divider><Text subheading blue>我只是想工作高效一些</Text></Divider>
-    <Divider
-      style={{
-        justifyContent: "flex-end",
-      }}
-      childrenStyle={{
-        marginRight: 15
-      }}
-    ><Text h4>我只是想工作高效一些</Text></Divider>
+    <Divider contentPosition={'left'}><Text h4 primary>左边</Text></Divider>
+    <Divider contentPosition={'left'} shortSideWidth={"20%"}><Text subheading success>左边20%</Text></Divider>
+    <Divider contentPosition={'left'} shortSideWidth={5}><Text subheading danger>左边5像素</Text></Divider>
+    <Divider contentPosition={'center'}><Text h4 warning>中间</Text></Divider>
+    <Divider contentPosition={'right'}><Text h4 primary>右边</Text></Divider>
+    <Divider childrenStyle={{
+      paddingHorizontal: 0
+    }}><Text h4 success>紧贴</Text></Divider>
   </View>
 }
 ```

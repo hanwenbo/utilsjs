@@ -1,57 +1,84 @@
 // @ts-ignore
 import {View, StyleSheet} from "react-native-web";
-import React, {forwardRef, Ref} from "react"
+import React from "react"
 import {GenericStyleProp} from "react-native-web/types";
 import {ViewStyle} from "react-native-web/exports/View/types";
+import {mergeProps} from "../../utils/with-default-props";
 
 type PropsType = {
-  style?: GenericStyleProp<ViewStyle>,
+  contentPosition?: "left" | "right" | "center";
+  style?: GenericStyleProp<ViewStyle>;
   startStyle?: GenericStyleProp<ViewStyle>,
   endStyle?: GenericStyleProp<ViewStyle>,
   childrenStyle?: GenericStyleProp<ViewStyle>,
   children?: React.ReactNode,
+  shortSideWidth?: number | string,
+
 }
-const Divider = ({style, startStyle, endStyle, childrenStyle, children, ...props}: PropsType, ref: Ref<any>) => {
-  return <View {...props} style={[styles.divider, style]} ref={ref}>
+const Divider = ({style, childrenStyle, children, ...p}: PropsType) => {
+  const defaultProps = {
+    contentPosition: "center",
+    startStyle: {},
+    endStyle: {},
+    shortSideWidth: '5%'
+  }
+  let props = mergeProps(defaultProps, p)
+  const hasChildren = !!children
+  let startStyle = props.startStyle
+  let endStyle = props.endStyle
+
+  switch (props.contentPosition) {
+    case 'center':
+      // @ts-ignore
+      startStyle = {flex: 'auto'}
+      // @ts-ignore
+      endStyle = {flex: 'auto'}
+      break;
+    case 'left':
+      startStyle = {width: props.shortSideWidth,}
+      endStyle = {flex: 1}
+      break
+    case 'right':
+      startStyle = {flex: 1,}
+      endStyle = {width: props.shortSideWidth}
+      break
+  }
+  return <View
+    {...props}
+    style={[styles.divider, style]}
+  >
     <View style={[styles.start, startStyle]} />
-    {!!children && <View style={[styles.children, childrenStyle]}>{children}</View>}
+    {hasChildren && <View style={[styles.children, childrenStyle]}>{children}</View>}
     <View style={[styles.end, endStyle]} />
   </View>
 }
 export {Divider}; // For tests
-export default forwardRef(Divider)
+export default Divider
 
 const startEnd = {
-  position: "absolute",
-  top: "50%",
-  width: '50%',
   backgroundColor: "#0000000f",
   height: 1,
 }
 const styles = StyleSheet.create({
   divider: {
     flexDirection: 'row',
-    justifyContent: 'center',
     color: "#000000d9",
     fontWeight: 500,
     fontSize: 16,
     whiteSpace: "nowrap",
     textAlign: "center",
-    width: '100%',
+    alignItems: "center",
+    flex: "auto",
   },
   start: {
     ...startEnd,
-    left: 0,
   },
   end: {
     ...startEnd,
-    right: 0,
   },
   children: {
     position: "relative",
     zIndex: 1,
-    borderWidth: 15,
-    borderColor: "#FFFFFF",
-    backgroundColor: "#FFFFFF",
+    paddingHorizontal: 15,
   },
 })

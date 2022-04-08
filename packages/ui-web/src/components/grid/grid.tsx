@@ -1,6 +1,7 @@
 import {mergeProps} from '../../utils/with-default-props'
 import React, {useState, FC} from 'react'
 import {NativeProps, withNativeProps} from '../../utils/native-props'
+// @ts-ignore
 import {StyleSheet, View} from "react-native-web";
 
 export type GridProps = {
@@ -33,6 +34,7 @@ export const Grid: FC<GridProps> = ({children, style = {}, columns, ...props}) =
 
   const flatStyle = StyleSheet.flatten([styles.main, style])
 
+  // TODO 如果想实现 span功能 需要遍历所有的子元素，获得每个子元素的span属性，然后计算出每个子元素的宽度，然后计算出每个子元素的宽度 用View包裹 每行算一层
   return withNativeProps(
     props,
     <View
