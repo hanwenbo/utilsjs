@@ -20,6 +20,7 @@ import TextInput from "./components/text-input"
 import NeedWrap from "./components/need-wrap"
 import StyleSheet from "./components/style-sheet"
 import Image from "./components/image"
+import PageIndicator from "./components/page-indicator"
 
 import ThemeManager from "./style/themeManager"
 import ColorManager from "./style/color"
@@ -48,6 +49,7 @@ export {
   NeedWrap,
   StyleSheet,
   Image,
+  PageIndicator
 }
 
 export default {
@@ -71,4 +73,5 @@ export default {
   TextInput,
   NeedWrap,
   Image,
+  PageIndicator
 }
