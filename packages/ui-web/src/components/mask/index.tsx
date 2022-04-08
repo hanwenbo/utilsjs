@@ -25,12 +25,11 @@ export type MaskProps = {
   destroyOnClose?: boolean
   forceRender?: boolean
   disableBodyScroll?: boolean
-  color?: 'black' | 'white'
-  opacity?: 'default' | 'thin' | 'thick' | number
   getContainer?: GetContainer
   afterShow?: () => void
   afterClose?: () => void
   stopPropagation?: PropagationEvent[],
+  [key: string]: any
 } & NativeProps
 const Mask = ({
                 style = {},
@@ -48,8 +47,6 @@ const Mask = ({
     visible: true,
     destroyOnClose: false,
     forceRender: false,
-    color: 'black',
-    opacity: 'default',
     disableBodyScroll: true,
     getContainer: null,
     stopPropagation: ['click'],

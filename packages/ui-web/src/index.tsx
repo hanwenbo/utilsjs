@@ -12,6 +12,7 @@ import Popup from "./components/popup"
 import AutoCenter from "./components/auto-center"
 import Slider from "./components/slider"
 import TextArea from "./components/text-area"
+import ImageViewer from "./components/image-viewer"
 
 
 import ThemeManager from "./style/themeManager"
@@ -31,6 +32,7 @@ export {
   AutoCenter,
   Slider,
   TextArea,
+  ImageViewer,
   ThemeManager,
   ColorManager
 }
@@ -48,5 +50,6 @@ export default {
   Popup,
   AutoCenter,
   Slider,
-  TextArea
+  TextArea,
+  ImageViewer
 }
