@@ -13,12 +13,17 @@ import AutoCenter from "./components/auto-center"
 import Slider from "./components/slider"
 import TextArea from "./components/text-area"
 import ImageViewer from "./components/image-viewer"
+import Toast from "./components/toast"
+import SpinLoading from "./components/spin-loading"
+import Dialog from "./components/dialog"
 
 
 import ThemeManager from "./style/themeManager"
 import ColorManager from "./style/color"
 
 export {
+  ThemeManager,
+  ColorManager,
   Text,
   View,
   Button,
@@ -32,9 +37,10 @@ export {
   AutoCenter,
   Slider,
   TextArea,
+  Toast,
   ImageViewer,
-  ThemeManager,
-  ColorManager
+  SpinLoading,
+  Dialog,
 }
 
 export default {
@@ -51,5 +57,8 @@ export default {
   AutoCenter,
   Slider,
   TextArea,
-  ImageViewer
+  ImageViewer,
+  Toast,
+  SpinLoading,
+  Dialog
 }

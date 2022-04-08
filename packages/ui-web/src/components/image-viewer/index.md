@@ -1,6 +1,6 @@
 # ImageViewer 图片查看器
 
-该组件使用了less，并没改为react-native-web的方式，react-native版本会直接使用第三方的插件解决，接口定义共用
+该组件使用了less，并没改为react-native-web的方式，react-native版本会直接使用第三方的插件解决，接口定义共用，后续将移出该库，单独引用
 
 <code src="./demos/demo1.tsx"></code>
 

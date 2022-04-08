@@ -45,6 +45,9 @@ export const theme = {
     link: {
       borderWidth: 0
     },
+    bold:{
+
+    },
     mini: {
       paddingHorizontal: 12,
       paddingVertical: 3,
@@ -100,6 +103,9 @@ export const theme = {
       },
       link: {
         color: Colors.primary,
+      },
+      bold:{
+        fontWeight: "bold",
       }
     }
   },
