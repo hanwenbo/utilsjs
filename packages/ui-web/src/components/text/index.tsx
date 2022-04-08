@@ -1,18 +1,16 @@
-// @ts-ignore
 import {Text as RNText} from "react-native-web";
-import React, {forwardRef, Ref} from "react"
+import React from "react"
 import {extractStyle} from "../../common/modifiers"
-import {GenericStyleProp} from "react-native-web/types";
-import {TextStyle} from "react-native-web/exports/Text/types";
+import {TextProps as RNTextProps} from "react-native-web/exports/Text/types";
 
-type PropsType = {
-  style?: GenericStyleProp<TextStyle>,
-  children?: string,
-}
+export type TextProps = {
+  children?: string | Text,
+  [key: string]: any
+} & RNTextProps
 
-const Text = ({style, ...props}: PropsType, ref: Ref<any>) => {
+const Text = ({style, ...props}: TextProps) => {
   const _style = {...extractStyle('Text', props), ...style}
-  return <RNText {...props} style={_style} ref={ref} />
+  return <RNText {...props} style={_style} />
 }
 export {Text}; // For tests
-export default forwardRef(Text)
+export default Text

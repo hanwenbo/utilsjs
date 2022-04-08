@@ -3,9 +3,11 @@ import {NativeProps, withNativeProps} from '../../utils/native-props'
 // @ts-ignore
 import {View, StyleSheet} from "react-native-web";
 
-export type AutoCenterProps = NativeProps
+export type AutoCenterProps = {
+  children?: React.ReactNode,
+} & NativeProps
 
-export const AutoCenter: FC<AutoCenterProps> = props => {
+export const AutoCenter: FC<AutoCenterProps> = ({...props}) => {
   return withNativeProps(
     props,
     <View style={styles.main}>
@@ -16,6 +18,7 @@ export const AutoCenter: FC<AutoCenterProps> = props => {
 
 const styles = StyleSheet.create({
   main: {
+    flexDirection: 'row',
     justifyContent: 'center'
   },
   content: {

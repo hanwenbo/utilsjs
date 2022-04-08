@@ -9,6 +9,8 @@ export const theme = {
     success: {color: Colors.success},
     danger: {color: Colors.danger},
     warning: {color: Colors.warning},
+    white: {color: "#FFFFFF"},
+    dark: {color: "#000"},
     h1: {fontSize: 38, lineHeight: 46, color: "#000", fontWeight: "600"},
     h2: {fontSize: 30, lineHeight: 40, color: "#000", fontWeight: "600"},
     h3: {fontSize: 30, lineHeight: 32, color: "#000", fontWeight: "600"},
@@ -45,9 +47,7 @@ export const theme = {
     link: {
       borderWidth: 0
     },
-    bold:{
-
-    },
+    bold: {},
     mini: {
       paddingHorizontal: 12,
       paddingVertical: 3,
@@ -104,9 +104,9 @@ export const theme = {
       link: {
         color: Colors.primary,
       },
-      bold:{
+      bold: {
         fontWeight: "bold",
-      }
+      },
     }
   },
   Space: {
@@ -137,9 +137,7 @@ export const theme = {
     },
   },
   Modal: {},
-  TextInput:{
-
-  }
+  TextInput: {}
 }
 
 class ThemeManager {

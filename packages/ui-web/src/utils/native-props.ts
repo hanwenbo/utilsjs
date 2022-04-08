@@ -1,8 +1,9 @@
 import React from 'react'
-import type { CSSProperties, ReactElement } from 'react'
+import type {CSSProperties, ReactElement} from 'react'
+import {TextProps} from '../components/text'
 
 export interface NativeProps<S extends string = never> {
-  style?: CSSProperties & Partial<Record<S, string>>
+  style?: CSSProperties | TextProps,
   tabIndex?: number
 }
 
