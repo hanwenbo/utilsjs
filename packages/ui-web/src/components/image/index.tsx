@@ -1,67 +1,15 @@
-// @ts-ignore
-import {StyleSheet, TouchableOpacity, ActivityIndicator, View, Text} from "react-native-web";
-import React, {forwardRef, Ref} from "react"
+import {Image as RNImage} from "react-native-web";
+import React from "react"
 import {extractStyle} from "../../common/modifiers"
-import {GenericStyleProp} from "react-native-web/types";
-import {ViewStyle} from "react-native-web/exports/View/types";
+import {ImageProps as RNImageProps} from "react-native-web/exports/Image/types";
 
-type PropsType = {
-  style?: GenericStyleProp<ViewStyle>,
-  children: any | null | undefined;
-  loadingProps?: object,
-  vertical?: boolean,
-  wrap?: boolean,
-  gap?: number
+export type ImageProps = {
+  [key: string]: boolean,
+} & RNImageProps
+
+const Image = ({style = {}, ...props}: ImageProps) => {
+  const _style = extractStyle('Image', props)
+  return <RNImage {...props} style={[style, _style]} />
 }
-const Space = ({
-                 style = null,
-                 wrap = false,
-                 gap = 8,
-                 children = null,
-                 ...props
-               }: PropsType, ref: Ref<any>) => {
-
-  let _style = {...extractStyle('Space', props), ...style}
-  if (wrap) {
-    _style['flexWrap'] = 'wrap'
-    _style['marginBottom'] = -gap
-  }
-  if (props?.vertical) {
-    _style['marginBottom'] = -gap
-  }
-  const childrenCount = React.Children.count(children)
-  const lastItemStyle = {marginRight: 0}
-
-  return <View style={[styles.main, _style]}>
-    {React.Children.map(children, (child, index) => {
-      const isLast = childrenCount === index + 1
-      let itemStyles = [styles.item, {marginRight: gap}]
-      if (isLast) {
-        itemStyles.push(lastItemStyle)
-      }
-      if (wrap) {
-        itemStyles.push({marginBottom: gap})
-      }
-      if (props?.vertical) {
-        itemStyles.push({marginBottom: gap, marginRight: 0})
-      }
-      return (
-        child !== null &&
-        child !== undefined && (
-          <View style={itemStyles}>{child}</View>
-        )
-      )
-    })}
-  </View>
-}
-export {Space}; // For tests
-export default forwardRef(Space)
-
-const styles = StyleSheet.create({
-  main: {
-    flexDirection: 'row',
-  },
-  item: {
-    flexDirection:'row',
-  },
-})
+export {Image};
+export default Image

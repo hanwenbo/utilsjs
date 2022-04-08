@@ -18,7 +18,8 @@ import SpinLoading from "./components/spin-loading"
 import Dialog from "./components/dialog"
 import TextInput from "./components/text-input"
 import NeedWrap from "./components/need-wrap"
-
+import StyleSheet from "./components/style-sheet"
+import Image from "./components/image"
 
 import ThemeManager from "./style/themeManager"
 import ColorManager from "./style/color"
@@ -44,7 +45,9 @@ export {
   SpinLoading,
   Dialog,
   TextInput,
-  NeedWrap
+  NeedWrap,
+  StyleSheet,
+  Image,
 }
 
 export default {
@@ -66,5 +69,6 @@ export default {
   SpinLoading,
   Dialog,
   TextInput,
-  NeedWrap
+  NeedWrap,
+  Image,
 }
