@@ -21,11 +21,6 @@
 | onAfterChange | 与 `touchend` 触发时机一致，把当前值作为参数传入             | `(value: number \| [number, number]) => void` | -                    |
 | icon          | 滑块的图标                                                   | `ReactNode`                                   | -                    |
 | fillColor     | 填充颜色                                                     | string                                        |                      |
-| trackStyle    | 轨道样式                                                     | object                                        |                      |
-| tickStyle     | 记号样式                                                     | object                                        |                      |
-
-### CSS 变量
-
-| 属性         | 说明     | 默认值                     |
-| ------------ | -------- | -------------------------- |
-| --fill-color | 填充颜色 | `var(--adm-color-primary)` |
+| trackStyle    | 轨道样式                                                     | React.CSSProperties                           |                      |
+| tickStyle     | 记号样式                                                     | React.CSSProperties                           |                      |
+| thumbStyle    | 拖动样式                                                     | React.CSSProperties                           |                      |

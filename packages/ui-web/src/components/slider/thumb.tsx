@@ -11,11 +11,12 @@ type ThumbProps = {
   disabled: boolean
   onDrag: (value: number, first: boolean, last: boolean) => void
   trackRef: RefObject<HTMLDivElement>
-  icon?: React.ReactNode
+  icon?: React.ReactNode,
+  thumbStyle?: React.CSSProperties,
 }
 
 const Thumb: FC<ThumbProps> = props => {
-  const {value, min, max, disabled, onDrag, icon} = props
+  const {value, min, max, disabled, onDrag, icon,thumbStyle={}} = props
   const prevValue = useRef(value)
 
   const currentPosition = () => {
@@ -47,6 +48,7 @@ const Thumb: FC<ThumbProps> = props => {
     <div
       style={{
         ...htmlStyle.container,
+        ...thumbStyle,
         ...currentPosition()
       }}
       {...bind()}

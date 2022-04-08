@@ -27,6 +27,7 @@ export type SliderProps = {
   onAfterChange?: (value: SliderValue) => void,
   trackStyle?: {},
   tickStyle?: {},
+  thumbStyle?: {},
   fillColor?: string,
 } & NativeProps
 
@@ -38,6 +39,8 @@ const defaultProps = {
   range: false,
   disabled: false,
   trackStyle: {},
+  tickStyle: {},
+  thumbStyle: {},
   fillColor: Colors.primary,
 }
 
@@ -157,6 +160,7 @@ export const Slider: FC<SliderProps> = p => {
         max={max}
         disabled={disabled}
         trackRef={trackRef}
+        thumbStyle={props.thumbStyle}
         onDrag={(position, first, last) => {
           if (first) {
             dragLockRef.current += 1
