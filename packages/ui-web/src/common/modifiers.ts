@@ -13,7 +13,7 @@ export function extractStyle(componentName: string | string[], props: any): obje
     _themeManager = themeManager[componentName]
   }
   Obj.forEach(props, (key, v) => {
-    const value = _themeManager[key]
+    const value = _themeManager?.[key]
     if (typeof key === "string" && v === true && !!value) {
       attr = {...attr, ...value};
     }

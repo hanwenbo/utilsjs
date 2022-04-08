@@ -136,7 +136,10 @@ export const theme = {
       backgroundColor: "rgba(0,0,0,0.75)",
     },
   },
-  Modal: {}
+  Modal: {},
+  TextInput:{
+
+  }
 }
 
 class ThemeManager {

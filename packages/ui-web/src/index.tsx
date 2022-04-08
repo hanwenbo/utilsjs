@@ -16,6 +16,7 @@ import ImageViewer from "./components/image-viewer"
 import Toast from "./components/toast"
 import SpinLoading from "./components/spin-loading"
 import Dialog from "./components/dialog"
+import TextInput from "./components/text-input"
 
 
 import ThemeManager from "./style/themeManager"
@@ -41,6 +42,7 @@ export {
   ImageViewer,
   SpinLoading,
   Dialog,
+  TextInput
 }
 
 export default {
@@ -60,5 +62,6 @@ export default {
   ImageViewer,
   Toast,
   SpinLoading,
-  Dialog
+  Dialog,
+  TextInput
 }
