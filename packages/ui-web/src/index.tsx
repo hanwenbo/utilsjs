@@ -9,7 +9,8 @@ import Modal from "./components/modal"
 import Mask from "./components/mask"
 import SafeArea from "./components/safe-area"
 import Popup from "./components/popup"
-
+import AutoCenter from "./components/auto-center"
+import Slider from "./components/slider"
 import ThemeManager from "./style/themeManager"
 import ColorManager from "./style/color"
 
@@ -24,6 +25,8 @@ export {
   Mask,
   SafeArea,
   Popup,
+  AutoCenter,
+  Slider,
   ThemeManager,
   ColorManager
 }
@@ -38,5 +41,7 @@ export default {
   Modal,
   Mask,
   SafeArea,
-  Popup
+  Popup,
+  AutoCenter,
+  Slider
 }

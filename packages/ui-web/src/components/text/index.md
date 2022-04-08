@@ -23,8 +23,8 @@ export default () => {
     }
   })
   return <View>
-    <Text h1>我只是想工作高效一些</Text>
-    <Text h2>我只是想工作高效一些</Text>
+    <Text h1 danger>我只是想工作高效一些</Text>
+    <Text h2 primary>我只是想工作高效一些</Text>
     <Text h3>我只是想工作高效一些</Text>
     <Text h4>我只是想工作高效一些</Text>
     <Text h5>我只是想工作高效一些</Text>
