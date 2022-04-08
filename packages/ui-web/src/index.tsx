@@ -17,6 +17,7 @@ import Toast from "./components/toast"
 import SpinLoading from "./components/spin-loading"
 import Dialog from "./components/dialog"
 import TextInput from "./components/text-input"
+import NeedWrap from "./components/need-wrap"
 
 
 import ThemeManager from "./style/themeManager"
@@ -42,7 +43,8 @@ export {
   ImageViewer,
   SpinLoading,
   Dialog,
-  TextInput
+  TextInput,
+  NeedWrap
 }
 
 export default {
@@ -63,5 +65,6 @@ export default {
   Toast,
   SpinLoading,
   Dialog,
-  TextInput
+  TextInput,
+  NeedWrap
 }

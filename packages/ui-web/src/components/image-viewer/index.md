@@ -76,3 +76,6 @@ ImageViewer.Multi 是一个[非受控](https://reactjs.org/docs/glossary.html#co
 
 
 你可以使用 ref 来对 ImageViewer.Multi 进行手动的操作，也可以考虑使用 `ImageViewer.show()`。
+
+
+
