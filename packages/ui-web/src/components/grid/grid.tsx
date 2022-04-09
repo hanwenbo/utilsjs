@@ -25,7 +25,6 @@ export const Grid: FC<GridProps> = ({children, style = {}, columns, ...props}) =
       style['margin'] = gap
     }
   }
-  let _style = {}
   const [wrapWidth, setWrapWidth] = useState<number>(0);
 
   const childrenCount = React.Children.count(children)

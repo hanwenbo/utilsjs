@@ -9,5 +9,5 @@ const TextInput = ({style, ...props}: TextInputProps, ref: Ref<any>) => {
   const _style = {...extractStyle('Input', props), ...style}
   return <RNTextInput {...props} style={_style} ref={ref} />
 }
-export {TextInput}; // For tests
+export {TextInput};
 export default forwardRef(TextInput)

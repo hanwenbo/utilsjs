@@ -54,7 +54,7 @@ const Space = ({
     })}
   </View>
 }
-export {Space}; // For tests
+export {Space};
 export default forwardRef(Space)
 
 const styles = StyleSheet.create({

@@ -21,6 +21,7 @@ import NeedWrap from "./components/need-wrap"
 import StyleSheet from "./components/style-sheet"
 import Image from "./components/image"
 import PageIndicator from "./components/page-indicator"
+import ActionSheet from "./components/action-sheet"
 
 import ThemeManager from "./style/themeManager"
 import ColorManager from "./style/color"
@@ -49,7 +50,8 @@ export {
   NeedWrap,
   StyleSheet,
   Image,
-  PageIndicator
+  PageIndicator,
+  ActionSheet
 }
 
 export default {
@@ -73,5 +75,6 @@ export default {
   TextInput,
   NeedWrap,
   Image,
-  PageIndicator
+  PageIndicator,
+  ActionSheet
 }

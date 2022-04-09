@@ -52,7 +52,7 @@ const Divider = ({style, childrenStyle, children, ...p}: PropsType) => {
     <View style={[styles.end, endStyle]} />
   </View>
 }
-export {Divider}; // For tests
+export {Divider};
 export default Divider
 
 const startEnd = {

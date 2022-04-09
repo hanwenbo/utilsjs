@@ -32,7 +32,7 @@ export type PopupProps = {
   bodyStyle?: React.CSSProperties
   maskClassName?: string
   maskStyle?: React.CSSProperties
-  onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
+  onPress?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
   stopPropagation?: PropagationEvent[]
 } & NativeProps
 
@@ -93,15 +93,15 @@ export const Popup: FC<PopupProps> = p => {
     },
   })
 
+  // zIndex 1000 为适配react-native-web view的默认zIndex
   const node = withStopPropagation(
     props.stopPropagation,
     withNativeProps(
       props,
       <View
-        onClick={props.onClick}
-        style={{display: active ? 'unset' : 'none'}}
+        style={{display: active ? 'unset' : 'none', zIndex:1000}}
       >
-        <TouchableOpacity onPress={props.onClick} activeOpacity={1}>
+        <TouchableOpacity onPress={props.onPress} activeOpacity={1}>
           {props.mask && (
             <Mask
               visible={props.visible}

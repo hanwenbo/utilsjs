@@ -119,7 +119,7 @@ const Mask = ({
   // return shouldRender && ReactDOM.createPortal(node, document.body)
   return renderToContainer(props.getContainer, node)
 }
-export {Mask}; // For tests
+export {Mask};
 export default forwardRef(Mask)
 
 const styles = StyleSheet.create({

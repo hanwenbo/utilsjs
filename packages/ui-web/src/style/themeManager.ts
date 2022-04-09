@@ -41,6 +41,7 @@ export const theme = {
       backgroundColor: Colors.warning,
       borderColor: Colors.warning,
     },
+    disabled:{},
     dashed: {
       borderStyle: "dashed",
     },
@@ -67,6 +68,10 @@ export const theme = {
       paddingHorizontal: 12,
       paddingVertical: 11,
       borderRadius: 5,
+    },
+    fillNone:{
+      borderWidth:0,
+      backgroundColor:"transparent",
     },
     // shape
     round: {
@@ -107,6 +112,9 @@ export const theme = {
       bold: {
         fontWeight: "bold",
       },
+      disabled:{
+        color:'red',
+      }
     }
   },
   Space: {

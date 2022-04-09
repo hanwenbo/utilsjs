@@ -1,13 +1,15 @@
-import React, { FC, ReactNode } from 'react'
-import { NativeProps, withNativeProps } from '../../utils/native-props'
-import { mergeProps } from '../../utils/with-default-props'
+import React, {FC, ReactNode} from 'react'
+import {NativeProps, withNativeProps} from '../../utils/native-props'
+import {mergeProps} from '../../utils/with-default-props'
 import Popup from '../popup'
 import Button from '../button'
-import { GetContainer } from '../../utils/render-to-container'
+import {GetContainer} from '../../utils/render-to-container'
 import SafeArea from '../safe-area'
-import { renderImperatively } from '../../utils/render-imperatively'
-
-const classPrefix = `adm-action-sheet`
+import {renderImperatively} from '../../utils/render-imperatively'
+// @ts-ignore
+import {StyleSheet, View, Text} from "react-native-web";
+import {Colors} from "../../style/color";
+import {TextStyle} from "react-native-web/exports/Text/types";
 
 export type Action = {
   key: string | number
@@ -15,7 +17,8 @@ export type Action = {
   disabled?: boolean
   description?: ReactNode
   danger?: boolean
-  onClick?: () => void
+  onPress?: () => void,
+  textStyle?: TextStyle
 }
 
 export type ActionSheetProps = {
@@ -46,7 +49,6 @@ const defaultProps = {
 
 export const ActionSheet: FC<ActionSheetProps> = p => {
   const props = mergeProps(defaultProps, p)
-
   return (
     <Popup
       visible={props.visible}
@@ -57,73 +59,72 @@ export const ActionSheet: FC<ActionSheetProps> = p => {
         }
       }}
       afterClose={props.afterClose}
-      className={classNames(`${classPrefix}-popup`, props.popupClassName)}
-      style={props.popupStyle}
-      getContainer={props.getContainer}
+      bodyStyle={StyleSheet.flatten(styles.popup, props.popupStyle)}
+      {...(!!props.getContainer ? {getContainer: props.getContainer} : null)}
     >
       {withNativeProps(
         props,
-        <div className={classPrefix}>
+        <View style={styles.main}>
           {props.extra && (
-            <div className={`${classPrefix}-extra`}>{props.extra}</div>
+            <View style={styles.extra}>{props.extra}</View>
           )}
-          <div className={`${classPrefix}-button-list`}>
-            {props.actions.map((action, index) => (
-              <div
+          <View style={styles.buttonList}>
+            {props.actions.map((action, index) => {
+              let textStyle = {fontSize: 14}
+              if (action.danger) textStyle['color'] = Colors.danger
+              if (action.disabled) textStyle['color'] = Colors.weak
+
+              return <View
                 key={action.key}
-                className={`${classPrefix}-button-item-wrapper`}
+                style={styles.buttonItemWrapper}
               >
                 <Button
                   block
-                  fill='none'
-                  shape='rectangular'
+                  rectangular
+                  fillNone
+                  large
                   disabled={action.disabled}
-                  onClick={() => {
-                    action.onClick?.()
+                  onPress={() => {
+                    action.onPress?.()
                     props.onAction?.(action, index)
                     if (props.closeOnAction) {
                       props.onClose?.()
                     }
                   }}
-                  className={classNames(`${classPrefix}-button-item`, {
-                    [`${classPrefix}-button-item-danger`]: action.danger,
-                  })}
                 >
-                  <div className={`${classPrefix}-button-item-name`}>
-                    {action.text}
-                  </div>
-                  {action.description && (
-                    <div className={`${classPrefix}-button-item-description`}>
-                      {action.description}
-                    </div>
-                  )}
+                  <View style={styles.buttonItem}>
+                    <Text style={[textStyle, action.textStyle]}>{action.text}</Text>
+                    {action.description && (
+                      <Text style={styles.buttonItemDescription}>
+                        {action.description}
+                      </Text>
+                    )}
+                  </View>
                 </Button>
-              </div>
-            ))}
-          </div>
+              </View>
+            })}
+          </View>
 
           {props.cancelText && (
-            <div className={`${classPrefix}-cancel`}>
-              <div className={`${classPrefix}-button-item-wrapper`}>
+            <View style={styles.cancel}>
+              <View style={styles.buttonItemWrapper}>
                 <Button
                   block
-                  fill='none'
-                  shape='rectangular'
-                  className={`${classPrefix}-button-item`}
-                  onClick={() => {
+                  rectangular
+                  fillNone
+                  onPress={() => {
                     props.onClose?.()
                   }}
                 >
-                  <div className={`${classPrefix}-button-item-name`}>
+                  <Text style={styles.buttonItemName}>
                     {props.cancelText}
-                  </div>
+                  </Text>
                 </Button>
-              </div>
-            </div>
+              </View>
+            </View>
           )}
-
           {props.safeArea && <SafeArea position='bottom' />}
-        </div>
+        </View>
       )}
     </Popup>
   )
@@ -138,3 +139,45 @@ export function showActionSheet(props: Omit<ActionSheetProps, 'visible'>) {
     <ActionSheet {...props} />
   ) as ActionSheetShowHandler
 }
+
+const styles = StyleSheet.create({
+  popup: {
+    borderTopLeftRadius: 8,
+    borderTopRightRadius: 8,
+    overflow: "hidden",
+  },
+  main: {},
+  extra: {
+    justifyContent: "center",
+    center: "center",
+    alignItems: "center",
+    color: Colors.weak,
+    fontSize: 13,
+    paddingHorizontal: 16,
+    paddingVertical: 18,
+  },
+  buttonList: {},
+  buttonItemWrapper: {
+    backgroundColor: "#ffffff",
+    borderTopWidth: 1,
+    borderTopColor: Colors.border
+  },
+  buttonItem: {
+    textAlign: "center",
+    justifyContent:"center",
+    alignItems:"center"
+  },
+  buttonItemName: {
+    fontSize: 14,
+  },
+  buttonItemDescription: {
+    fontSize: 12,
+    color: Colors.weak,
+    paddingTop: 4,
+  },
+  cancel: {
+    backgroundColor: "#f5f5f5",
+    paddingTop: 8,
+  }
+})
+

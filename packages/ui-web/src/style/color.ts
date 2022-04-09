@@ -35,7 +35,7 @@ export const Colors = {
   weak: '#999999',
   light: '#cccccc',
   border: '#eeeeee',
-  text: '#333333'
+  text: '#333333',
 }
 export default colorObject;
 
