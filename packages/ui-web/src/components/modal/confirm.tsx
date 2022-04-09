@@ -1,7 +1,7 @@
 import {show} from './show'
 import {ModalProps} from './index'
 import {ReactNode} from 'react'
-import merge from "deepmerge";
+import {mergeProps} from '../../utils/with-default-props'
 
 export type ModalConfirmProps = Omit<ModalProps,
   'visible' | 'closeOnAction' | 'actions'> & {
@@ -17,13 +17,10 @@ const defaultProps = {
 }
 
 export function confirm(p: ModalConfirmProps) {
-  let props = merge(defaultProps,
-    {
-      confirmText: "确认",
-      cancelText: "取消",
-    },
-  )
-  props = merge(props, p)
+  const props = mergeProps(defaultProps, {
+    confirmText: "确认",
+    cancelText: "取消",
+  }, p)
   return new Promise<boolean>(resolve => {
     show({
       ...props,
@@ -37,7 +34,7 @@ export function confirm(p: ModalConfirmProps) {
           key: 'confirm',
           text: props.confirmText,
           primary: true,
-          onClick: async () => {
+          onPress: async () => {
             await props?.onConfirm?.()
             resolve(true)
           },
@@ -45,7 +42,7 @@ export function confirm(p: ModalConfirmProps) {
         {
           key: 'cancel',
           text: props.cancelText,
-          onClick: async () => {
+          onPress: async () => {
             await props?.onCancel?.()
             resolve(false)
           },

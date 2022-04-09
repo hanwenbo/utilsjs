@@ -14,7 +14,7 @@ export type Action = {
 } & NativeProps
 
 export const DialogActionButton: FC<{
-  buttonStyle: ViewStyle
+  buttonStyle?: ViewStyle
   action: Action
   onAction: () => void | Promise<void>
 }> = props => {
@@ -42,11 +42,11 @@ export const DialogActionButton: FC<{
       onPress={handleClick}
       style={[styles.button,props.buttonStyle]}
       bold={action.bold}
-      rectangular
       block
       large
       {...colorProps}
       fillNone
+      rectangular
       loading={loading}
       disabled={action.disabled}
     >

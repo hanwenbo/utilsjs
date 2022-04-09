@@ -13,7 +13,7 @@ export default () => {
   return (
     <>
       <DemoBlock title='不同位置'>
-        <Space direction='vertical'>
+        <Space vertical>
           <>
             <Button
               onPress={() => {
@@ -93,7 +93,7 @@ export default () => {
       </DemoBlock>
 
       <DemoBlock title='自定义样式'>
-        <Space direction='vertical'>
+        <Space vertical>
           <>
             <Button
               onPress={() => {

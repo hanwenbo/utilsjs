@@ -72,7 +72,6 @@ export const theme = {
     fillNone: {
       borderWidth: 0,
       backgroundColor: "transparent",
-      borderRadius:0,
     },
     // shape
     round: {

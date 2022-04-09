@@ -17,7 +17,7 @@ import {NativeProps, withNativeProps} from '../../utils/native-props'
 import {CloseOutline} from 'antd-mobile-icons'
 import merge from "deepmerge";
 // @ts-ignore
-import {View, Text, Image, StyleSheet} from 'react-native-web'
+import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native-web'
 
 export type ModalProps = {
   afterClose?: () => void
@@ -34,7 +34,6 @@ export type ModalProps = {
   visible?: boolean
   getContainer?: GetContainer
   bodyStyle?: React.CSSProperties
-  bodyClassName?: string
   maskStyle?: React.CSSProperties
   maskClassName?: string
   stopPropagation?: PropagationEvent[]
@@ -82,47 +81,48 @@ export const Modal: FC<ModalProps> = p => {
 
   const [active, setActive] = useState(props.visible)
 
-  const renderTitle = (): any => {
-    if (props.title) {
-      return (
-        <View style={styles.title}>
-          {typeof props.title === "string" && <Text style={styles.titleText}>{props.title}</Text>}
-          {typeof props.title !== "string" && props.title}
-        </View>
-      )
-    }
-  }
+  const withImageStyle = props.image ? {paddingTop: 0} : {}
+  const noTop = !props.header && !props.title && !props.image
+  const noTopContentStyle = noTop ? {marginTop: 20,} : {}
+  const footerStyle = props.actions.length === 0 && {padding: 10, height: 8}
+  const notPrimaryButton = props.actions.filter(item => !!item.primary).length === 0 ? {
+    paddingVertical: 0,
+    paddingTop: 15,
+    paddingBottom: 0
+  } : {}
   const body = (
     <View
-      style={[styles.body, props.bodyStyle]}
+      style={[styles.body, withImageStyle,  props.bodyStyle]}
     >
       {props.showCloseButton && (
-        <a
-          onClick={props.onClose}
-        >
-          关闭
+        <TouchableOpacity onPress={props.onClose} style={styles.closeWrap}>
           <CloseOutline />
-        </a>
+        </TouchableOpacity>
       )}
       {!!props.image && (
-        <div>
-          <Image source={props.image} />
-        </div>
+        <View style={styles.imageContainer}>
+          <Image source={props.image} style={{
+            width: '75vw',
+            height: 200
+          }} />
+        </View>
       )}
       {!!props.header && (
-        <div>
+        <View style={styles.header}>
           <AutoCenter>{props.header}</AutoCenter>
-        </div>
+        </View>
       )}
-      {renderTitle()}
-      <View style={styles.content}>
+      {!!props.title && <Text style={styles.title}>{props.title}</Text>}
+      <View
+        style={[styles.content, noTopContentStyle, !props.content ? styles.contentEmpty : null]}
+      >
         {typeof props.content === 'string' ? (
-          <AutoCenter><Text>{props.content}</Text></AutoCenter>
+          <AutoCenter><Text style={styles.contentText}>{props.content}</Text></AutoCenter>
         ) : (
           props.content
         )}
       </View>
-      <View style={styles.footer}>
+      <View style={[styles.footer, footerStyle,notPrimaryButton]}>
         <Space vertical>
           {props.actions.map((action, index) => {
             return (
@@ -131,7 +131,7 @@ export const Modal: FC<ModalProps> = p => {
                 action={action}
                 onAction={async () => {
                   await Promise.all([
-                    action.onClick?.(),
+                    action.onPress?.(),
                     props.onAction?.(action, index),
                   ])
                   if (props.closeOnAction) {
@@ -190,25 +190,42 @@ const styles = StyleSheet.create({
   body: {
     width: "100%",
     maxHeight: "70vh",
-    boxSizing: "border-box",
     fontSize: 14,
     backgroundColor: "#fff",
     borderRadius: 8,
     overflow: "hidden",
     flexDirection: "column",
-    paddingTop: 20,
   },
+  header: {},
   footer: {
     padding: 15
   },
-  title: {},
-  titleText:{
-    fontSize: 18,
+  title: {
+    paddingVertical: 12,
     fontWeight: "bold",
-    color: "#333",
+    fontSize: 18,
+    lineHeight: 25,
+    textAlign: "center",
   },
   content: {
-    padding: 15,
-    textAlign: "center"
+    paddingHorizontal: 12,
+    paddingTop: 0,
+    maxHeight: "40vh",
+    overflowX: "hidden",
+    overflowY: "auto",
+  },
+  contentText: {
+    fontSize: 15,
+    color: "#333",
+  },
+  contentEmpty: {
+    padding: 0,
+    height: 12,
+  },
+  closeWrap: {
+    position: "absolute",
+    right: 8,
+    top: 8,
+    padding: 4,
   }
 })

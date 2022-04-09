@@ -24,7 +24,7 @@ export default () => {
           bodyStyle={{ height: '40vh' }}
         >
           <div style={{ padding: '24px' }}>
-            <Space direction='vertical'>
+            <Space vertical>
               <div>这是弹出层1</div>
               <Button
                 onPress={() => {

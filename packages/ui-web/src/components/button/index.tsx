@@ -48,7 +48,7 @@ const Button = ({
   _style = StyleSheet.flatten([styles.main, _style, {zIndex: "initial"}])
   const _textStyle = extractStyleCompose(['Button', 'Text'], props, textStyle)
   return <TouchableOpacity {...p} {...wrapperProps} style={_style}>
-    <View ref={ref}>
+    <View ref={ref} style={styles.wrap}>
       {loading && <View style={styles.loading}>
         <ActivityIndicator
           {...loadingProps}
@@ -63,12 +63,14 @@ export default forwardRef(Button)
 
 const styles = StyleSheet.create({
   main: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: "center",
   },
   loading: {
     paddingRight: 8
+  },
+  wrap:{
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: "center",
   },
   text: {},
 })

@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
   },
   content: {
     paddingHorizontal: 12,
-    paddingBottom: 12,
+    paddingBottom: 20,
     paddingTop: 0,
     maxHeight: "50vh",
     overflowX: "hidden",

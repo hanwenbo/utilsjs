@@ -1,19 +1,17 @@
-import React, { useState, useRef } from 'react'
-import { Button, Dialog, Space, Toast, Divider ,View} from '@hanwenbo/ui-web'
+import React, { useState } from 'react'
+import { Button, Modal, Space, Toast, Divider } from '@hanwenbo/ui-web'
 import { DemoBlock, DemoDescription, lorem } from 'demos'
 import { ExclamationCircleFill } from 'antd-mobile-icons'
 
 export default () => {
   return (
-    <View style={{
-      width:'100vw'
-    }}>
+    <>
       <DemoBlock title='内容区域'>
         <Space vertical block>
           <Button
             block
             onPress={() => {
-              Dialog.alert({
+              Modal.alert({
                 header: (
                   <ExclamationCircleFill
                     style={{
@@ -25,7 +23,7 @@ export default () => {
                 title: '注意',
                 content: (
                   <>
-                    <div>请用手机拍摄手持工牌照，注意保持照片清晰1</div>
+                    <div>请用手机拍摄手持工牌照，注意保持照片清晰</div>
                     <div>
                       详情说明请查阅<a>操作指引</a>
                     </div>
@@ -39,7 +37,7 @@ export default () => {
           <Button
             block
             onPress={() => {
-              Dialog.alert({
+              Modal.alert({
                 image:
                   'https://gw.alipayobjects.com/mdn/rms_efa86a/afts/img/A*SE7kRojatZ0AAAAAAAAAAAAAARQnAQ',
                 title: '手持工牌照示例',
@@ -52,9 +50,9 @@ export default () => {
           <Button
             block
             onPress={() =>
-              Dialog.confirm({
+              Modal.confirm({
                 title: '提示',
-                content: lorem.generateParagraphs(7),
+                content: <div>{lorem.generateParagraphs(7)}</div>,
               })
             }
           >
@@ -67,7 +65,7 @@ export default () => {
           <Button
             block
             onPress={async () => {
-              await Dialog.alert({
+              await Modal.alert({
                 content: '人在天边月上明',
               })
               Toast.show({ content: '已关闭', position: 'bottom' })
@@ -80,7 +78,7 @@ export default () => {
           <Button
             block
             onPress={async () => {
-              const result = await Dialog.confirm({
+              const result = await Modal.confirm({
                 content: '人在天边月上明',
               })
               if (result) {
@@ -102,14 +100,7 @@ export default () => {
           <DemoDescription content='你可以手动控制 visible 状态' />
         </Space>
       </DemoBlock>
-
-      <DemoBlock title='自定义关闭操作'>
-        <Space vertical block>
-          <Imperative />
-          <DemoDescription content='你可以根据需求，自定义关闭弹窗的时机' />
-        </Space>
-      </DemoBlock>
-    </View>
+    </>
   )
 }
 
@@ -124,11 +115,11 @@ const Declarative = () => {
           setVisible(true)
         }}
       >
-        显示对话框
+        显示弹窗
       </Button>
-      <Dialog
+      <Modal
         visible={visible}
-        content='人在天边月上明1'
+        content='人在天边月上明'
         closeOnAction
         onClose={() => {
           setVisible(false)
@@ -141,36 +132,5 @@ const Declarative = () => {
         ]}
       />
     </>
-  )
-}
-
-// 自定义关闭操作
-function Imperative() {
-  const handler = useRef()
-
-  return (
-    <Button
-      block
-      onPress={() => {
-        handler.current = Dialog.show({
-          content: '人在天边月上明，风初紧，吹入画帘旌',
-          actions: [
-            {
-              key: 'close',
-              text: '关闭',
-              onPress: () => {
-                if (Math.random() > 0.5) {
-                  handler.current?.close()
-                } else {
-                  Toast.show('再试一下')
-                }
-              },
-            },
-          ],
-        })
-      }}
-    >
-      显示对话框
-    </Button>
   )
 }
