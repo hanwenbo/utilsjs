@@ -1,6 +1,6 @@
 import React from 'react'
-import { Button, Dialog, Space, Toast, Divider } from '@hanwenbo/ui-web'
-import { DemoBlock, DemoDescription, sleep } from 'demos'
+import {Button, Dialog, Space, Toast, Divider} from '@hanwenbo/ui-web'
+import {DemoBlock, DemoDescription, sleep} from 'demos'
 
 export default () => {
   return (
@@ -40,7 +40,7 @@ export default () => {
             block
             onPress={() => {
               Dialog.show({
-                content: '人在天边月上明，风初紧，吹入画帘旌',
+                content: '人在天边月上明，风初紧，吹入画帘旌，人在天边月上明，风初紧，吹入画帘旌',
                 closeOnAction: true,
                 actions: [
                   {
@@ -58,6 +58,12 @@ export default () => {
                     },
                     {
                       key: 'delete',
+                      text: '删除',
+                      bold: true,
+                      danger: true,
+                    },
+                    {
+                      key: 'delete1',
                       text: '删除',
                       bold: true,
                       danger: true,
@@ -108,7 +114,8 @@ export default () => {
           >
             异步操作执行失败
           </Button>
-          <DemoDescription content='onAction、onConfirm、onCancel、onPress 这些事件函数都支持返回一个 Promise，通过这种方式，可以让按钮在执行异步操作的时候变为加载状态' />
+          <DemoDescription
+            content='onAction、onConfirm、onCancel、onPress 这些事件函数都支持返回一个 Promise，通过这种方式，可以让按钮在执行异步操作的时候变为加载状态' />
         </Space>
       </DemoBlock>
     </>

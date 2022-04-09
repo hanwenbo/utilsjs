@@ -1,13 +1,15 @@
 import React, { useState, useRef } from 'react'
-import { Button, Dialog, Space, Toast, Divider } from '@hanwenbo/ui-web'
+import { Button, Dialog, Space, Toast, Divider ,View} from '@hanwenbo/ui-web'
 import { DemoBlock, DemoDescription, lorem } from 'demos'
 import { ExclamationCircleFill } from 'antd-mobile-icons'
 
 export default () => {
   return (
-    <>
+    <View style={{
+      width:'100vw'
+    }}>
       <DemoBlock title='内容区域'>
-        <Space direction='vertical' block>
+        <Space vertical block>
           <Button
             block
             onPress={() => {
@@ -16,14 +18,14 @@ export default () => {
                   <ExclamationCircleFill
                     style={{
                       fontSize: 64,
-                      color: 'var(--adm-color-warning)',
+                      marginTop:20
                     }}
                   />
                 ),
                 title: '注意',
                 content: (
                   <>
-                    <div>请用手机拍摄手持工牌照，注意保持照片清晰</div>
+                    <div>请用手机拍摄手持工牌照，注意保持照片清晰1</div>
                     <div>
                       详情说明请查阅<a>操作指引</a>
                     </div>
@@ -61,7 +63,7 @@ export default () => {
         </Space>
       </DemoBlock>
       <DemoBlock title='获取点击结果'>
-        <Space direction='vertical' block>
+        <Space vertical block>
           <Button
             block
             onPress={async () => {
@@ -107,7 +109,7 @@ export default () => {
           <DemoDescription content='你可以根据需求，自定义关闭弹窗的时机' />
         </Space>
       </DemoBlock>
-    </>
+    </View>
   )
 }
 
@@ -126,7 +128,7 @@ const Declarative = () => {
       </Button>
       <Dialog
         visible={visible}
-        content='人在天边月上明'
+        content='人在天边月上明1'
         closeOnAction
         onClose={() => {
           setVisible(false)

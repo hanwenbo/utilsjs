@@ -2,7 +2,7 @@ import React, {FC, useState} from 'react'
 import Button from '../button'
 import {NativeProps, withNativeProps} from '../../utils/native-props'
 // @ts-ignore
-import {StyleSheet} from "react-native-web";
+import {StyleSheet, ViewStyle} from "react-native-web";
 
 export type Action = {
   key: string | number
@@ -10,10 +10,11 @@ export type Action = {
   disabled?: boolean
   danger?: boolean
   bold?: boolean
-  onClick?: () => void | Promise<void>
+  onPress?: () => void | Promise<void>
 } & NativeProps
 
 export const DialogActionButton: FC<{
+  buttonStyle: ViewStyle
   action: Action
   onAction: () => void | Promise<void>
 }> = props => {
@@ -39,12 +40,13 @@ export const DialogActionButton: FC<{
     <Button
       key={action.key}
       onPress={handleClick}
-      style={styles.button}
+      style={[styles.button,props.buttonStyle]}
       bold={action.bold}
-      // fillNone
       rectangular
       block
+      large
       {...colorProps}
+      fillNone
       loading={loading}
       disabled={action.disabled}
     >

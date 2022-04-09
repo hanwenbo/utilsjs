@@ -15,7 +15,8 @@ import AutoCenter from '../auto-center'
 import {useSpring, animated} from '@react-spring/web'
 import {NativeProps, withNativeProps} from '../../utils/native-props'
 // @ts-ignore
-import {View, StyleSheet, Image} from "react-native-web"
+import {View, StyleSheet, Image, Text} from "react-native-web"
+import {Colors} from "../../style/color";
 
 export type DialogProps = {
   afterClose?: () => void
@@ -75,16 +76,19 @@ export const Dialog: FC<DialogProps> = p => {
   })
 
   const [active, setActive] = useState(props.visible)
+  const noTop = !props.header && !props.title
+  const noTopContentStyle = noTop ? {marginTop: 20,} : {}
 
   const body = (
     <View
-      style={props.bodyStyle}
+      style={[styles.body, props.bodyStyle]}
     >
       {!!props.image && (
         <View style={styles.imageContainer}>
           <Image source={props.image} style={{
-            width: '100%',
-          }}/>
+            width: '75vw',
+            height: 200
+          }} />
         </View>
       )}
       {!!props.header && (
@@ -92,13 +96,12 @@ export const Dialog: FC<DialogProps> = p => {
           <AutoCenter>{props.header}</AutoCenter>
         </View>
       )}
-      {!!props.title && <View style={styles.title}>{props.title}</View>}
+      {!!props.title && <Text style={styles.title}>{props.title}</Text>}
       <View
-        style={styles.content}
-        // empty
+        style={[styles.content, noTopContentStyle, !props.content ? styles.contentEmpty : null]}
       >
         {typeof props.content === 'string' ? (
-          <AutoCenter>{props.content}</AutoCenter>
+          <AutoCenter><Text style={styles.contentText}>{props.content}</Text></AutoCenter>
         ) : (
           props.content
         )}
@@ -108,13 +111,19 @@ export const Dialog: FC<DialogProps> = p => {
           const actions = Array.isArray(row) ? row : [row]
           return (
             <View style={styles.actionRow} key={index}>
-              {actions.map((action, index) => (
-                <DialogActionButton
+              {actions.map((action, index) => {
+                const isLast = actions.length === index+1
+                const buttonStyle = isLast ? {} : {
+                  borderRightWidth: StyleSheet.hairlineWidth,
+                  borderRightColor: Colors.border
+                }
+                return <DialogActionButton
+                  buttonStyle={buttonStyle}
                   key={action.key}
                   action={action}
                   onAction={async () => {
                     await Promise.all([
-                      action.onClick?.(),
+                      action.onPress?.(),
                       props.onAction?.(action, index),
                     ])
                     if (props.closeOnAction) {
@@ -122,7 +131,7 @@ export const Dialog: FC<DialogProps> = p => {
                     }
                   }}
                 />
-              ))}
+              })}
             </View>
           )
         })}
@@ -140,36 +149,65 @@ export const Dialog: FC<DialogProps> = p => {
       <Mask
         visible={props.visible}
         onMaskClick={props.closeOnMaskClick ? props.onClose : undefined}
-        // style={props.maskStyle}
         disableBodyScroll={props.disableBodyScroll}
-      />
-      <div
-        style={{
-          pointerEvents: props.visible ? 'unset' : 'none',
-        }}
       >
-        <animated.div style={style}>{body}</animated.div>
-      </div>
+        <View style={styles.bodyWrap}>
+          <animated.div style={style}>{body}</animated.div>
+        </View>
+      </Mask>
     </View>
   )
 
-  return renderToContainer(
-    props.getContainer,
-    withStopPropagation(props.stopPropagation, node)
-  )
+  return renderToContainer(!!props.getContainer ? props.getContainer : document.body, withStopPropagation(props.stopPropagation, node))
 }
 
 
 const styles = StyleSheet.create({
+  bodyWrap: {
+    justifyContent: "center",
+    alignItems: "center",
+    width: '100vw',
+    height: '100vh',
+  },
+  body: {
+    width: "75vw",
+    maxHeight: "70vh",
+    fontSize: 14,
+    backgroundColor: "#FFFFFF",
+    borderRadius: 8,
+    overflow: "hidden",
+  },
   header: {},
-  title: {},
-  content: {},
-  contentEmpty: {},
+  title: {
+    paddingVertical: 12,
+    fontWeight: "bold",
+    fontSize: 18,
+    lineHeight: 25,
+    textAlign: "center",
+  },
+  content: {
+    paddingHorizontal: 12,
+    paddingBottom: 12,
+    paddingTop: 0,
+    maxHeight: "50vh",
+    overflowX: "hidden",
+    overflowY: "auto",
+  },
+  contentText: {
+    fontSize: 15,
+    color: "#333",
+  },
+  contentEmpty: {
+    padding: 0,
+    height: 12,
+  },
   imageContainer: {},
   footer: {},
   actionRow: {
     flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between"
+    alignItems: "stretch",
+    justifyContent: "space-between",
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopColor: Colors.border
   }
 })

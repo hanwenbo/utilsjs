@@ -1,4 +1,3 @@
-import './toast.less'
 import { clear, show, config } from './methods'
 
 export type { ToastShowProps, ToastHandler } from './methods'

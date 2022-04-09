@@ -134,6 +134,14 @@ export default () => {
       <Button primary rectangular>
         方块
       </Button>
+      <Button primary block>
+        块块块
+      </Button>
+    </View>
+    <View>
+      <Button primary block>
+        块块块
+      </Button>
     </View>
   </View>
 }

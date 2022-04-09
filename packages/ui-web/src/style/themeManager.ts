@@ -41,7 +41,7 @@ export const theme = {
       backgroundColor: Colors.warning,
       borderColor: Colors.warning,
     },
-    disabled:{},
+    disabled: {},
     dashed: {
       borderStyle: "dashed",
     },
@@ -69,9 +69,10 @@ export const theme = {
       paddingVertical: 11,
       borderRadius: 5,
     },
-    fillNone:{
-      borderWidth:0,
-      backgroundColor:"transparent",
+    fillNone: {
+      borderWidth: 0,
+      backgroundColor: "transparent",
+      borderRadius:0,
     },
     // shape
     round: {
@@ -79,6 +80,9 @@ export const theme = {
     },
     rectangular: {
       borderRadius: 0,
+    },
+    block: {
+      flex: 1
     },
     Text: {
       default: {},
@@ -112,8 +116,11 @@ export const theme = {
       bold: {
         fontWeight: "bold",
       },
-      disabled:{
-        color:'red',
+      disabled: {
+        color: 'red',
+      },
+      fillNone: {
+        color: Colors.primary
       }
     }
   },

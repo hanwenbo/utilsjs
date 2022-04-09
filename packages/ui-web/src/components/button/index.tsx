@@ -44,10 +44,11 @@ const Button = ({
   }
 
   const props = mergeProps(defaultProps, p)
-  const _style = extractStyleCompose('Button', props, style)
+  let _style = extractStyleCompose('Button', props, style)
+  _style = StyleSheet.flatten([styles.main, _style, {zIndex: "initial"}])
   const _textStyle = extractStyleCompose(['Button', 'Text'], props, textStyle)
-  return <TouchableOpacity {...p} {...wrapperProps}>
-    <View style={[styles.main, _style,{zIndex: "initial"}]} ref={ref}>
+  return <TouchableOpacity {...p} {...wrapperProps} style={_style}>
+    <View ref={ref}>
       {loading && <View style={styles.loading}>
         <ActivityIndicator
           {...loadingProps}
