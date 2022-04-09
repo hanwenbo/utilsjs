@@ -69,6 +69,11 @@ export const theme = {
       paddingVertical: 11,
       borderRadius: 5,
     },
+    fillOutline:{
+      borderWidth: 1,
+      borderColor: Colors.primary,
+      backgroundColor: Colors.white,
+    },
     fillNone: {
       borderWidth: 0,
       backgroundColor: "transparent",
@@ -120,7 +125,10 @@ export const theme = {
       },
       fillNone: {
         color: Colors.primary
-      }
+      },
+      fillOutline:{
+        color: Colors.primary,
+      },
     }
   },
   Space: {
