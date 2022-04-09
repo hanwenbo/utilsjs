@@ -1,4 +1,6 @@
 import React from "react"
+// @ts-ignore
+import { useWindowDimensions } from "react-native-web"
 import Text from "./components/text"
 import View from "./components/view"
 import Button from "./components/button"
@@ -56,6 +58,7 @@ export {
   ActionSheet,
   ProgressBar,
   Dimensions,
+  useWindowDimensions
 }
 
 export default {
