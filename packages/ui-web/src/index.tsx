@@ -23,6 +23,7 @@ import Image from "./components/image"
 import PageIndicator from "./components/page-indicator"
 import ActionSheet from "./components/action-sheet"
 import ProgressBar from "./components/progress-bar"
+import Dimensions from "./components/dimensions"
 
 import ThemeManager from "./style/themeManager"
 import ColorManager from "./style/color"
@@ -53,7 +54,8 @@ export {
   Image,
   PageIndicator,
   ActionSheet,
-  ProgressBar
+  ProgressBar,
+  Dimensions,
 }
 
 export default {
@@ -79,5 +81,6 @@ export default {
   Image,
   PageIndicator,
   ActionSheet,
-  ProgressBar
+  ProgressBar,
+  Dimensions
 }
