@@ -1,7 +1,7 @@
-import React, { FC, useEffect, useRef, useState } from 'react'
-import { Button, Space, Toast } from '@hanwenbo/ui-web'
-import { DemoBlock } from 'demos'
-import { UploadOutline } from 'antd-mobile-icons'
+import React, {FC, useEffect, useRef, useState} from 'react'
+import {Button, Space, Toast} from '@hanwenbo/ui-web'
+import {DemoBlock} from 'demos'
+import {UploadOutline} from 'antd-mobile-icons'
 
 export default () => {
   const handler = useRef()
@@ -16,6 +16,7 @@ export default () => {
               afterClose: () => {
                 console.log('after')
               },
+              // duration:1000000
             })
           }
         >
@@ -40,6 +41,7 @@ export default () => {
               Toast.show({
                 icon: 'fail',
                 content: '名称已存在',
+                // duration:1000000
               })
             }}
           >
@@ -59,7 +61,12 @@ export default () => {
             onPress={() => {
               Toast.show({
                 content: '上传中',
-                icon: <UploadOutline />,
+                icon: <UploadOutline
+                  style={{
+                    color: "#FFFFFF",
+                    fontSize: 36
+                  }}
+                />,
               })
             }}
           >

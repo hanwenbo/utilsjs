@@ -1,14 +1,15 @@
-import React, { memo } from 'react'
-import { NativeProps, withNativeProps } from '../../utils/native-props'
-import { mergeProps } from '../../utils/with-default-props'
-import { useSpring, animated } from '@react-spring/web'
+import React, {memo} from 'react'
+import {NativeProps, withNativeProps} from '../../utils/native-props'
+import {mergeProps} from '../../utils/with-default-props'
+import {useSpring, animated} from '@react-spring/web'
+import {Colors} from "../../style/color"
 
 const classPrefix = 'adm-spin-loading'
 
 const colorRecord: Record<string, string> = {
-  default: 'var(--adm-color-weak)',
-  primary: 'var(--adm-color-primary)',
-  white: 'var(--adm-color-white)',
+  default: Colors.weak,
+  primary: Colors.primary,
+  white: Colors.white,
 }
 
 export type SpinLoadingProps = {
@@ -24,7 +25,7 @@ const circumference = 15 * 3.14159265358979 * 2
 export const SpinLoading = memo<SpinLoadingProps>(p => {
   const props = mergeProps(defaultProps, p)
 
-  const { percent } = useSpring({
+  const {percent} = useSpring({
     loop: {
       reverse: true,
     },

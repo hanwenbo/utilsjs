@@ -70,7 +70,7 @@ export const ActionSheet: FC<ActionSheetProps> = p => {
           )}
           <View style={styles.buttonList}>
             {props.actions.map((action, index) => {
-              let textStyle = {fontSize: 14}
+              let textStyle = {fontSize: 16}
               if (action.danger) textStyle['color'] = Colors.danger
               if (action.disabled) textStyle['color'] = Colors.weak
 
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
     alignItems:"center"
   },
   buttonItemName: {
-    fontSize: 14,
+    fontSize: 16,
   },
   buttonItemDescription: {
     fontSize: 12,

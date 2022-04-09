@@ -14,7 +14,6 @@
 | --------------- | ------------------------------------- | ----------------------------------------------------- | --------------- |
 | afterClose      | `Toast` 完全关闭后的回调              | `() => void`                                          | -               |
 | maskStyle       | `Toast` 遮罩样式                      | `React.CSSProperties`                                 | -               |
-| maskClassName   | `Toast` 遮罩类名                      | `string`                                              | -               |
 | maskClickable   | 是否允许背景点击                      | `boolean`                                             | `true`          |
 | content         | `Toast` 文本内容                      | `React.ReactNode`                                     | -               |
 | icon            | `Toast` 图标                          | `'success' \| 'fail' \| 'loading' \| React.ReactNode` | -               |
