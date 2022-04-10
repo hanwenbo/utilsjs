@@ -1,10 +1,12 @@
 import React from 'react'
 import type {CSSProperties, ReactElement} from 'react'
-import {TextProps} from '../components/text'
+import {TextStyle} from "react-native-web"
+import classNames from 'classnames'
 
 export interface NativeProps<S extends string = never> {
-  style?: CSSProperties | TextProps,
-  tabIndex?: number
+  style?: CSSProperties | TextStyle | undefined,
+  tabIndex?: number,
+  className?: string,
 }
 
 export function withNativeProps<P extends NativeProps>(
@@ -14,7 +16,15 @@ export function withNativeProps<P extends NativeProps>(
   const p = {
     ...element.props,
   }
-
+  if (props.className) {
+    p.className = classNames(element.props.className, props.className)
+  }
+  if (props.style) {
+    p.style = {
+      ...p.style,
+      ...props.style,
+    }
+  }
   if (props.tabIndex !== undefined) {
     p.tabIndex = props.tabIndex
   }

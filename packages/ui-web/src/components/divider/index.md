@@ -1,6 +1,4 @@
----
-title: Divider
----
+# Divider 分割线
 
 ```jsx
 import React from 'react';

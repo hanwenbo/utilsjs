@@ -1,6 +1,4 @@
----
-title: Mask
----
+# Mask 遮罩层
 
 ```jsx
 import React, { useState } from 'react'

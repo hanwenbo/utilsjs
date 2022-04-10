@@ -19,11 +19,13 @@
     "ahooks": "^3.3.0",
     "antd-mobile-icons": "^0.2.2",
     "deepmerge": "^4.2.2",
-    "react-native-web": "^0.17.7"
+    "react-native-web": "^0.17.7",
+    "react-virtualized": "^9.22.3"
   },
   "devDependencies": {
     "@types/react": "^17.0.43",
     "@types/react-dom": "^17.0.14",
-    "@types/react-native-web": "github:gtechnologies/react-native-web-ts-types"
+    "@types/react-native-web": "github:gtechnologies/react-native-web-ts-types",
+    "@types/react-virtualized": "^9"
   }
 }

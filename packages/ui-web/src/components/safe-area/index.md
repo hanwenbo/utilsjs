@@ -1,6 +1,4 @@
----
-title: SafeArea
----
+# SafeArea 安全区
 
 ```jsx
 import React from 'react'

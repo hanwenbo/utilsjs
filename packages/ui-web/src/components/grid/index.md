@@ -1,6 +1,3 @@
----
-title: Grid
----
 # Grid 栅格
 
 <code src="./demos/demo1.tsx"></code>

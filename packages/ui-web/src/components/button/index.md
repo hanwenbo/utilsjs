@@ -1,6 +1,4 @@
----
-title: Button
----
+# Button 按钮
 
 ```jsx
 import React from 'react';

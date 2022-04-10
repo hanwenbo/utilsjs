@@ -1,7 +1,4 @@
----
-title: View
----
-
+# View 视域
 ```jsx
 import React from 'react';
 import { View, ThemeManager } from "@hanwenbo/ui-web"

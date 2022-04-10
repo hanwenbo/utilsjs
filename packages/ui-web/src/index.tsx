@@ -1,6 +1,6 @@
 import React from "react"
 // @ts-ignore
-import { useWindowDimensions } from "react-native-web"
+import {useWindowDimensions, useColorScheme} from "react-native-web"
 import Text from "./components/text"
 import View from "./components/view"
 import Button from "./components/button"
@@ -26,6 +26,11 @@ import PageIndicator from "./components/page-indicator"
 import ActionSheet from "./components/action-sheet"
 import ProgressBar from "./components/progress-bar"
 import Dimensions from "./components/dimensions"
+import Card from "./components/card"
+import List from "./components/list"
+import FloatingPanel from "./components/floating-panel"
+import Switch from "./components/switch"
+import ViewTextAuto from "./components/view-text-auto"
 
 import ThemeManager from "./style/themeManager"
 import ColorManager from "./style/color"
@@ -58,7 +63,13 @@ export {
   ActionSheet,
   ProgressBar,
   Dimensions,
-  useWindowDimensions
+  useWindowDimensions,
+  useColorScheme,
+  Card,
+  List,
+  FloatingPanel,
+  Switch,
+  ViewTextAuto
 }
 
 export default {
@@ -85,5 +96,10 @@ export default {
   PageIndicator,
   ActionSheet,
   ProgressBar,
-  Dimensions
+  Dimensions,
+  Card,
+  List,
+  FloatingPanel,
+  Switch,
+  ViewTextAuto
 }

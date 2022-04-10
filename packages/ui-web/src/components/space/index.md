@@ -1,6 +1,4 @@
----
-title: Space
----
+# Space 间距
 
 ```jsx
 import React from 'react';

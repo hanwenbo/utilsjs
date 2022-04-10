@@ -1,6 +1,4 @@
----
-title: Text
----
+# Text 文本
 
 ```jsx
 import React from 'react';

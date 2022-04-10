@@ -1,4 +1,4 @@
-# AutoCenter
+# AutoCenter 自动居中
 
 ```jsx
 import React from 'react'

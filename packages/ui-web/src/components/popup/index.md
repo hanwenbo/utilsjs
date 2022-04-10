@@ -1,7 +1,3 @@
----
-title: Popup
----
-
 # Popup 弹出层
 
 <code src="./demos/demo1.tsx"></code>
