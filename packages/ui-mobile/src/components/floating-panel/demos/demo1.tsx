@@ -30,7 +30,7 @@ export default () => {
       width:"100vw",
       height:"100vh"
     }}>
-      <FloatingPanel anchors={anchors}>
+      <FloatingPanel anchors={anchors} borderRadius={30}>
         <List>
           {data.map((item, index) => (
             <List.Item key={index}>{item}</List.Item>

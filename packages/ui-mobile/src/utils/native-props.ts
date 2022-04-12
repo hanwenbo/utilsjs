@@ -1,10 +1,10 @@
 import React from 'react'
 import type {CSSProperties, ReactElement} from 'react'
-import {TextStyle} from "react-native-web"
+import {TextStyle,ViewStyle} from "react-native-web"
 import classNames from 'classnames'
 
 export interface NativeProps<S extends string = never> {
-  style?: CSSProperties | TextStyle | undefined,
+  style?: CSSProperties & Partial<Record<S, string>> | TextStyle | { [key: string]: any } | undefined | any | ViewStyle
   tabIndex?: number,
   className?: string,
 }

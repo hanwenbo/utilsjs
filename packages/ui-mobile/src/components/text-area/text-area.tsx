@@ -119,6 +119,7 @@ export const TextArea = forwardRef<TextAreaRef, TextAreaProps>(
       <View style={styles.container}>
         <textarea
           ref={nativeTextAreaRef}
+          // @ts-ignore
           style={htmlStyle.element}
           className={'textarea'}
           rows={props.rows}

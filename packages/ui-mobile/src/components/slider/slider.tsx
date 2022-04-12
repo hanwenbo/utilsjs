@@ -195,7 +195,7 @@ export const Slider: FC<SliderProps> = p => {
         <View style={styles.wrap}>
           <View
             style={styles.track}
-            onClick={onTrackClick}
+            // @ts-ignore
             ref={trackRef}
           >
             <View

@@ -64,6 +64,7 @@ export const ListItem: FC<ListItemProps> = props => {
   return withNativeProps(
     props,
     React.createElement(
+      // @ts-ignore
       clickable ? TouchableOpacity : View,
       {
         style: classNames(props.disabled && styles.disabled),

@@ -43,7 +43,7 @@
 | bold      | 是否文字加粗   | `boolean`                     | `false` |
 | style     | `Action` 样式  | `React.CSSProperties`         | -       |
 | className | `Action` 类名  | `string`                      | -       |
-| onClick   | 点击时触发     | `() => void \| Promise<void>` | -       |
+| onPress   | 点击时触发     | `() => void \| Promise<void>` | -       |
 
 ## 指令式
 
@@ -112,7 +112,7 @@ export default function App() {
   };
   return (
     <div>
-      <Button onClick={showCaptcha}>Show</Button>
+      <Button onPress={showCaptcha}>Show</Button>
     </div>
   );
 }

@@ -112,6 +112,7 @@ export const Popup: FC<PopupProps> = p => {
             />
           )}
           <animated.div
+            // @ts-ignore
             style={{
               ...bodyStyle,
               ...props.bodyStyle,

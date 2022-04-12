@@ -40,8 +40,8 @@ const defaultProps = {
   borderRadius: 8,
   headerHeight: 28,
   zIndex: 900,
-  headerHandlerBarStyle:{
-    backgroundColor:Colors.weak
+  headerHandlerBarStyle: {
+    backgroundColor: Colors.weak
   },
 }
 
@@ -144,15 +144,14 @@ export const FloatingPanel = forwardRef<FloatingPanelRef, FloatingPanelProps>(
     )
 
     useLockScroll(elementRef, true)
-    // borderRadius: 8,
-    //   headerHeight: 28,
-    //   zIndex: 900,
+
     return withNativeProps(
       props,
       <animated.div
         ref={elementRef}
         className='adm-floating-panel'
         style={{
+          // @ts-ignore
           '--z-index': props.zIndex,
           '--border-radius': `${props.borderRadius}PX`,
           '--header-height': `${props.headerHeight}PX`,

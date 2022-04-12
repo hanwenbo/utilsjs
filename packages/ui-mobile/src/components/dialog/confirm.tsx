@@ -5,7 +5,7 @@ import { mergeProps } from '../../utils/with-default-props'
 
 export type DialogConfirmProps = Omit<
   DialogProps,
-  'visible' | 'closeOnAction' | 'actions'
+  'visible' | 'closeOnAction' | 'actions' | 'onCancel' | 'onConfirm'
 > & {
   confirmText?: ReactNode
   cancelText?: ReactNode
@@ -40,7 +40,7 @@ export function confirm(p: DialogConfirmProps) {
           {
             key: 'cancel',
             text: props.cancelText,
-            onClick: async () => {
+            onPress: async () => {
               await props.onCancel?.()
               resolve(false)
             },
@@ -49,7 +49,7 @@ export function confirm(p: DialogConfirmProps) {
             key: 'confirm',
             text: props.confirmText,
             bold: true,
-            onClick: async () => {
+            onPress: async () => {
               await props.onConfirm?.()
               resolve(true)
             },

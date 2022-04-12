@@ -28,14 +28,15 @@ export type DialogProps = {
   actions?: (Action | Action[])[]
   onAction?: (action: Action, index: number) => void | Promise<void>
   closeOnAction?: boolean
-  onClose?: () => void
+  onPress?: () => void
   closeOnMaskClick?: boolean
   visible?: boolean
   getContainer?: GetContainer
   bodyStyle?: object
   maskStyle?: object
   stopPropagation?: PropagationEvent[]
-  disableBodyScroll?: boolean
+  disableBodyScroll?: boolean,
+  onClose?:() => void | Promise<void>
 } & NativeProps
 
 const defaultProps = {

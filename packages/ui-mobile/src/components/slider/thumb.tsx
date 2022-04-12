@@ -46,6 +46,7 @@ const Thumb: FC<ThumbProps> = props => {
 
   return (
     <div
+      // @ts-ignore
       style={{
         ...htmlStyle.container,
         ...thumbStyle,

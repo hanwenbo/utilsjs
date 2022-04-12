@@ -6,6 +6,7 @@ import {extractStyle} from "../../common/modifiers"
 import {TextInputProps, TextInputStyle} from "react-native-web/exports/TextInput/types";
 
 const TextInput = ({style, ...props}: TextInputProps, ref: Ref<any>) => {
+  // @ts-ignore
   const _style = {...extractStyle('Input', props), ...style}
   return <RNTextInput {...props} style={_style} ref={ref} />
 }
