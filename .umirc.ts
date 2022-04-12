@@ -1,10 +1,13 @@
-import { join } from 'path';
+import {join} from 'path';
+
 export default {
   title: 'JS Utils',
   alias: {
     '@hanwenbo/ui-mobile': join(__dirname, 'packages/ui-mobile/src'),
     'demos': join(__dirname, 'demos'),
   },
+  hash: true,
+  base: '/utilsjs/',
   // ...
   themeConfig: {
     carrier: 'dumi', // 设备状态栏左侧的文本内容
