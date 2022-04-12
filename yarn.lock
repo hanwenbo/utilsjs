@@ -2414,9 +2414,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@hanwenbo/ui-web@workspace:packages/ui-web":
+"@hanwenbo/ui-mobile@workspace:packages/ui-mobile":
   version: 0.0.0-use.local
-  resolution: "@hanwenbo/ui-web@workspace:packages/ui-web"
+  resolution: "@hanwenbo/ui-mobile@workspace:packages/ui-mobile"
   dependencies:
     "@react-spring/web": ^9.4.4
     "@types/react": ^17.0.43

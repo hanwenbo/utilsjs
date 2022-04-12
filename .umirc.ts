@@ -2,7 +2,7 @@ import { join } from 'path';
 export default {
   title: 'JS Utils',
   alias: {
-    '@hanwenbo/ui-web': join(__dirname, 'packages/ui-web/src'),
+    '@hanwenbo/ui-mobile': join(__dirname, 'packages/ui-mobile/src'),
     'demos': join(__dirname, 'demos'),
   },
   // ...

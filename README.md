@@ -38,7 +38,7 @@ import isFunction from '@hanwenbo/某包';
 |---|---|
 |[@hanwenbo/array](https://github.com/hanwenbo/utilsjs/tree/master/./packages/array/)|常用的数组操作|
 |[@hanwenbo/object](https://github.com/hanwenbo/utilsjs/tree/master/./packages/object/)|常用的对象操作|
-|[@hanwenbo/ui-web](https://github.com/hanwenbo/utilsjs/tree/master/./packages/ui-web/)|常用基础组件|
+|[@hanwenbo/ui-mobile](https://github.com/hanwenbo/utilsjs/tree/master/./packages/ui-mobile/)|常用基础组件|
 
 <!-- end-directory -->
 

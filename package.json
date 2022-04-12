@@ -14,7 +14,7 @@
     "readme": "node scripts/update-readme.js",
     "test:array": "walrus test packages/array",
     "test:object": "walrus test packages/object",
-    "test:ui-web": "walrus test packages/ui-web",
+    "test:ui-mobile": "walrus test packages/ui-mobile",
     "prerelease": "npm run build",
     "release": "release --commit-message '🔖 chore(release): publish' --skip-build",
     "site:start": "dumi dev",
