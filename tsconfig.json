@@ -22,6 +22,10 @@
     "suppressImplicitAnyIndexErrors": true,
     "moduleResolution": "node",
     "experimentalDecorators": true,
-    "jsx": "react"
+    "jsx": "react",
+    /* error TS2300: Duplicate identifier 'LibraryManagedAttributes'. */
+    "baseUrl": ".",
+//    "skipLibCheck": true,
+//    "allowSyntheticDefaultImports": true
   }
 }
