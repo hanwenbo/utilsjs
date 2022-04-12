@@ -20,7 +20,7 @@ jobs:
       - name: 'Setup Node.js'
         uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 16
 
       - name: Cache pnpm modules
         uses: actions/cache@v3
@@ -36,7 +36,7 @@ jobs:
           run_install: true
 
       - name: Build
-        run: pnpm site
+        run: pnpm site:build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
