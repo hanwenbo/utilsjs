@@ -8,6 +8,7 @@ export default {
   },
   hash: true,
   base: '/utilsjs/',
+  publicPath: '/utilsjs/',
   // ...
   themeConfig: {
     carrier: 'dumi', // 设备状态栏左侧的文本内容
