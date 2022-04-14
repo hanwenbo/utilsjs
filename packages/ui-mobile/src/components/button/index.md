@@ -40,6 +40,14 @@ export default () => {
     }]} disabled>
       StyleSheet 创建样式 + style填充
     </Button>
+
+    <Button primary  style={[styles.button, {
+      backgroundColor: '#000',
+      borderColor: '#000000',
+      borderWidth: 5,
+    }]} disabled>
+      StyleSheet 创建样式 + style填充
+    </Button>
     <Button>
       块
     </Button>

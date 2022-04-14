@@ -19,7 +19,8 @@
     "release": "release --commit-message '🔖 chore(release): publish' --skip-build",
     "release:package": "npx lerna publish from-package",
     "doc:start": "dumi dev",
-    "doc:build": "dumi build"
+    "doc:build": "dumi build",
+    "pub": "father-build && npx lerna publish"
   },
   "devDependencies": {
     "@types/react": "^17.0.43",
