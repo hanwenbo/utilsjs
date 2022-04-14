@@ -17,8 +17,7 @@
     "test:ui-mobile": "walrus test packages/ui-mobile",
     "prerelease": "npm run build",
     "release": "release --commit-message '🔖 chore(release): publish' --skip-build",
-    "prepublish": "npm run build",
-    "publish": "npx lerna publish from-package",
+    "publish": "npm run build && npx lerna publish from-package",
     "doc:start": "dumi dev",
     "doc:build": "dumi build"
   },
