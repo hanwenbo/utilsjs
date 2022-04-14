@@ -49,6 +49,7 @@ const Button = ({
   _style = StyleSheet.flatten([styles.main, _style, {zIndex: "initial"}])
   const _textStyle = extractStyleCompose(['Button', 'Text'], props, textStyle)
 
+
   // @ts-ignore
   return <TouchableOpacity activeOpacity={0.6} {...p} {...wrapperProps} style={_style}>
     <View ref={ref} style={[styles.wrap, {
