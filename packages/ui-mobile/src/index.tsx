@@ -38,6 +38,7 @@ import TouchableOpacity from "./components/touchable-opacity"
 
 import ThemeManager from "./style/themeManager"
 import ColorManager from "./style/color"
+import {Colors} from "./style/color"
 
 export {
   ThemeManager,
@@ -77,7 +78,8 @@ export {
   Flex,
   WhiteSpace,
   WingBlank,
-  TouchableOpacity
+  TouchableOpacity,
+  Colors
 }
 
 export default {
@@ -113,5 +115,6 @@ export default {
   Flex,
   WhiteSpace,
   WingBlank,
-  TouchableOpacity
+  TouchableOpacity,
+  Colors
 }

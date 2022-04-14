@@ -40,15 +40,18 @@ const Button = ({
   }
   const defaultProps = {
     middle: true,
-    default: true
+    default: true,
+    activeOpacity: 0.8,
   }
 
   const props = mergeProps(defaultProps, p)
   let _style = extractStyleCompose('Button', props, style)
   _style = StyleSheet.flatten([styles.main, _style, {zIndex: "initial"}])
   const _textStyle = extractStyleCompose(['Button', 'Text'], props, textStyle)
-  return <TouchableOpacity {...p} {...wrapperProps} style={_style}>
-    <View ref={ref} style={styles.wrap}>
+  return <TouchableOpacity activeOpacity={0.6} {...p} {...wrapperProps} style={_style}>
+    <View ref={ref} style={[styles.wrap, {
+      opacity: disabled ? 0.5 : 1
+    }]}>
       {loading && <View style={styles.loading}>
         <ActivityIndicator
           {...loadingProps}
@@ -62,12 +65,11 @@ export {Button};
 export default forwardRef(Button)
 
 const styles = StyleSheet.create({
-  main: {
-  },
+  main: {},
   loading: {
     paddingRight: 8
   },
-  wrap:{
+  wrap: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: "center",

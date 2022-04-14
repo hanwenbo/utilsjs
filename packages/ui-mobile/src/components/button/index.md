@@ -37,7 +37,7 @@ export default () => {
       backgroundColor: 'green',
       borderColor: 'yellow',
       borderWidth: 5,
-    }]}>
+    }]} disabled>
       StyleSheet 创建样式 + style填充
     </Button>
     <Button>

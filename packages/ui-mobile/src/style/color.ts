@@ -5,6 +5,7 @@ export class Color {
 
   constructor() {
     const colors = Object.assign({});
+    // @ts-ignore
     Object.assign(this, colors);
   }
 
