@@ -11,13 +11,15 @@ type PropsType = {
   loadingProps?: object,
   vertical?: boolean,
   wrap?: boolean,
-  gap?: number
+  gap?: number,
+  block?: boolean,
 }
 const Space = ({
                  style = null,
                  wrap = false,
                  gap = 8,
                  children = null,
+                 block = false,
                  ...props
                }: PropsType, ref: Ref<any>) => {
 
@@ -29,14 +31,17 @@ const Space = ({
   if (props?.vertical) {
     _style['marginBottom'] = -gap
   }
+
   const childrenCount = React.Children.count(children)
   const lastItemStyle = {marginRight: 0}
 
   // zIndex: "initial" 解决多个Mask层级错乱问题
+  // @ts-ignore
   return <View style={[styles.main, _style, {zIndex: "initial"}]}>
     {React.Children.map(children, (child, index) => {
       const isLast = childrenCount === index + 1
       let itemStyles = [styles.item, {marginRight: gap, zIndex: "initial"}]
+
       if (isLast) {
         itemStyles.push(lastItemStyle)
       }
@@ -45,6 +50,9 @@ const Space = ({
       }
       if (props?.vertical) {
         itemStyles.push({marginBottom: gap, marginRight: 0, flexDirection: "column"})
+      }
+      if (block) {
+        itemStyles.push({flex: 1})
       }
       return (
         child !== null &&

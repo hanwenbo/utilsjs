@@ -2,7 +2,7 @@
 
 ```jsx
 import React from 'react';
-import { Space, Divider, Button, View, ThemeManager, Text } from "@hanwenbo/ui-mobile"
+import { Space, Divider, Button, View, ThemeManager, Text, StyleSheet } from "@hanwenbo/ui-mobile"
 
 ThemeManager.loadTheme({
   View: {
@@ -24,6 +24,22 @@ ThemeManager.loadTheme({
 })
 export default () => {
   return <View>
+    <Button style={{
+      flex: 1,
+      backgroundColor: "#FF0000",
+    }}>
+      style 填充样式
+    </Button>
+    <Button style={styles.button}>
+      StyleSheet 创建样式
+    </Button>
+    <Button style={[styles.button, {
+      backgroundColor: 'green',
+      borderColor: 'yellow',
+      borderWidth: 5,
+    }]}>
+      StyleSheet 创建样式 + style填充
+    </Button>
     <Button>
       块
     </Button>
@@ -143,5 +159,14 @@ export default () => {
     </View>
   </View>
 }
+const styles = StyleSheet.create({
+  button: {
+    backgroundColor: "blue",
+  }
+});
+```
+
+*/
+
 ```
 
