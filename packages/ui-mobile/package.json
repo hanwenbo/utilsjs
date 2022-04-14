@@ -1,7 +1,7 @@
 {
   "name": "@hanwenbo/ui-mobile",
   "version": "0.0.14",
-  "description": "常用基础组件",
+  "description": "A mobile UI library for React Native Web",
   "author": "9476400@qq.com",
   "license": "MIT",
   "main": "lib/index.js",
@@ -11,6 +11,14 @@
     "lib",
     "es"
   ],
+  "dependencies": {
+    "@react-spring/web": "^9.4.4",
+    "ahooks": "^3.3.0",
+    "antd-mobile-icons": "^0.2.2",
+    "deepmerge": "^4.2.2",
+    "react-native-web": "^0.17.7",
+    "umi-hd": "^5.0.1"
+  },
   "publishConfig": {
     "access": "public"
   }

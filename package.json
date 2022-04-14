@@ -50,6 +50,7 @@
     "react-native-web": "^0.17.7",
     "react-virtualized": "^9.22.3",
     "remax": "^2.15.13",
-    "smart-arraytotree": "^1.1.2"
+    "smart-arraytotree": "^1.1.2",
+    "umi-hd": "^5.0.1"
   }
 }

@@ -2431,6 +2431,7 @@ __metadata:
     smart-arraytotree: ^1.1.2
     testing: ^2.0.1
     typescript: 4.5.2
+    umi-hd: ^5.0.1
   languageName: unknown
   linkType: soft
 
