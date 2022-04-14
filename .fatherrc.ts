@@ -4,4 +4,7 @@ export default {
     type: 'babel',
     importLibToEs: true
   },
+  pkgFilter: {
+    include: ['@hanwenbo/ui-mobile']
+  }
 };
