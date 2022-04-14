@@ -33,6 +33,7 @@ export type FloatingPanelProps = {
   zIndex?: number,
   headerHeight?: number,
   headerHandlerBarStyle?: React.CSSProperties,
+  wrapStyle?: React.CSSProperties,
 } & NativeProps
 
 const defaultProps = {
@@ -43,6 +44,7 @@ const defaultProps = {
   headerHandlerBarStyle: {
     backgroundColor: Colors.weak
   },
+  wrapStyle:{},
 }
 
 export const FloatingPanel = forwardRef<FloatingPanelRef, FloatingPanelProps>(
@@ -145,18 +147,23 @@ export const FloatingPanel = forwardRef<FloatingPanelRef, FloatingPanelProps>(
 
     useLockScroll(elementRef, true)
 
+    // TODO wrapStyle如果为create 需要摊平
+
+    const anmStyle = {
+      '--z-index': props.zIndex,
+      '--border-radius': `${props.borderRadius}PX`,
+      '--header-height': `${props.headerHeight}PX`,
+      translateY: y.to(y => `calc(100% + (${y}px))`),
+      height: maxHeight,
+      ...props.wrapStyle,
+    }
     return withNativeProps(
       props,
       <animated.div
         ref={elementRef}
         className='adm-floating-panel'
-        style={{
-          // @ts-ignore
-          '--z-index': props.zIndex,
-          '--border-radius': `${props.borderRadius}PX`,
-          '--header-height': `${props.headerHeight}PX`,
-          translateY: y.to(y => `calc(100% + (${y}px))`),
-        }}
+        // @ts-ignore
+        style={anmStyle}
       >
         <div
           className='adm-floating-panel-mask'

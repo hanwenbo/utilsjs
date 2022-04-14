@@ -1,9 +1,9 @@
 // @ts-ignore
-import {Text} from "react-native-web";
+import {Text, TextProps, ViewProps} from "react-native-web";
 import React from "react"
-import {ViewProps} from "react-native-web/exports/View/types";
 
-const ViewTextAuto = ({children, ...props}: ViewProps) => {
+const ViewTextAuto = ({children, ...props}: TextProps | ViewProps) => {
+  // todo style 磨平
   if (typeof children === 'string') {
     // @ts-ignore
     return <Text {...props}>{children}</Text>

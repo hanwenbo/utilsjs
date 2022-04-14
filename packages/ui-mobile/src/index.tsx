@@ -31,6 +31,10 @@ import List from "./components/list"
 import FloatingPanel from "./components/floating-panel"
 import Switch from "./components/switch"
 import ViewTextAuto from "./components/view-text-auto"
+import Flex from "./components/flex"
+import WhiteSpace from "./components/white-space"
+import WingBlank from "./components/wing-blank"
+import TouchableOpacity from "./components/touchable-opacity"
 
 import ThemeManager from "./style/themeManager"
 import ColorManager from "./style/color"
@@ -69,7 +73,11 @@ export {
   List,
   FloatingPanel,
   Switch,
-  ViewTextAuto
+  ViewTextAuto,
+  Flex,
+  WhiteSpace,
+  WingBlank,
+  TouchableOpacity
 }
 
 export default {
@@ -101,5 +109,9 @@ export default {
   List,
   FloatingPanel,
   Switch,
-  ViewTextAuto
+  ViewTextAuto,
+  Flex,
+  WhiteSpace,
+  WingBlank,
+  TouchableOpacity
 }
