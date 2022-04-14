@@ -16,8 +16,7 @@
     "ahooks": "^3.3.0",
     "antd-mobile-icons": "^0.2.2",
     "deepmerge": "^4.2.2",
-    "react-native-web": "^0.17.7",
-    "umi-hd": "^5.0.1"
+    "react-native-web": "^0.17.7"
   },
   "publishConfig": {
     "access": "public"
