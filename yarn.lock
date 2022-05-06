@@ -2399,11 +2399,12 @@ __metadata:
 "@hanwenbo/ui-mobile@workspace:packages/ui-mobile":
   version: 0.0.0-use.local
   resolution: "@hanwenbo/ui-mobile@workspace:packages/ui-mobile"
-  peerDependencies:
+  dependencies:
     "@react-spring/web": ^9.4.4
     ahooks: ^3.3.0
     antd-mobile-icons: ^0.2.2
     deepmerge: ^4.2.2
+  peerDependencies:
     react-native-web: "*"
   languageName: unknown
   linkType: soft
