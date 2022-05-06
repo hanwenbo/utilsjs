@@ -15,9 +15,10 @@ type MarksProps = {
   min: number
   upperBound: number
   lowerBound: number
+  markStyle?: {}
 }
 
-const Marks: FC<MarksProps> = ({marks, upperBound, lowerBound, max, min}) => {
+const Marks: FC<MarksProps> = ({marks, upperBound, lowerBound, max, min, markStyle}) => {
   const marksKeys = Object.keys(marks)
 
   const range = max - min
@@ -39,7 +40,7 @@ const Marks: FC<MarksProps> = ({marks, upperBound, lowerBound, max, min}) => {
         left: `${((point - min) / range) * 100}%`,
       }
       return (
-        <Text style={[styles.mask, style]} key={point}>
+        <Text style={[styles.mask, style, markStyle]} key={point}>
           {markPoint}
         </Text>
       )

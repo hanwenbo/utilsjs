@@ -30,9 +30,9 @@ const Divider = ({style, childrenStyle, children, ...p}: PropsType) => {
   switch (props.contentPosition) {
     case 'center':
       // @ts-ignore
-      startStyle = {flex: 'auto'}
+      startStyle = {flex: 1}
       // @ts-ignore
-      endStyle = {flex: 'auto'}
+      endStyle = {flex: 1}
       break;
     case 'left':
       startStyle = {width: props.shortSideWidth,}

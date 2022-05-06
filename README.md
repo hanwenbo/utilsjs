@@ -61,7 +61,7 @@ npm run release --registry https://registry.npmjs.org
 如果错过了发布 可以使用强行发布
 npx lerna publish --force-publish
 
-跳过 git提交
+跳过 git提交 会把package.json代码恢复 慎用
 npx lerna publish --skip-git 
 ```
 

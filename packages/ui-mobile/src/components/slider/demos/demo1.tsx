@@ -40,7 +40,15 @@ export default () => {
       </DemoBlock>
 
       <DemoBlock title='传入刻度标记' padding='13px'>
-        <Slider marks={marks} ticks defaultValue={40} fillColor={'red'}/>
+        <Slider
+          marks={marks}
+          ticks
+          defaultValue={40}
+          fillColor={'red'}
+          markStyle={{
+            fontWeight: "bold"
+          }}
+        />
       </DemoBlock>
 
       <DemoBlock title='自定义样式（通过 style）' padding='13px'>

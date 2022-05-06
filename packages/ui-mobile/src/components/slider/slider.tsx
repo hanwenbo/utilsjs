@@ -28,6 +28,7 @@ export type SliderProps = {
   trackStyle?: {},
   tickStyle?: {},
   thumbStyle?: {},
+  markStyle?:{},
   fillColor?: string,
 } & NativeProps
 
@@ -41,6 +42,7 @@ const defaultProps = {
   trackStyle: {},
   tickStyle: {},
   thumbStyle: {},
+  markStyle:{},
   fillColor: Colors.primary,
 }
 
@@ -228,6 +230,7 @@ export const Slider: FC<SliderProps> = p => {
           marks={marks}
           lowerBound={sliderValue[0]}
           upperBound={sliderValue[1]}
+          markStyle={props.markStyle}
         />
       )}
     </View>

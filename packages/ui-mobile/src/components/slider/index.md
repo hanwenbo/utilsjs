@@ -24,3 +24,4 @@
 | trackStyle    | 轨道样式                                                     | React.CSSProperties                           |                      |
 | tickStyle     | 记号样式                                                     | React.CSSProperties                           |                      |
 | thumbStyle    | 拖动样式                                                     | React.CSSProperties                           |                      |
+| markStyle     | 数字样式                                                     | React.CSSProperties                           |                      |
