@@ -1,7 +1,8 @@
-# View 视域
+# TouchableOpacity 可触摸不透明度
+
 ```jsx
 import React from 'react';
-import { View, ThemeManager } from "@hanwenbo/ui-mobile"
+import {TouchableOpacity, View, ThemeManager } from "@hanwenbo/ui-mobile"
 
 export default () => {
   ThemeManager.loadTheme({
@@ -14,7 +15,9 @@ export default () => {
     }
   });
   return <View>
-    <View body />
+    <TouchableOpacity>
+      <View body />
+    </TouchableOpacity>
   </View>
 }
 ```

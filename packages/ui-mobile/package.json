@@ -11,12 +11,12 @@
     "lib",
     "es"
   ],
-  "dependencies": {
+  "peerDependencies": {
     "@react-spring/web": "^9.4.4",
     "ahooks": "^3.3.0",
     "antd-mobile-icons": "^0.2.2",
     "deepmerge": "^4.2.2",
-    "react-native-web": "^0.17.7"
+    "react-native-web": "*"
   },
   "publishConfig": {
     "access": "public"
