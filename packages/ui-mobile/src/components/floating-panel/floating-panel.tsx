@@ -27,7 +27,7 @@ export type FloatingPanelRef = {
 export type FloatingPanelProps = {
   anchors: number[]
   children: ReactNode
-  onHeightChange?: (height: number, animating: boolean) => void
+  onHeightChange?: (height: number, animating: boolean, velocity: number) => void
   handleDraggingOfContent?: boolean,
   borderRadius?: number,
   zIndex?: number,
@@ -44,7 +44,7 @@ const defaultProps = {
   headerHandlerBarStyle: {
     backgroundColor: Colors.weak
   },
-  wrapStyle:{},
+  wrapStyle: {},
 }
 
 export const FloatingPanel = forwardRef<FloatingPanelRef, FloatingPanelProps>(
@@ -73,7 +73,7 @@ export const FloatingPanel = forwardRef<FloatingPanelRef, FloatingPanelProps>(
       y: bounds.bottom,
       config: {tension: 300},
       onChange: result => {
-        onHeightChange(result.value.y, y.isAnimating)
+        onHeightChange(result.value.y, y.isAnimating, y.velocity)
       },
     }))
 

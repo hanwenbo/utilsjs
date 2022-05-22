@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 import {FloatingPanel, List, Button, AutoCenter, View, Text, Space} from '@hanwenbo/ui-mobile'
 import {DemoBlock, lorem} from 'demos'
 
@@ -24,17 +24,19 @@ const data = [
   'Q',
 ]
 
-const anchors = [0, 100, window.innerHeight * 0.4, window.innerHeight * 0.8]
+const anchors = [0, 10, 50, 100]
 
 export default () => {
   const [floatingHeight, setFloatingHeight] = useState(0);
   const floatRef = useRef(null);
 
+  useEffect(() => {
+    floatRef?.current?.setHeight(100)
+  }, [])
+
   return (
     <div style={{
       backgroundColor: "#000",
-      // width:"100vw",
-      // height:"100vh",
     }}>
       <div style={floatingHeight !== 0 ? {
         filter: 'blur(2px)'
@@ -81,7 +83,8 @@ export default () => {
           anchors={anchors}
           borderRadius={30}
           wrapStyle={{
-            backgroundColor: 'rgb(237 255 0 / 71%)'
+            backgroundColor: 'rgb(237 255 0 / 71%)',
+            paddingBottom:100,// 防止拖拽超出边界露出底部颜色
           }}
           ref={floatRef}
           onHeightChange={(height, animating) => {
@@ -91,7 +94,7 @@ export default () => {
           <View style={{
             margin: 15
           }}>
-            <Button  danger onPress={()=>{
+            <Button danger onPress={() => {
               floatRef.current.setHeight(0)
             }}>关闭</Button>
             <Button>测试</Button>
