@@ -1,0 +1,52 @@
+body .editor-user-css {
+  width: 300px;
+  height: 30vh;
+  color: red;
+  text-align: center;
+  margin-bottom: 100px;
+  left: 20%;
+  right: 0;
+  transition: width .3s cubic-bezier(0.075, 0.82, 0.165, 1),
+  height .3s cubic-bezier(0.075, 0.82, 0.165, 1),
+  left .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  box-shadow: 0 5px 5px rgba(0,0,0,0.15);
+  border-bottom: 1px solid #000fff;
+  border-top-left-radius: 10px;
+  background-blend-mode: exclusion, normal;
+  background-image: url("http://xxxxxxx.jpg");
+  background-color: #ccc;
+
+  //background-position: 50%, 100% 50%;
+  &:hover {
+  }
+}
+.box {
+  position: relative;
+  top: 20px;
+  text-align: left;
+}
+
+.a, .c .a, .c{
+  &:hover {
+    font-size: 15px
+  }
+}
+.tmain-editor_css{
+  background-color: red;
+}
+
+.a{
+  top: 10px;
+  &:hover {
+    color: #fff;
+
+  }
+}
+@media screen and (max-width: 767px) {
+  body .editor-user-css {
+    background: #333;
+  }
+  body .a {
+    //color: #000fff;
+  }
+}

@@ -1,0 +1,70 @@
+.editor-bg-image-wrapper {
+  border-top: 1px solid #121212;
+  padding-top: 8px;
+}
+.editor-bg-image-wrapper .add-button {
+  font-size: 14px;
+}
+.editor-bg-image-list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 24px 24px auto 24px;
+      grid-template-columns: 24px 24px auto 24px;
+  -ms-grid-rows: 32px;
+      grid-template-rows: 32px;
+  gap: 0 4px;
+  -ms-flex-align: center;
+      align-items: center;
+  line-height: 32px;
+  height: 32px;
+  transition: background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.editor-bg-image-list-preview {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  background-size: cover;
+  background-position: center;
+  background-clip: content-box;
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.editor-bg-image-list-bar {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  text-align: center;
+  outline: none;
+}
+.editor-bg-image-list-name {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: rgba(255, 255, 255, 0.55);
+}
+.editor-bg-image-list-name:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+.editor-bg-image-list-delete {
+  -ms-grid-column: 4;
+      grid-column-start: 4;
+  text-align: center;
+  cursor: pointer;
+}
+.editor-bg-image-list:hover,
+.editor-bg-image-list:active {
+  background-color: rgba(18, 18, 18, 0.7);
+}
+.editor-bg-image-pop {
+  width: 248px;
+  padding: 16px;
+}
+.editor-bg-image-pop-type {
+  padding-bottom: 8px;
+  border-bottom: 1px solid #262626;
+}

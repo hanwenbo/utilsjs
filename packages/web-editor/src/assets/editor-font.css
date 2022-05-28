@@ -1,0 +1,63 @@
+.editor-font-align .left,
+.editor-font-align .center,
+.editor-font-align .right,
+.editor-font-align .justify {
+  width: 16px;
+  margin: auto;
+}
+.editor-font-align .left:after,
+.editor-font-align .center:after,
+.editor-font-align .right:after,
+.editor-font-align .justify:after,
+.editor-font-align .left:before,
+.editor-font-align .center:before,
+.editor-font-align .right:before,
+.editor-font-align .justify:before {
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 6px 0 rgba(255, 255, 255, 0.55);
+}
+.editor-font-align .left:after,
+.editor-font-align .center:after,
+.editor-font-align .right:after,
+.editor-font-align .justify:after,
+.editor-font-align .left:before,
+.editor-font-align .center:before,
+.editor-font-align .right:before,
+.editor-font-align .justify:before {
+  content: '';
+  display: block;
+  margin: auto;
+  height: 1px;
+}
+.editor-font-align .left:before,
+.editor-font-align .center:before,
+.editor-font-align .right:before,
+.editor-font-align .justify:before {
+  margin-top: 5px;
+}
+.editor-font-align .left:after,
+.editor-font-align .center:after,
+.editor-font-align .right:after,
+.editor-font-align .justify:after {
+  margin-top: 2px;
+}
+.editor-font-align .left:after,
+.editor-font-align .center:after,
+.editor-font-align .right:after {
+  width: 12px;
+}
+.editor-font-align .left:before,
+.editor-font-align .center:before,
+.editor-font-align .right:before {
+  width: 16px;
+}
+.editor-font-align .left:after {
+  margin-left: 0;
+}
+.editor-font-align .right:after {
+  margin-right: 0;
+}
+.editor-font-align .justify:after,
+.editor-font-align .justify:before {
+  width: 16px;
+}

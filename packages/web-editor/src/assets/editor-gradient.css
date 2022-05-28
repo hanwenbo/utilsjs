@@ -1,0 +1,40 @@
+.editor-gradient {
+  padding-bottom: 1px;
+  border-bottom: 1px solid #262626;
+  margin-bottom: 8px;
+}
+.editor-gradient-bar {
+  height: 16px;
+  border: 1px solid #262626;
+  cursor: crosshair;
+  position: relative;
+  background-repeat: no-repeat;
+  margin: 16px 0;
+}
+.editor-gradient-bar-item {
+  position: relative;
+  height: 100%;
+  margin-right: 8px;
+}
+.editor-gradient-point {
+  box-shadow: #262626 0px 0px 0px 1px;
+  height: 100%;
+  width: 8px;
+  position: absolute;
+  cursor: ew-resize;
+  transition: shadow .3s;
+  border-radius: 2px;
+  background: #eee;
+}
+.editor-gradient-point.active {
+  box-shadow: rgba(255, 255, 255, 0.9) 0px 0px 0px 2px, #262626 0px 0px 0px 3px, #262626 0px 0px 0px 1px inset;
+}
+.editor-gradient-repeat {
+  color: rgba(255, 255, 255, 0.55);
+}
+.editor-gradient-repeat .ant-checkbox + span {
+  color: rgba(255, 255, 255, 0.55);
+}
+.editor-gradient-color .ant-row {
+  margin-bottom: 0 !important;
+}
