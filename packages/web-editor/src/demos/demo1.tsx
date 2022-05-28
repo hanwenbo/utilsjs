@@ -14,7 +14,6 @@ export default (props) => {
   const onClick = (e) => {
     const dom = e.target;
     setEditorDom(dom);
-
   }
 
   const onChange = (e) => {
@@ -31,8 +30,17 @@ export default (props) => {
 
   return (<div id="abc" className="box">
     <div className="editor-user-css">
+      <div onClick={onClick} className="flex-editor_css">
+        <span className="colorBox">测试布局1</span>
+        <span className="colorBox">测试布局2</span>
+        <span className="colorBox">测试布局3</span>
+        <span className="colorBox">测试布局4</span>
+        <span className="colorBox">测试布局5</span>
+        <span className="colorBox">测试布局6</span>
+        <span className="colorBox">测试布局7</span>
+      </div>
       <div onClick={onClick} className="a c  tmain-editor_css">
-        顶部
+
         <div onClick={onClick} className="a c jeply9mvwlk-editor_css">
           a<br />
           ---------请点击---------
@@ -59,14 +67,14 @@ export default (props) => {
         defaultActiveKey={["EditorBackGround", "EditorClassName", "EditorState", "EditorLayout", "EditorFont", "EditorInterface", 'Css']}
 
       >
-        <ClassName />
-        <State />
+        {/*<ClassName />*/}
+        {/*<State />*/}
         <Layout />
-        <Font />
-        <BackGround />
-        <Border />
+        {/*<Font />*/}
+        {/*<BackGround />*/}
+        {/*<Border />*/}
         <Interface
-          exclude={['position', 'float', 'opacity', 'width', 'height', 'overflow']}
+          exclude={['position', 'float', 'opacity',  'overflow']}
         />
         <Css />
       </EditorList>)}

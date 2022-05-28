@@ -15,6 +15,10 @@ export default {
       none: 'none 隐藏元素',
     },
     flexName: {
+      flexDirection: {
+        name: '方向',
+        icon: 'flex-direction',
+      },
       alignItems: {
         name: '竖向',
         icon: 'column-height',
@@ -23,8 +27,23 @@ export default {
         name: '横向',
         icon: 'column-width',
       },
+      flexWrap: {
+        name: '换行',
+        icon: 'flex-wrap',
+      },
     },
     flexSelect: {
+      flexDirection: {
+        row: '横向排列',
+        column: '竖向排列',
+        'row-reverse': "横向排列反",
+        'column-reverse': "竖向排列反"
+      },
+      flexWrap: {
+        nowrap: '不换行',
+        wrap: '换行',
+        'wrap-reverse': '换行反向',
+      },
       alignItems: {
         stretch: '元素被拉伸以适应容器',
         'flex-start': '素位于容器的开头',
@@ -113,7 +132,7 @@ export default {
     header: '背景',
     add: '添加图片或渐变',
     img: '图片',
-    linear: '线性渐变', 
+    linear: '线性渐变',
     radial: '圆形渐变',
     image: '图片地址',
     color: '背景颜色',
