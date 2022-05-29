@@ -6,7 +6,7 @@ import './index.less';
 const {ClassName, State, Layout, Font, BackGround, Border, Interface, Margin, Shadow, Transition, Css} = EditorList;
 
 
-export default (props) => {
+export default () => {
   const [editorDom, setEditorDom] = useState(null);
   const [state, setState] = useState('web');
   const editorRef = useRef(null);
