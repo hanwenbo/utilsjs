@@ -2648,8 +2648,6 @@ __metadata:
     react-dom: 16.x
     react-lifecycles-compat: ^3.0.4
     specificity: ^0.3.2
-  peerDependencies:
-    react-native-web: "*"
   languageName: unknown
   linkType: soft
 

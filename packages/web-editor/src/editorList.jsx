@@ -491,7 +491,6 @@ class EditorList extends Component {
             editorElem,
             editorDefaultClassName,
         } = props;
-        console.warn('editorElem.className ', editorElem.className );
         const currentEditorCssName = (editorElem.className || '').split(' ')
             .filter(name => name.indexOf(editorDefaultClassName) >= 0)
             .map(name => name.replace(`-${editorDefaultClassName}`, ''))[0];

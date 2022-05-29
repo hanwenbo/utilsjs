@@ -2,7 +2,7 @@
 import React from 'react';
 import Select from 'antd/lib/select';
 import Radio from 'antd/lib/radio';
-import specificity from 'specificity';
+import { compare } from 'specificity';
 
 const Option = Select.Option;
 
@@ -662,7 +662,7 @@ function getCssPropertyForRuleToCss({
   Object.keys(styleObj).sort((a, b) => {
     const aArray = a.split('~');
     const bArray = b.split('~');
-    return specificity.compare(aArray[0], bArray[0]) ||
+    return compare(aArray[0], bArray[0]) ||
       parseFloat(aArray[1]) - parseFloat(bArray[1]) ||
       parseFloat(aArray[2]) - parseFloat(bArray[2]) ||
       aArray.length - bArray.length ||
