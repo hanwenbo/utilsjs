@@ -99,7 +99,7 @@ export const Popup: FC<PopupProps> = p => {
     withNativeProps(
       props,
       <View
-        style={{display: active ? 'unset' : 'none', zIndex:1000}}
+        style={{display: active ? 'flex' : 'none', zIndex:1000}}
       >
         <TouchableOpacity onPress={props.onPress} activeOpacity={1}>
           {props.mask && (

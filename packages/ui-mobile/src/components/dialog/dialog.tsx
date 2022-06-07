@@ -144,7 +144,7 @@ export const Dialog: FC<DialogProps> = p => {
     props,
     <View
       style={{
-        display: active ? 'unset' : 'none',
+        display: active ? 'flex' : 'none',
       }}
     >
       <Mask

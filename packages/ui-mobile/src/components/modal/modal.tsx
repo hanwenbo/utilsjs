@@ -152,7 +152,7 @@ export const Modal: FC<ModalProps> = p => {
       props,
       <div
         style={{
-          display: active ? 'unset' : 'none',
+          display: active ? 'flex' : 'none',
         }}
       >
         <Mask
@@ -162,7 +162,7 @@ export const Modal: FC<ModalProps> = p => {
         >
           <View
             style={[styles.wrap, {
-              pointerEvents: props.visible ? 'unset' : 'none',
+              pointerEvents: props.visible ? 'flex' : 'none',
             }]}
           >
             <animated.div style={style}>{body}</animated.div>

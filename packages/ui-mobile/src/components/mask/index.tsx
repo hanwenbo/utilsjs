@@ -102,7 +102,7 @@ const Mask = ({
             height: "100%"
           },
           opacity,
-          display: active ? 'unset' : 'none',
+          display: active ? 'flex' : 'none',
         }}
       >
         <TouchableOpacity activeOpacity={1} onPress={onMaskClick}>
