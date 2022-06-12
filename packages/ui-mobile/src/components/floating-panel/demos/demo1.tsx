@@ -1,7 +1,7 @@
 import React, {useState, useRef} from 'react'
 import {FloatingPanel, List, Button, AutoCenter, View, Text, Space} from '@hanwenbo/ui-mobile'
 import {DemoBlock, lorem} from 'demos'
-
+import {ScrollView} from "react-native-web"
 const shortText = lorem.generateWords(3)
 const longText = lorem.generateParagraphs(2)
 const data = [
