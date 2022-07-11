@@ -1,0 +1,25 @@
+{
+  "name": "@hanwenbo/pro-components",
+  "version": "0.0.30",
+  "description": "utils library for pro-components",
+  "author": "9476400@qq.com",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "es"
+  ],
+  "dependencies": {
+    "ahooks": "^3.5.2"
+  },
+  "peerDependencies": {
+    "@ant-design/pro-components": "*",
+    "antd": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "e09fc150b0dbae1d530eba38518b6d2eec55cbb3"
+}
