@@ -2,7 +2,7 @@
 group:
   path: /docs
 ---
-# FormBeta 表单试用版
+# TableBeta 表格试用版
 
 <code src="./demos/demo1.tsx"></code>
 
