@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Drawer} from "antd"
-import ProDescriptions, {ProDescriptionsItemProps} from "@ant-design/pro-descriptions";
+import {ProDescriptionsItemProps,ProDescriptions} from "@ant-design/pro-components";
 
 type Props = {
   info: any;
