@@ -1,15 +1,15 @@
 export default {
-  esm: {},
-  cjs: {},
+  esm: {
+    output: 'es',
+    ignores: [
+      '**/demos/*'
+    ],
+  },
+  cjs: {
+    output: 'lib',
+    ignores: [
+      '**/demos/*'
+    ],
+  },
   platform: 'browser',
-  extraBabelPlugins: [
-    [
-      'import',
-      {
-        libraryName: '@sensoro-design/antd',
-        libraryDirectory: 'es',
-        style: true
-      }
-    ]
-  ]
 };
