@@ -2853,10 +2853,9 @@ __metadata:
 "@hanwenbo/pro-components@workspace:packages/pro-components":
   version: 0.0.0-use.local
   resolution: "@hanwenbo/pro-components@workspace:packages/pro-components"
-  dependencies:
-    ahooks: ^3.5.2
   peerDependencies:
     "@ant-design/pro-components": "*"
+    ahooks: "*"
     antd: "*"
   languageName: unknown
   linkType: soft
@@ -2897,8 +2896,10 @@ __metadata:
     father-build: 1.20.4
     globby: ^13.1.1
     husky: 5.1.2
+    js-file-download: ^0.4.12
     lorem-ipsum: ^2.0.4
     qrcode.react: ^3.0.1
+    react-amap: ^1.2.8
     react-native-web: ^0.17.7
     react-virtualized: ^9.22.3
     remax: ^2.15.13
@@ -6938,24 +6939,6 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
   checksum: 2eb939287d76c29fdba596a4c6bfab6775cf24a11352a1e4e85f1eaaa6a1087efe9e268743fe5c909c8fd1508cad616715f9fb4e239842e6f69c1ca7f1ad5f06
-  languageName: node
-  linkType: hard
-
-"ahooks@npm:^3.5.2":
-  version: 3.5.2
-  resolution: "ahooks@npm:3.5.2"
-  dependencies:
-    "@types/js-cookie": ^2.x.x
-    ahooks-v3-count: ^1.0.0
-    dayjs: ^1.9.1
-    intersection-observer: ^0.12.0
-    js-cookie: ^2.x.x
-    lodash: ^4.17.21
-    resize-observer-polyfill: ^1.5.1
-    screenfull: ^5.0.0
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 4527bae26ce18e3763b579bfa5f310479071723b9c38bf371b7d23c6cb646e14db9b07c8c165e73138d4fe5ca632d6c96d24b734cda23ff87de09a97f8690622
   languageName: node
   linkType: hard
 
@@ -19591,6 +19574,13 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"js-file-download@npm:^0.4.12":
+  version: 0.4.12
+  resolution: "js-file-download@npm:0.4.12"
+  checksum: a03847eef0184fbf34a7b7fd365ea6aa1a6cc142efeac52c4baa0cdde845dc93718eb66808dfcffd6c91b37ddc9d058d352ac9698b4280744bad3587240c93b6
+  languageName: node
+  linkType: hard
+
 "js-tokens@npm:^3.0.0 || ^4.0.0, js-tokens@npm:^4.0.0":
   version: 4.0.0
   resolution: "js-tokens@npm:4.0.0"
@@ -27439,6 +27429,13 @@ fsevents@~2.1.2:
   peerDependencies:
     react-dom: ^15.4.2
   checksum: 7b6b72d7326514bcb20cef11a89789372e2ae5207c37f0f5ca9b228913a82c3a761c8fd48c2c7b34eaf9609907fc61f78bec245840f70f1beff2eb1bfa51b947
+  languageName: node
+  linkType: hard
+
+"react-amap@npm:^1.2.8":
+  version: 1.2.8
+  resolution: "react-amap@npm:1.2.8"
+  checksum: 3d4a519491a59acb7c97487d2313804331c7113e3203c1b09323e4510e52b7e204c3a8512e5791111ec86a9a1fa3075e4f9b87bf23e6b082a51bbbf6951625e3
   languageName: node
   linkType: hard
 
