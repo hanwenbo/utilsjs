@@ -2878,6 +2878,7 @@ __metadata:
   resolution: "@hanwenbo/utilsjs@workspace:."
   dependencies:
     "@ant-design/pro-components": ^1.1.9
+    "@pansy/react-amap": ^2.12.4
     "@react-spring/web": ^9.4.4
     "@types/react": ^17.0.43
     "@types/react-dom": ^17.0.14
@@ -4336,6 +4337,42 @@ __metadata:
   dependencies:
     "@octokit/openapi-types": ^11.2.0
   checksum: f122b9aee8f6baddd515e34a0913e73b21d4bc82d6ee59d77a8aaf01b4a02c10867dd013003d087a83dc96db23511893669015af6d30c27cece185e21cf1df89
+  languageName: node
+  linkType: hard
+
+"@pansy/amap-api-loader@npm:0.3.12":
+  version: 0.3.12
+  resolution: "@pansy/amap-api-loader@npm:0.3.12"
+  dependencies:
+    "@pansy/amap-types": 2.16.3
+  checksum: cc14270ecba0b4a1c5c09ae462de9e29b9f885cdad1c685971d07ef1ab85f81bba934d5887a11c280e773c37f0a6f87c1644519d2c16e3a04fb89041695ac4e3
+  languageName: node
+  linkType: hard
+
+"@pansy/amap-types@npm:2.16.3":
+  version: 2.16.3
+  resolution: "@pansy/amap-types@npm:2.16.3"
+  checksum: 532dfc1fc226d89f2c8aae48b42f0940a3430d4a10116720928414870ac3cfab0e40780fec59edfa6cb0c8379bcdab1071fc41177ad864e9b742f7bd2073c112
+  languageName: node
+  linkType: hard
+
+"@pansy/react-amap-core@npm:1.3.0":
+  version: 1.3.0
+  resolution: "@pansy/react-amap-core@npm:1.3.0"
+  dependencies:
+    "@pansy/amap-types": 2.16.3
+  checksum: 9a08b30e78f2ea19d2db6fbcf3911424f1ed41476f58ad36a16cd956e124b3f4fce9aa53f7fa6d0b790a8ee546dc011e3ef040d92aea89320cec7da4dcadaa83
+  languageName: node
+  linkType: hard
+
+"@pansy/react-amap@npm:^2.12.4":
+  version: 2.12.4
+  resolution: "@pansy/react-amap@npm:2.12.4"
+  dependencies:
+    "@pansy/amap-api-loader": 0.3.12
+    "@pansy/amap-types": 2.16.3
+    "@pansy/react-amap-core": 1.3.0
+  checksum: 084704e5d808a73b8cb4827bbfcb3c1471f83a5412636ce2f479a24826bcff8ae9852804aa43be5b9e3ce4e5857efd9e3af3316224d47313caff1bdfa26d1d1a
   languageName: node
   linkType: hard
 

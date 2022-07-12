@@ -1,4 +1,4 @@
 
-describe('ui-mobile', () => {
+describe('pro-components', () => {
   console.warn('adsd')
 });

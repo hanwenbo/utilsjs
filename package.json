@@ -47,6 +47,7 @@
     "packages/*"
   ],
   "dependencies": {
+    "@pansy/react-amap": "^2.12.4",
     "@react-spring/web": "^9.4.4",
     "ahooks": "^3.3.0",
     "antd-mobile-icons": "^0.2.2",
