@@ -39,6 +39,7 @@
     "father-build": "1.20.4",
     "globby": "^13.1.1",
     "husky": "5.1.2",
+    "lerna": "^5.1.8",
     "lorem-ipsum": "^2.0.4",
     "qrcode.react": "^3.0.1",
     "testing": "^2.0.1",
