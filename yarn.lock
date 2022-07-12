@@ -2901,7 +2901,6 @@ __metadata:
     lorem-ipsum: ^2.0.4
     qrcode.react: ^3.0.1
     rc-util: ^5.22.5
-    react-amap: ^1.2.8
     react-native-web: ^0.17.7
     react-virtualized: ^9.22.3
     remax: ^2.15.13
@@ -27467,13 +27466,6 @@ fsevents@~2.1.2:
   peerDependencies:
     react-dom: ^15.4.2
   checksum: 7b6b72d7326514bcb20cef11a89789372e2ae5207c37f0f5ca9b228913a82c3a761c8fd48c2c7b34eaf9609907fc61f78bec245840f70f1beff2eb1bfa51b947
-  languageName: node
-  linkType: hard
-
-"react-amap@npm:^1.2.8":
-  version: 1.2.8
-  resolution: "react-amap@npm:1.2.8"
-  checksum: 3d4a519491a59acb7c97487d2313804331c7113e3203c1b09323e4510e52b7e204c3a8512e5791111ec86a9a1fa3075e4f9b87bf23e6b082a51bbbf6951625e3
   languageName: node
   linkType: hard
 

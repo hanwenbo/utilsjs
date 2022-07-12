@@ -28,7 +28,6 @@ export const Detail = (props: Props) => {
           request={async () => ({
             data: info || {},
           })}
-          // params={{id: info?.id}}
           columns={columns as ProDescriptionsItemProps[]}
         />
       )}

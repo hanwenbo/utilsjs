@@ -1,17 +1,17 @@
-import React,{useRef} from 'react'
-import TableList, {
-  AddModal,
-  DelModal,
-  EditModal,
-  getRequestParams,
-  tableSearch,
-  ImportModal,
-  DetailModel
-} from "../";
+import React, {useRef} from 'react'
+import {TableList} from "../table-list";
+import {getRequestParams} from "../../../utils/get-request-params"
+import AddModal from "../add-modal"
+import EditModal from "../edit-modal"
+import DelModal from "../del-modal"
+import ImportModal from "../import-modal"
+import {tableSearch} from "../export-modal"
+import DetailModel from "../detail-modal"
+
 import {Space} from "antd";
 import {ProFormInstance, ProTableProps} from '@ant-design/pro-components';
 import type {ProColumns} from '@ant-design/pro-components';
-import {RequestType,DefaultResponseFunction} from "../../../types";
+import {RequestType, DefaultResponseFunction} from "../../../types";
 
 interface importTemplate {
   url?: string,
@@ -27,7 +27,7 @@ interface PropsType {
   } | null,
   exportExcel?: {
     name: string
-    background?:boolean
+    background?: boolean
   } | null,
   actions: {
     add?: boolean,
@@ -48,8 +48,8 @@ interface PropsType {
     importExcelAction?: string
   },
   onResponse?: Function,
-  renderBefore?:Function,
-  renderAfter?:Function
+  renderBefore?: Function,
+  renderAfter?: Function
 }
 
 export default (
@@ -97,7 +97,7 @@ export default (
   // 开启导出或定义了名字
   if (!!exportExcel?.name) {
     extraProps['search'] = tableSearch({
-      getList: service.list??DefaultResponseFunction,
+      getList: service.list ?? DefaultResponseFunction,
       exportName: exportExcel?.name,
       exportBackground: !!exportExcel?.background,
       formRef
@@ -136,12 +136,12 @@ export default (
               params={editParams}
               columns={columns}
               info={entity}
-              infoService={service.info??DefaultResponseFunction}
-              editService={service.edit??DefaultResponseFunction}
+              infoService={service.info ?? DefaultResponseFunction}
+              editService={service.edit ?? DefaultResponseFunction}
               onSuccess={onSuccess}
             />}
             {actions?.del && <DelModal
-              delService={service.del??DefaultResponseFunction}
+              delService={service.del ?? DefaultResponseFunction}
               info={entity}
               onSuccess={onSuccess}
             />}

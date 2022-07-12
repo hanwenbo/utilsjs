@@ -1,6 +1,6 @@
 import React from "react";
 import {Button, message} from "antd";
-import {getRequestParams} from "../";
+import {getRequestParams} from "../../../utils/get-request-params"
 import fileDownload from "js-file-download";
 import {DefaultResponseFunction, RequestType} from "../../../types";
 import type {ProFormInstance} from '@ant-design/pro-components';

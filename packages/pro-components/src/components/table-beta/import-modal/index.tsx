@@ -1,7 +1,7 @@
 import React from "react";
 import {Upload, Button, Typography, Space, UploadFile} from "antd";
 import {ModalForm} from "@ant-design/pro-components";
-import {UploadChangeParam} from "antd/lib/upload";
+import {UploadChangeParam} from "antd/es/upload";
 
 const {Paragraph, Text} = Typography;
 
