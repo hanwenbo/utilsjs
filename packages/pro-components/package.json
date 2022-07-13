@@ -19,7 +19,8 @@
     "antd": "^4.21.6"
   },
   "peerDependencies": {
-    "ahooks": "*"
+    "ahooks": "*",
+    "antd": "^4.21.6"
   },
   "publishConfig": {
     "access": "public"
