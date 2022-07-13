@@ -158,6 +158,7 @@ export default (
   }
 
   return <TableList
+    {...extraProps}
     actionRef={actionRef}
     formRef={formRef}
     service={async (params: any, sorter: any, filter: any) => {
@@ -167,5 +168,6 @@ export default (
       return res
     }}
     columns={columns}
+    {...props}
   />
 }
