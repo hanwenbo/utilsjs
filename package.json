@@ -21,7 +21,7 @@
     "release:package": "npx lerna publish from-package",
     "doc:start": "dumi dev",
     "doc:build": "dumi build",
-    "pub": "father-build && npx lerna publish"
+    "pub": "npx lerna publish"
   },
   "devDependencies": {
     "@ant-design/pro-components": "^1.1.9",
