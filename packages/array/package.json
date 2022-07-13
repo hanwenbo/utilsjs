@@ -1,6 +1,6 @@
 {
   "name": "@hanwenbo/array",
-  "version": "0.0.8",
+  "version": "0.0.9-alpha.0",
   "description": "常用的数组操作",
   "author": "9476400@qq.com",
   "license": "MIT",
