@@ -1,12 +1,12 @@
 import classNames from "classnames";
-import styles from "./index.less";
+import "./index.less";
 import {ProTable} from "@ant-design/pro-components";
 import React from "react";
 import {RequestType} from "../../../types";
 
 type Props = any & {
-  service:RequestType
-  paddingClear:boolean
+  service: RequestType
+  paddingClear: boolean
 }
 export const TableList = (props: Props) => {
   const {service, paddingClear, ..._props} = props || {};
@@ -29,7 +29,7 @@ export const TableList = (props: Props) => {
     }
   }
 
-  const style = classNames(styles.main, paddingClear ? styles.paddingFalse : null)
+  const style = classNames("table-beta-main", paddingClear ? "table-beta-paddingFalse" : null)
   return <>
     <div className={style}>
       <ProTable

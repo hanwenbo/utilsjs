@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import styles from './index.less';
+import './index.less';
 import {message} from "antd";
 import AutoComplete from "./auto-complete"
 import {Map, Marker} from '@pansy/react-amap';
@@ -58,8 +58,8 @@ const MapSearch = ({
       message.error('请输入具体位置')
     }
   }
-  return <div className={styles.main}>
-    <div className={styles.autoComplete}>
+  return <div className={"map-search-main"}>
+    <div className={"map-search-autoComplete"}>
       <AutoComplete
         value={addressName}
         onAddressSelect={onAddressSelect}
@@ -91,7 +91,7 @@ const MapSearch = ({
         />
       </div>
       <span
-        className={styles.position}>当前选择：{!!addressName ? addressName : "-"}  坐标：{markerPosition.longitude},{markerPosition.latitude}</span>
+        className={"map-search-position"}>当前选择：{!!addressName ? addressName : "-"} 坐标：{markerPosition.longitude},{markerPosition.latitude}</span>
     </Map>
   </div>
 }

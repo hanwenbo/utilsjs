@@ -10,7 +10,7 @@ import {filterDefaultRender} from "../../utils/filter-default-render"
 import {getTableListColumns} from "../../utils/get-table-list-columns"
 import {TableList} from "./table-list";
 
-export default TableList;
+export default TableBeta;
 
 export {
   getTableListColumns,
@@ -21,6 +21,6 @@ export {
   EditModal,
   DelModal,
   ImportModal,
-  TableBeta,
-  DetailModel
+  DetailModel,
+  TableList
 }
