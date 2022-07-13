@@ -1,6 +1,6 @@
 {
   "name": "@hanwenbo/pro-components",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "utils library for pro-components",
   "author": "9476400@qq.com",
   "license": "MIT",
@@ -25,5 +25,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "e09fc150b0dbae1d530eba38518b6d2eec55cbb3"
+  "gitHead": "bd684289c78690e29135b9640a52d157f44a9ae2"
 }
