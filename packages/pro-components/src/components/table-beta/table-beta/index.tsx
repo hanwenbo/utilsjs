@@ -7,7 +7,6 @@ import DelModal from "../del-modal"
 import ImportModal from "../import-modal"
 import {tableSearch} from "../export-modal"
 import DetailModel from "../detail-modal"
-
 import {Space} from "antd";
 import {ProFormInstance, ProTableProps} from '@ant-design/pro-components';
 import type {ProColumns} from '@ant-design/pro-components';
