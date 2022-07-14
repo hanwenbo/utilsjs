@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, {Ref, useRef} from 'react'
 import {TableList} from "../table-list";
 import {getRequestParams} from "../../../utils/get-request-params"
 import AddModal from "../add-modal"
@@ -18,7 +18,7 @@ interface importTemplate {
   tips?: []
 }
 
-interface PropsType {
+export type PropsType = ProTableProps<any, any> & {
   columns: ProColumns<any>[] | any[],
   exportName?: string,
   importExcel?: {
@@ -51,7 +51,7 @@ interface PropsType {
   renderAfter?: Function
 }
 
-export default (
+const TableBeta =  (
   {
     formRef,
     columns = [],
@@ -80,9 +80,9 @@ export default (
       importExcelAction: ""
     },
     ...props
-  }: PropsType & ProTableProps<any, any>
+  }: PropsType
+  , _: Ref<any>
 ) => {
-
   if (!formRef) {
     formRef = useRef<ProFormInstance>()
   }
@@ -170,3 +170,4 @@ export default (
     {...props}
   />
 }
+export default React.forwardRef<PropsType,any>(TableBeta);
