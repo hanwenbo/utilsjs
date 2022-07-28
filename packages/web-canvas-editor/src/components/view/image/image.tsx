@@ -20,5 +20,5 @@ export default (p: Props) => {
     src: '',
   }
   const props = {...defaultProps, ...p}
-  return <img className="image" style={props.style} alt="" src={props.src} />
+  return <img className="image" style={props.style} alt="" src={props.src} draggable={false} />
 }

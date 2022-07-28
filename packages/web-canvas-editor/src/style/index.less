@@ -13,11 +13,15 @@
   .@{cname}-view {
     position: relative;
 
+    .text{
+      user-select: none;
+    }
     .image{
-      background-color: #a5caff;
+      user-select: none;
     }
     .hotArea {
       background-color: rgba(255, 137, 137, 0.44);
+      user-select: none;
     }
   }
 
@@ -36,6 +40,42 @@
       width: 375px;
       overflow: hidden;
       margin-right: 5px;
+      .react-draggable{
+        position:absolute!important;
+      }
+      .handle {
+        cursor: pointer;
+        position: absolute !important;
+      }
+
+      .active {
+      }
+
+      .active:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        pointer-events: none;
+        z-index: 2;
+        display: block;
+        border: 1px dashed #38f;
+      }
+
+      .active .handleComponentBottomRight {
+        width: 5px;
+        height: 5px;
+        background-color: #38f;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+      }
+
     }
 
     .control {

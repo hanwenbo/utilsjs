@@ -23,3 +23,8 @@ export type ItemProps = {
   children?: any;
   link?: LinkActionType;
 }
+
+export type ItemClickType = {
+  item: ItemProps
+  index: number
+}

@@ -4,14 +4,14 @@ import PictureOutlined from '@ant-design/icons/PictureOutlined';
 import GatewayOutlined from '@ant-design/icons/GatewayOutlined';
 import {Col, Row} from 'antd';
 
-type ItemType = {
+type ToolItemType = {
   label: string
   type: string
   icon: React.ReactNode
 }
 type Props = {
-  items?: ItemType[]
-  onItemClick?: (item: any) => void
+  items?: ToolItemType[]
+  onItemClick?: (item: ToolItemType) => void
 }
 export const Tool = (p: Props) => {
   const defaultProps = {
@@ -20,14 +20,12 @@ export const Tool = (p: Props) => {
       {label: "图片", "icon": <PictureOutlined />, 'type': 'image'},
       {label: "热区", "icon": <GatewayOutlined />, 'type': 'hotArea'},
     ],
-    onItemClick: (_: ItemType) => {
-    }
   }
   const props = {...defaultProps, ...p}
   return <Row gutter={[16, 16]} className={"web-canvas-editor-tool"}>
-    {props.items.map((item,index) => {
-      return <Col span={12} className={"item"} key={index}>
-        <Row gutter={5} justify={'center'} align={'middle'} onClick={() => props.onItemClick(item)}>
+    {props.items.map((item, index) => {
+      return <Col span={12} className={"item"} key={index} onClick={() => props?.onItemClick?.(item)}>
+        <Row gutter={5} justify={'center'} align={'middle'}>
           <Col span={24}>{item.icon}</Col>
           <Col span={24}>{item.label}</Col>
         </Row>

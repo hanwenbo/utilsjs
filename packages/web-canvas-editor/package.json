@@ -15,7 +15,10 @@
     "es"
   ],
   "dependencies": {
-    "antd": "4.21.6"
+    "antd": "4.21.6",
+    "react-draggable": "^4.4.5",
+    "re-resizable": "^6.9.9",
+    "clone": "^2.1.2"
   },
   "peerDependencies": {
     "ahooks": "*",

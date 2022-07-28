@@ -21,5 +21,5 @@ export default (p: Props) => {
     children: "文字"
   }
   const props = {...defaultProps, ...p}
-  return <span className="hotArea" style={props.style}>{props.children}</span>
+  return <span className="text" style={props.style}>{props.children}</span>
 }
