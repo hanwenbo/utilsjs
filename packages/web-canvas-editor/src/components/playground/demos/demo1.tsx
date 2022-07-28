@@ -87,6 +87,7 @@ export default () => {
       canvasSize={canvasSize}
       items={items}
       currentIndex={currentIndex}
+      onIndexChange={setCurrentIndex}
       onItemsChange={setItems}
       onToolClick={onToolClick}
       onItemClick={onItemClick}

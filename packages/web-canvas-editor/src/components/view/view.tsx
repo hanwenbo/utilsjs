@@ -20,6 +20,7 @@ type ItemType = {
   link?: LinkActionType
 }
 type Props = {
+  currentIndex: number
   canvas: {
     width: number
     height: number
@@ -94,9 +95,7 @@ export const View = (p: Props) => {
     const onResizeStop = (e: any, direction: any, ref: any, d: { width: number; height: number }) => {
       onResize(d, i);
     }
-    const handleComponent = {
-      bottomRight: () => <div className={"handleComponentBottomRight"} />
-    }
+
     const onItemClick = (e: ItemClickType) => {
       props.onItemClick(e)
     }
@@ -119,7 +118,6 @@ export const View = (p: Props) => {
         onResizeStop={onResizeStop}
         data-index={i}
         {...item?.resizableProps}
-        handleComponent={handleComponent}
       >
         <div className={`handle type-${item.type}`} onClick={() => onItemClick({item: item.originItem, index: i})}>
           {item.element}
@@ -139,8 +137,10 @@ export const View = (p: Props) => {
   const initFormatItems = (data: ItemType[]) => {
     return Array.isArray(data) ? data.map((item) => {
       const {type, ...subProps} = item
+
       const element = !!elementKeys[type] ? React.createElement(elementKeys[type], subProps) :
         <div className={"item"}>不存在的组件</div>
+
       return {
         ...item,
         originItem: item,
@@ -158,6 +158,6 @@ export const View = (p: Props) => {
     width: props.canvas.width,
     height: props.canvas.height
   }}>
-    {content}
+    {props.items.length > 0 && content}
   </div>
 }

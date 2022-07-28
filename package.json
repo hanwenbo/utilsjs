@@ -69,7 +69,8 @@
     "umi-hd": "^5.0.1",
     "react-draggable": "^4.4.5",
     "re-resizable": "^6.9.9",
-    "clone": "^2.1.2"
+    "clone": "^2.1.2",
+    "react-dragline": "^1.1.0"
   },
   "resolutions": {
     "@ant-design/pro-provider": "1.9.0"

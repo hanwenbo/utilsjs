@@ -11,7 +11,7 @@ type Props = {
   renderLinkActionControl?: () => React.ReactElement
   onValuesChange?: (values: any) => void
 }
-export default (p: Props) => {
+export default React.forwardRef((p: Props, ref) => {
   const defaultProps = {
     values: {
       style: {
@@ -36,7 +36,7 @@ export default (p: Props) => {
   }, [props.values])
   return <div className={"control"}>
     {/* @ts-ignore*/}
-    <ProForm initialValues={props.values} onValuesChange={props.onValuesChange} ref={formRef}>
+    <ProForm initialValues={props.values} onValuesChange={props.onValuesChange} formRef={formRef}>
       <ProForm.Group>
         <ProFormDigit width="xs" name="style.left" label="x" />
         <ProFormDigit width="xs" name="style.top" label="y" />
@@ -45,7 +45,7 @@ export default (p: Props) => {
         <ProFormDigit width="xs" name="style.width" label="宽" />
         <ProFormDigit width="xs" name="style.height" label="高" />
       </ProForm.Group>
-     w <ProForm.Item name={'src'} label='图片'>
+      <ProForm.Item name={'src'} label='图片'>
         {props.renderImageControl()}
       </ProForm.Item>
       <ProForm.Item name={'link'} label='链接'>
@@ -53,5 +53,4 @@ export default (p: Props) => {
       </ProForm.Item>
     </ProForm>
   </div>
-
-}
+})

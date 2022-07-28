@@ -4,14 +4,13 @@ import {
   ProFormDigit,
   ProFormInstance
 } from '@ant-design/pro-components';
-import value from "*.less";
 
 type Props = {
   values: any
   renderLinkActionControl?: () => React.ReactElement
   onValuesChange?: (values: any) => void
 }
-export default (p: Props) => {
+export default React.forwardRef((p: Props, ref) => {
   const defaultProps = {
     values: {
       style:{
@@ -34,7 +33,7 @@ export default (p: Props) => {
   }, [props.values])
   return <div className={"control"}>
     {/* @ts-ignore*/}
-    <ProForm initialValues={props.values} onValuesChange={props.onValuesChange} ref={formRef}>
+    <ProForm initialValues={props.values} onValuesChange={props.onValuesChange} formRef={formRef}>
       <ProForm.Group>
         <ProFormDigit width="xs" name="style.left" label="x"  />
         <ProFormDigit width="xs" name="style.top" label="y" />
@@ -48,5 +47,4 @@ export default (p: Props) => {
       </ProForm.Item>
     </ProForm>
   </div>
-
-}
+})
