@@ -6,6 +6,7 @@ export default {
     '@hanwenbo/ui-mobile': join(__dirname, 'packages/ui-mobile/src'),
     '@hanwenbo/web-editor': join(__dirname, 'packages/web-editor/src'),
     '@hanwenbo/pro-components': join(__dirname, 'packages/pro-components/src'),
+    '@hanwenbo/web-canvas-editor': join(__dirname, 'packages/web-canvas-editor/src'),
     'demos': join(__dirname, 'demos'),
   },
   hash: true,

@@ -1,7 +1,7 @@
 {
-  "name": "@hanwenbo/pro-components",
-  "version": "0.0.8",
-  "description": "utils library for pro-components",
+  "name": "@hanwenbo/web-canvas-editor",
+  "version": "0.0.1",
+  "description": "utils library for web hot area",
   "author": "9476400@qq.com",
   "license": "MIT",
   "main": "lib/index.js",
