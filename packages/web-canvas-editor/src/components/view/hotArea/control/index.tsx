@@ -31,19 +31,26 @@ export default React.forwardRef((p: Props, ref) => {
   useEffect(() => {
     formRef?.current?.setFieldsValue(props.values);
   }, [props.values])
+
+  const onValuesChange = (_: any) => {
+    props.onValuesChange(formRef?.current?.getFieldsValue())
+  }
+
+
   return <div className={"control"}>
-    <ProForm onValuesChange={props.onValuesChange} formRef={formRef}>
+    <ProForm onValuesChange={onValuesChange} formRef={formRef}>
       <ProForm.Group>
-        <ProFormDigit width="xs" name="style.left" label="x" />
-        <ProFormDigit width="xs" name="style.top" label="y" />
+        <ProFormDigit width="xs" name={['style', 'left']} label="x" />
+        <ProFormDigit width="xs" name={['style', 'top']} label="y" />
       </ProForm.Group>
       <ProForm.Group>
-        <ProFormDigit width="xs" name="style.width" label="宽" />
-        <ProFormDigit width="xs" name="style.height" label="高" />
+        <ProFormDigit width="xs" name={['style', 'width']} label="宽" />
+        <ProFormDigit width="xs" name={['style', 'height']} label="高" />
       </ProForm.Group>
       <ProForm.Item name={'link'} label='链接'>
         {props.renderLinkActionControl()}
       </ProForm.Item>
     </ProForm>
+
   </div>
 })

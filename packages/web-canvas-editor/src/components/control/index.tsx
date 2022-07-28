@@ -9,6 +9,7 @@ type Props = {
 }
 export default (p:Props)=>{
   const defaultProps = {
+    onItemChange: (_:ItemProps) => {}
   }
   const props = {...defaultProps, ...p}
   const elementKeys = {
@@ -17,11 +18,18 @@ export default (p:Props)=>{
     "hotArea": HotAreaControl,
   }
   const {type, ...subProps} = props.current
+
   return <div>
     {!!elementKeys[props.current.type] ? React.createElement(elementKeys[type], {
+      onValuesChange:(values)=>{
+        props.onItemChange({
+          ...props.current,
+          ...values
+        })
+      },
       values:{
         ...subProps
-      }
+      },
     }) : <div>不存在的组件</div>}
   </div>
 }

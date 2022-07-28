@@ -20,6 +20,7 @@ export const Tool = (p: Props) => {
       {label: "图片", "icon": <PictureOutlined />, 'type': 'image'},
       {label: "热区", "icon": <GatewayOutlined />, 'type': 'hotArea'},
     ],
+    onItemClick: (_: ToolItemType) => {}
   }
   const props = {...defaultProps, ...p}
   return <Row gutter={[16, 16]} className={"web-canvas-editor-tool"}>

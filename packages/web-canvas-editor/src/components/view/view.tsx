@@ -21,13 +21,14 @@ type ItemType = {
 }
 type Props = {
   currentIndex: number
+  onIndexChange: (index: number) => void
   canvas: {
     width: number
     height: number
   }
   items?: ItemType[]
-  onItemClick?: (_: ItemClickType) => void
   onItemsChange?: (items: ItemProps[]) => void
+  onItemChange?: (item: ItemProps) => void
 }
 export const View = (p: Props) => {
   const defaultProps = {
@@ -54,10 +55,11 @@ export const View = (p: Props) => {
         }
       },
     ],
-    onItemClick: (_: ItemClickType) => {
-    },
     onItemsChange: (_: ItemType[]) => {
-    }
+    },
+    onItemChange: (_: ItemProps) => {
+    },
+    onIndexChange: (_: number) => {}
   }
   const props = {...defaultProps, ...p}
   const elementKeys = {
@@ -65,41 +67,38 @@ export const View = (p: Props) => {
     "image": Image,
     "hotArea": HotArea,
   }
-  const [index, setIndex] = useState(0);
 
   const onReposition = (x: number, y: number, i: number) => {
-    let _items = clone(props.items);
-    _items[i].style.left = x;
-    _items[i].style.top = y;
-    props.onItemsChange(_items);
+    let _item = clone(props.items[props.currentIndex]);
+    _item.style.left = x
+    _item.style.top = y
+    props.onItemChange(_item);
   };
 
   const onResize = (d: { width: number; height: number }, i: number) => {
-    let _items = clone(props.items);
-    let lastSize = _items[i].style;
-    _items[i].style.width = lastSize.width + d.width
-    _items[i].style.height = lastSize.height + d.height
-    props.onItemsChange(_items);
+    let _item = clone(props.items[props.currentIndex]);
+    let lastSize = _item.style;
+    _item.style.width = lastSize.width + d.width
+    _item.style.height = lastSize.height + d.height
+    props.onItemChange(_item);
   };
 
   const getDraggableItem = (item: DragItemType, i) => {
     const position = {x: item.style.left, y: item.style.top}
     const size = {width: item.style.width, height: item.style.height}
-    const onStart = () => {
-      setIndex(i)
+
+    const onStart =()=>{
+      props.onIndexChange(i)
     }
     const onStop = (e: any, data: { lastX: any; lastY: any }) => {
-      setIndex(i)
       onReposition(data.lastX, data.lastY, i);
     }
     const onResizeStop = (e: any, direction: any, ref: any, d: { width: number; height: number }) => {
       onResize(d, i);
     }
 
-    const onItemClick = (e: ItemClickType) => {
-      props.onItemClick(e)
-    }
-    const className = `${index === i ? "active" : ""} `
+
+    const className = `${props.currentIndex === i ? "active" : ""} `
     return <Draggable
       key={`k${i}`}
       bounds="parent"
@@ -119,11 +118,10 @@ export const View = (p: Props) => {
         data-index={i}
         {...item?.resizableProps}
       >
-        <div className={`handle type-${item.type}`} onClick={() => onItemClick({item: item.originItem, index: i})}>
+        <div className={`handle type-${item.type}`}>
           {item.element}
         </div>
       </Resizable> : <div
-        onClick={() => onItemClick({item: item.originItem, index: i})}
         className={className}
         style={size}
         data-index={i}

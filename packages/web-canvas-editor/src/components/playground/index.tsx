@@ -24,10 +24,19 @@ export default (props: Props) => {
     setCurrent(props.items[props.currentIndex])
   }, [props.currentIndex]);
 
+
   const onItemChange = (item:ItemProps)=>{
     let _items = clone(props.items);
     _items[props.currentIndex] = item
     props.onItemsChange(_items);
+    setCurrent(item)
+  }
+
+
+  const onIndexChange = (index: number) => {
+    props.onIndexChange(index)
+    const _item = clone(props.items[index]);
+    setCurrent(_item)
   }
 
   return <div className={"web-canvas-editor"}>
@@ -40,8 +49,8 @@ export default (props: Props) => {
           currentIndex={props.currentIndex}
           canvas={props.canvasSize}
           items={props.items}
-          onItemClick={props.onItemClick}
-          onItemsChange={props.onItemsChange}
+          onItemChange={onItemChange}
+          onIndexChange={onIndexChange}
         />
       </div>
       <div className={'control'}>
