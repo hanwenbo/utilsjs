@@ -13,7 +13,7 @@ type Props = {
 export default React.forwardRef((p: Props, ref) => {
   const defaultProps = {
     values: {
-      style:{
+      style: {
         left: 0,
         top: 0,
         width: 100,
@@ -32,15 +32,14 @@ export default React.forwardRef((p: Props, ref) => {
     formRef?.current?.setFieldsValue(props.values);
   }, [props.values])
   return <div className={"control"}>
-    {/* @ts-ignore*/}
-    <ProForm initialValues={props.values} onValuesChange={props.onValuesChange} formRef={formRef}>
+    <ProForm onValuesChange={props.onValuesChange} formRef={formRef}>
       <ProForm.Group>
-        <ProFormDigit width="xs" name="style.left" label="x"  />
+        <ProFormDigit width="xs" name="style.left" label="x" />
         <ProFormDigit width="xs" name="style.top" label="y" />
       </ProForm.Group>
       <ProForm.Group>
-        <ProFormDigit width="xs" name="style.width" label="宽"  />
-        <ProFormDigit width="xs" name="style.height" label="高"  />
+        <ProFormDigit width="xs" name="style.width" label="宽" />
+        <ProFormDigit width="xs" name="style.height" label="高" />
       </ProForm.Group>
       <ProForm.Item name={'link'} label='链接'>
         {props.renderLinkActionControl()}

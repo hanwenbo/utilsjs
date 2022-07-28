@@ -17,7 +17,6 @@ export default (p:Props)=>{
     "hotArea": HotAreaControl,
   }
   const {type, ...subProps} = props.current
-  console.log('type', subProps)
   return <div>
     {!!elementKeys[props.current.type] ? React.createElement(elementKeys[type], {
       values:{
