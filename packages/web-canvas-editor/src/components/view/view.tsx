@@ -1,8 +1,8 @@
-import React, {useState} from "react"
+import React from "react"
 import {Text} from "./text"
 import {Image} from "./image"
 import {HotArea} from "./hotArea"
-import {ElementStyleProps, LinkActionType, ItemClickType, ItemProps} from "../../types"
+import {ElementStyleProps, LinkActionType, ItemProps} from "../../types"
 import Draggable from "react-draggable";
 import {Resizable} from "re-resizable";
 import clone from "clone"
@@ -59,7 +59,8 @@ export const View = (p: Props) => {
     },
     onItemChange: (_: ItemProps) => {
     },
-    onIndexChange: (_: number) => {}
+    onIndexChange: (_: number) => {
+    }
   }
   const props = {...defaultProps, ...p}
   const elementKeys = {
@@ -87,7 +88,7 @@ export const View = (p: Props) => {
     const position = {x: item.style.left, y: item.style.top}
     const size = {width: item.style.width, height: item.style.height}
 
-    const onStart =()=>{
+    const onStart = () => {
       props.onIndexChange(i)
     }
     const onStop = (e: any, data: { lastX: any; lastY: any }) => {
@@ -117,6 +118,9 @@ export const View = (p: Props) => {
         onResizeStop={onResizeStop}
         data-index={i}
         {...item?.resizableProps}
+        style={{
+          zIndex: item.style.zIndex
+        }}
       >
         <div className={`handle type-${item.type}`}>
           {item.element}
@@ -138,7 +142,6 @@ export const View = (p: Props) => {
 
       const element = !!elementKeys[type] ? React.createElement(elementKeys[type], subProps) :
         <div className={"item"}>不存在的组件</div>
-
       return {
         ...item,
         originItem: item,

@@ -2,7 +2,7 @@ import React, {useEffect, useRef} from "react"
 import {
   ProForm,
   ProFormDigit,
-  ProFormInstance
+  ProFormInstance, ProFormSlider
 } from '@ant-design/pro-components';
 
 type Props = {
@@ -46,6 +46,7 @@ export default React.forwardRef((p: Props, ref) => {
       <ProForm.Group>
         <ProFormDigit width="xs" name={['style','left']} label="x" />
         <ProFormDigit width="xs" name={['style', 'top']} label="y" />
+        <ProFormSlider width="xs" name={['style', 'zIndex']} label="浮动层级" />
       </ProForm.Group>
       <ProForm.Group>
         <ProFormDigit width="xs" name={['style', 'width']} label="宽" />
