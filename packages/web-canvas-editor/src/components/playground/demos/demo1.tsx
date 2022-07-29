@@ -2,12 +2,20 @@ import React, {useState} from 'react'
 import {Playground,ViewDisplay} from "@hanwenbo/web-canvas-editor"
 import "@hanwenbo/web-canvas-editor/style/index.less"
 import clone from "clone"
+import {
+  ProForm,
+  ProFormDigit,
+  ProFormSelect,
+  ProFormText,
+  ProFormColorPicker,
+  ProFormInstance, ProFormSlider
+} from '@ant-design/pro-components';
 
 const defaultItems = [
   {
     type: "image",
-    src: "http://mojiim-static.oss-cn-beijing.aliyuncs.com/goods.png",
-    style: {left: 0, top: 0, width: 375, height: 375, zIndex: 0},
+    src: "http://mojiim-static.oss-cn-beijing.aliyuncs.com/hotArea.png",
+    style: {left: 0, top: 0, width: 375, height: 420.67, zIndex: 0},
     link: {
       action: "doNotJump",
       params: {}
@@ -25,7 +33,7 @@ const defaultItems = [
 export default () => {
   const [items, setItems] = useState(defaultItems);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [canvasSize, setCanvasSize] = useState( {width: 375, height: 375});
+  const [canvasSize, setCanvasSize] = useState( {width: 375, height: 420.67});
   const onToolClick = (e: { type: string }) => {
     const {type} = e
     let _items = []
@@ -105,6 +113,18 @@ export default () => {
       }}
       renderImageControl={()=>{
         return "第三方图片组件"
+      }}
+      renderViewFooter={()=>{
+        return  <div className={"canvas-setting"}>
+          <div className={"title"}>画布设置</div>
+          <ProForm submitter={false} layout={"horizontal"}>
+            <ProForm.Group>
+              <ProFormDigit width="xs" name={['options', 'width']} label="宽" disabled />
+              <ProFormDigit width="xs" name={['options', 'height']} label="高" />
+            </ProForm.Group>
+            {/*下面是data*/}
+          </ProForm>
+        </div>
       }}
     />
     <ViewDisplay

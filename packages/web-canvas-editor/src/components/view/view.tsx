@@ -29,7 +29,9 @@ type Props = {
   items?: ItemType[]
   onItemsChange?: (items: ItemProps[]) => void
   onItemChange?: (item: ItemProps) => void
-  onCanvasSizeChange?: (canvas: {width: number, height: number}) => void
+  onCanvasSizeChange?: (canvas: { width: number, height: number }) => void
+  renderViewFooter?: () => React.ReactElement
+  renderViewHeader?: () => React.ReactElement
 }
 export const View = (p: Props) => {
   const defaultProps = {
@@ -40,7 +42,7 @@ export const View = (p: Props) => {
     items: [
       {
         type: "image",
-        src: "http://mojiim-static.oss-cn-beijing.aliyuncs.com/goods.png",
+        src: "http://mojiim-static.oss-cn-beijing.aliyuncs.com/hotArea.png",
         style: {left: 0, top: 0, width: 375, height: 375, zIndex: 0},
         link: {
           action: "doNotJump",
@@ -61,7 +63,9 @@ export const View = (p: Props) => {
     onItemChange: (_: ItemProps) => {
     },
     onIndexChange: (_: number) => {
-    }
+    },
+    renderViewFooter: () => <></>,
+    renderViewHeader: () => <></>,
   }
   const props = {...defaultProps, ...p}
   const elementKeys = {
@@ -154,25 +158,30 @@ export const View = (p: Props) => {
 
   const content = initFormatItems(props.items).map((item, i) => getDraggableItem(item, i))
 
-  return <div
-    className="web-canvas-editor-view"
-    style={{
-      width: props.canvas.width,
-      height: props.canvas.height
-    }}>
-    {props.items.length > 0 && content}
-    <Draggable
-      axis="y"
-      handle='.handle'
-      position={{x: 0, y: 0}}
-      grid={[1, 1]}
-      onStop={(e: any, data: { lastX: any; lastY: any })=>{
-        props?.onCanvasSizeChange?.({
-          width:props.canvas.width,
-          height:props.canvas.height + data.lastY
-        })
+  return <>
+    {props.renderViewHeader()}
+    <div
+      className="web-canvas-editor-view"
+      style={{
+        width: props.canvas.width,
+        height: props.canvas.height
       }}>
-    <div className={'handle canvas-drag'}/>
-    </Draggable>
-  </div>
+
+      {props.items.length > 0 && content}
+      <Draggable
+        axis="y"
+        handle='.handle'
+        position={{x: 0, y: 0}}
+        grid={[1, 1]}
+        onStop={(e: any, data: { lastX: any; lastY: any }) => {
+          props?.onCanvasSizeChange?.({
+            width: props.canvas.width,
+            height: props.canvas.height + data.lastY
+          })
+        }}>
+        <div className={'handle canvas-drag'} />
+      </Draggable>
+    </div>
+    {props.renderViewFooter()}
+  </>
 }

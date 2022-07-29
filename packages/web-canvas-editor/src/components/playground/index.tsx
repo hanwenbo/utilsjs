@@ -13,7 +13,7 @@ type Props = {
     width: number
     height: number
   },
-  onCanvasSizeChange: (canvasSize: {width: number, height: number}) => void
+  onCanvasSizeChange: (canvasSize: { width: number, height: number }) => void
   items: ItemProps[],
   onItemsChange: (items: ItemProps[]) => void
   onToolClick: (item: ItemProps) => void
@@ -21,6 +21,8 @@ type Props = {
   renderTextVariableControl?: (_: ProFormInstance | any) => React.ReactElement
   renderLinkActionControl?: () => React.ReactElement
   renderImageControl?: () => React.ReactElement
+  renderViewFooter?: () => React.ReactElement
+  renderViewHeader?: () => React.ReactElement
 }
 export default (p: Props) => {
   const [current, setCurrent] = useState<ItemProps>(p.items[p.currentIndex])
@@ -28,6 +30,8 @@ export default (p: Props) => {
     renderLinkActionControl: () => <></>,
     renderImageControl: () => <></>,
     renderTextVariableControl: (_: ProFormInstance | any) => <></>,
+    renderViewFooter: () => <></>,
+    renderViewHeader: () => <></>,
   }
   const props = {...defaultProps, ...p}
 
@@ -38,16 +42,19 @@ export default (p: Props) => {
 
   const onItemChange = (item: ItemProps) => {
     let _items = clone(props.items);
-    _items[props.currentIndex] = item
-    onItemsChange(_items);
-    setCurrent(item)
+    if(!!_items[props.currentIndex]){
+      _items[props.currentIndex] = item
+      onItemsChange(_items);
+      setCurrent(item)
+    }
   }
-
 
   const onIndexChange = (index: number) => {
     props.onIndexChange(index)
-    const _item = clone(props.items[index]);
-    setCurrent(_item)
+    if(!!props.items[index]) {
+      const _item = clone(props.items[index]);
+      setCurrent(_item)
+    }
   }
 
   const onDelete = () => {
@@ -73,6 +80,8 @@ export default (p: Props) => {
             onItemChange={onItemChange}
             onIndexChange={onIndexChange}
             onCanvasSizeChange={props.onCanvasSizeChange}
+            renderViewFooter={props.renderViewFooter}
+            renderViewHeader={props.renderViewHeader}
           />
         </div>
         {props.items.length > 0 && !!current && <div className={'control'}>
