@@ -4,6 +4,7 @@ import {
   ProFormDigit,
   ProFormSelect,
   ProFormText,
+  ProFormColorPicker,
   ProFormInstance
 } from '@ant-design/pro-components';
 
@@ -26,6 +27,7 @@ export default React.forwardRef((p: Props, ref) => {
         fontWeight: 'normal',
         textAlign: "left",
         lineHeight: 16,
+        color:"#000",
       },
       children: "文字"
     },
@@ -45,7 +47,7 @@ export default React.forwardRef((p: Props, ref) => {
     props.onValuesChange(formRef?.current?.getFieldsValue())
   }
   return <div className={"control"}>
-    <ProForm onValuesChange={onValuesChange} formRef={formRef}>
+    <ProForm onValuesChange={onValuesChange} formRef={formRef} submitter={false}>
       <ProForm.Group>
         <ProFormDigit width="xs" name={['style', 'left']} label="x" />
         <ProFormDigit width="xs" name={['style', 'top']} label="y" />
@@ -57,6 +59,7 @@ export default React.forwardRef((p: Props, ref) => {
       <ProForm.Group>
         <ProFormDigit width="xs" name={['style', 'lineHeight']} label="行高" />
         <ProFormDigit width="xs" name={['style', 'fontSize']} label="字体大小" />
+        <ProFormColorPicker width="xs" name={['style', 'color']} label="颜色" />
       </ProForm.Group>
       <ProForm.Group>
         <ProFormSelect

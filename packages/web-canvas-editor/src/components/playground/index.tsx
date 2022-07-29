@@ -4,6 +4,7 @@ import View from "../view"
 import Control from "../control"
 import {ItemProps, ItemClickType} from "../../types";
 import clone from "clone"
+import {ProFormInstance} from "@ant-design/pro-components";
 
 type Props = {
   currentIndex: number
@@ -16,9 +17,16 @@ type Props = {
   onItemsChange: (items: ItemProps[]) => void
   onToolClick: (item: ItemProps) => void
   onItemClick: (e: ItemClickType) => void
+  renderTextVariableControl?: (_: ProFormInstance | any) => React.ReactElement
+  renderLinkActionControl?: () => React.ReactElement
 }
-export default (props: Props) => {
-  const [current, setCurrent] = useState<ItemProps>(props.items[props.currentIndex])
+export default (p: Props) => {
+  const [current, setCurrent] = useState<ItemProps>(p.items[p.currentIndex])
+  const defaultProps = {
+    renderLinkActionControl: () => <></>,
+    renderTextVariableControl: (_: ProFormInstance | any) => <></>,
+  }
+  const props = {...defaultProps, ...p}
 
   useEffect(() => {
     setCurrent(props.items[props.currentIndex])
@@ -57,6 +65,8 @@ export default (props: Props) => {
         <Control
           current={current}
           onItemChange={onItemChange}
+          renderLinkActionControl={props.renderLinkActionControl}
+          renderTextVariableControl={props.renderTextVariableControl}
         />
       </div>
     </div>

@@ -38,7 +38,7 @@ export default React.forwardRef((p: Props, ref) => {
 
 
   return <div className={"control"}>
-    <ProForm onValuesChange={onValuesChange} formRef={formRef}>
+    <ProForm onValuesChange={onValuesChange} formRef={formRef} submitter={false}>
       <ProForm.Group>
         <ProFormDigit width="xs" name={['style', 'left']} label="x" />
         <ProFormDigit width="xs" name={['style', 'top']} label="y" />
