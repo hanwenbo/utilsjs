@@ -20,11 +20,13 @@ type Props = {
   onItemClick: (e: ItemClickType) => void
   renderTextVariableControl?: (_: ProFormInstance | any) => React.ReactElement
   renderLinkActionControl?: () => React.ReactElement
+  renderImageControl?: () => React.ReactElement
 }
 export default (p: Props) => {
   const [current, setCurrent] = useState<ItemProps>(p.items[p.currentIndex])
   const defaultProps = {
     renderLinkActionControl: () => <></>,
+    renderImageControl: () => <></>,
     renderTextVariableControl: (_: ProFormInstance | any) => <></>,
   }
   const props = {...defaultProps, ...p}
@@ -79,6 +81,7 @@ export default (p: Props) => {
             onItemChange={onItemChange}
             renderLinkActionControl={props.renderLinkActionControl}
             renderTextVariableControl={props.renderTextVariableControl}
+            renderImageControl={props.renderImageControl}
             onDelete={onDelete}
           />
         </div>}

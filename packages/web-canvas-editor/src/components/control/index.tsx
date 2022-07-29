@@ -11,12 +11,14 @@ type Props = {
   onItemChange: (e: ItemProps) => void
   renderTextVariableControl?: (_: ProFormInstance | any) => React.ReactElement
   renderLinkActionControl?: () => React.ReactElement
+  renderImageControl?: () => React.ReactElement
   onDelete?: () => void
 }
 export default (p: Props) => {
   const defaultProps = {
     onItemChange: (_: ItemProps) => {
     },
+    renderImageControl: () => <></>,
     renderLinkActionControl: () => <></>,
     renderTextVariableControl: (_: ProFormInstance | any) => <></>,
     onDelete: () => {
@@ -28,7 +30,7 @@ export default (p: Props) => {
     "image": ImageControl,
     "hotArea": HotAreaControl,
   }
-  const {renderLinkActionControl, renderTextVariableControl} = props
+  const {renderLinkActionControl, renderTextVariableControl,renderImageControl} = props
   const {type, ...subProps} = props.current
 
   const onDelete = () => {
@@ -46,6 +48,7 @@ export default (p: Props) => {
     {!!elementKeys[props.current.type] ? React.createElement(elementKeys[type], {
       renderLinkActionControl,
       ...(type === "text" ? {renderTextVariableControl} : {}),
+      ...(type === "image" ? {renderImageControl} : {}),
       onValuesChange: (values) => {
         props.onItemChange({
           ...props.current,

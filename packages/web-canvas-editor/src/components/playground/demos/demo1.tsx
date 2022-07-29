@@ -100,6 +100,12 @@ export default () => {
       onItemsChange={onItemsChange}
       onToolClick={onToolClick}
       onCanvasSizeChange={setCanvasSize}
+      renderLinkActionControl={()=>{
+        return "第三方组件"
+      }}
+      renderImageControl={()=>{
+        return "第三方图片组件"
+      }}
     />
     <ViewDisplay
       canvas={canvasSize}
