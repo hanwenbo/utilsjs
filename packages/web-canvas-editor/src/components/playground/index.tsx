@@ -7,7 +7,7 @@ import clone from "clone"
 import {ProFormInstance} from "@ant-design/pro-components";
 
 type Props = {
-  currentIndex: number
+  currentIndex: number | null
   onIndexChange: (index: number) => void
   canvasSize: {
     width: number
@@ -16,7 +16,7 @@ type Props = {
   onCanvasSizeChange: (canvasSize: { width: number, height: number }) => void
   items: ItemProps[],
   onItemsChange: (items: ItemProps[]) => void
-  onToolClick: (item: ItemProps) => void
+  onToolClick: (item: any) => void
   onItemClick: (e: ItemClickType) => void
   renderTextVariableControl?: (_: ProFormInstance | any) => React.ReactElement
   renderLinkActionControl?: () => React.ReactElement
@@ -25,7 +25,7 @@ type Props = {
   renderViewHeader?: () => React.ReactElement
 }
 export default (p: Props) => {
-  const [current, setCurrent] = useState<ItemProps>(p.items[p.currentIndex])
+  const [current, setCurrent] = useState<ItemProps | null>(p.currentIndex !== null ? (!!p.items?.[p.currentIndex] ? p.items[p.currentIndex] : null) : null)
   const defaultProps = {
     renderLinkActionControl: () => <></>,
     renderImageControl: () => <></>,
@@ -36,13 +36,17 @@ export default (p: Props) => {
   const props = {...defaultProps, ...p}
 
   useEffect(() => {
-    setCurrent(props.items[props.currentIndex])
+    if (props.currentIndex !== null) {
+      setCurrent(!!props.items[props.currentIndex] ? props.items[props.currentIndex] : null)
+    } else {
+      setCurrent(null)
+    }
   }, [props.currentIndex]);
 
 
   const onItemChange = (item: ItemProps) => {
     let _items = clone(props.items);
-    if(!!_items[props.currentIndex]){
+    if (!!_items[props.currentIndex]) {
       _items[props.currentIndex] = item
       onItemsChange(_items);
       setCurrent(item)
@@ -51,21 +55,24 @@ export default (p: Props) => {
 
   const onIndexChange = (index: number) => {
     props.onIndexChange(index)
-    if(!!props.items[index]) {
+    if (!!props.items[index]) {
       const _item = clone(props.items[index]);
       setCurrent(_item)
     }
   }
 
   const onDelete = () => {
-    props.items.splice(props.currentIndex, 1);
-    onItemsChange(props.items);
-    onIndexChange(props.currentIndex - 1);
+    if (props.currentIndex !== null) {
+      props.items.splice(props.currentIndex, 1);
+      onItemsChange(props.items);
+      onIndexChange(props.currentIndex - 1);
+    }
   }
 
-  const onItemsChange = (items) => {
+  const onItemsChange = (items: ItemProps[]) => {
     props.onItemsChange(clone(items))
   }
+
   return <div className={"web-canvas-editor"}>
     <div className={"playground"}>
       <div className={'tool'}>

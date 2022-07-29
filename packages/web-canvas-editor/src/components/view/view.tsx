@@ -20,7 +20,7 @@ type ItemType = {
   link?: LinkActionType
 }
 type Props = {
-  currentIndex: number
+  currentIndex: number|null
   onIndexChange: (index: number) => void
   canvas: {
     width: number
@@ -74,19 +74,23 @@ export const View = (p: Props) => {
     "hotArea": HotArea,
   }
 
-  const onReposition = (x: number, y: number, i: number) => {
-    let _item = clone(props.items[props.currentIndex]);
-    _item.style.left = x
-    _item.style.top = y
-    props.onItemChange(_item);
+  const onReposition = (x: number, y: number, _: number) => {
+    if(props.currentIndex!=null && !!props.items[props.currentIndex]){
+      let _item = clone(props.items[props.currentIndex]);
+      _item.style.left = x
+      _item.style.top = y
+      props.onItemChange(_item);
+    }
   };
 
-  const onResize = (d: { width: number; height: number }, i: number) => {
-    let _item = clone(props.items[props.currentIndex]);
-    let lastSize = _item.style;
-    _item.style.width = lastSize.width + d.width
-    _item.style.height = lastSize.height + d.height
-    props.onItemChange(_item);
+  const onResize = (d: { width: number; height: number }, _: number) => {
+    if(props.currentIndex!=null && !!props.items[props.currentIndex]){
+      let _item = clone(props.items[props.currentIndex]);
+      let lastSize = _item.style;
+      _item.style.width = lastSize.width + d.width
+      _item.style.height = lastSize.height + d.height
+      props.onItemChange(_item);
+    }
   };
 
   const getDraggableItem = (item: DragItemType, i) => {
