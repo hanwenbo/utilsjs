@@ -33,10 +33,10 @@ export default (p: Props) => {
   }, [props.currentIndex]);
 
 
-  const onItemChange = (item:ItemProps)=>{
+  const onItemChange = (item: ItemProps) => {
     let _items = clone(props.items);
     _items[props.currentIndex] = item
-    props.onItemsChange(_items);
+    onItemsChange(_items);
     setCurrent(item)
   }
 
@@ -47,6 +47,15 @@ export default (p: Props) => {
     setCurrent(_item)
   }
 
+  const onDelete = () => {
+    props.items.splice(props.currentIndex, 1);
+    onItemsChange(props.items);
+    onIndexChange(props.currentIndex - 1);
+  }
+
+  const onItemsChange = (items) => {
+    props.onItemsChange(clone(items))
+  }
   return <div className={"web-canvas-editor"}>
     <div className={"playground"}>
       <div className={'tool'}>
@@ -61,14 +70,15 @@ export default (p: Props) => {
           onIndexChange={onIndexChange}
         />
       </div>
-      <div className={'control'}>
+      {props.items.length > 0 && !!current && <div className={'control'}>
         <Control
           current={current}
           onItemChange={onItemChange}
           renderLinkActionControl={props.renderLinkActionControl}
           renderTextVariableControl={props.renderTextVariableControl}
+          onDelete={onDelete}
         />
-      </div>
+      </div>}
     </div>
   </div>
 }

@@ -27,7 +27,6 @@ export default () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const canvasSize = {width: 375, height: 375}
   const onToolClick = (e: { type: string }) => {
-    console.log("onToolClick", e)
     const {type} = e
     let _items = []
     const zIndex = items.length + 1
@@ -89,8 +88,8 @@ export default () => {
     }
     setCurrentIndex(_items.length - 1)
   }
-  const onItemClick = () => {
-
+  const onItemsChange = (_items)=>{
+    setItems(_items)
   }
   return <>
     <Playground
@@ -98,9 +97,8 @@ export default () => {
       items={items}
       currentIndex={currentIndex}
       onIndexChange={setCurrentIndex}
-      onItemsChange={setItems}
+      onItemsChange={onItemsChange}
       onToolClick={onToolClick}
-      onItemClick={onItemClick}
     />
   </>
 }

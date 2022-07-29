@@ -11,7 +11,10 @@
   }
 
   .@{cname}-view {
+    box-sizing: content-box;
     position: relative;
+    padding:30px;
+    background-color: #f1f1f1;
     &:before {
       content: '';
       position: absolute;
@@ -19,7 +22,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      border:1px solid #c5c5c5;
+      border:1px solid #e2e2e2;
     }
 
     .text{
@@ -47,7 +50,6 @@
     }
 
     .view {
-      width: 375px;
       overflow: hidden;
       margin-right: 5px;
       .react-draggable{
