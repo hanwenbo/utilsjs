@@ -1,6 +1,6 @@
 {
   "name": "@hanwenbo/pro-components",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "utils library for pro-components",
   "author": "9476400@qq.com",
   "license": "MIT",
@@ -18,8 +18,8 @@
     "antd": "4.21.6"
   },
   "peerDependencies": {
-    "ahooks": "*",
-    "@ant-design/pro-components": "^1.1.9"
+    "@ant-design/pro-components": "^1.1.9",
+    "ahooks": "*"
   },
   "publishConfig": {
     "access": "public"
