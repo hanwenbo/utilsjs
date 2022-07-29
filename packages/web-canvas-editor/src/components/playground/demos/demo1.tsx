@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Playground} from "@hanwenbo/web-canvas-editor"
+import {Playground,ViewDisplay} from "@hanwenbo/web-canvas-editor"
 import "@hanwenbo/web-canvas-editor/style/index.less"
 import clone from "clone"
 
@@ -100,6 +100,10 @@ export default () => {
       onItemsChange={onItemsChange}
       onToolClick={onToolClick}
       onCanvasSizeChange={setCanvasSize}
+    />
+    <ViewDisplay
+      canvas={canvasSize}
+      items={items}
     />
   </>
 }

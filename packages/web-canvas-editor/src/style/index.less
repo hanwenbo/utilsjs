@@ -1,7 +1,24 @@
 @cname: web-canvas-editor;
-
+.@{cname}-display{
+  box-sizing: content-box;
+  position: relative;
+  overflow: hidden;
+  .item{
+    position: absolute !important;
+  }
+  .text{
+    user-select: none;
+    display: block;
+  }
+  .image{
+    user-select: none;
+  }
+  .hotArea {
+    background-color: rgba(255, 137, 137, 0.44);
+    user-select: none;
+  }
+}
 .@{cname} {
-
   .@{cname}-tool {
     .item {
       text-align: center;
@@ -9,7 +26,6 @@
 
     }
   }
-
   .@{cname}-view {
     box-sizing: content-box;
     position: relative;
