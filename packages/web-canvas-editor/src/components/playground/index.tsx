@@ -13,6 +13,7 @@ type Props = {
     width: number
     height: number
   },
+  onCanvasSizeChange: (canvasSize: {width: number, height: number}) => void
   items: ItemProps[],
   onItemsChange: (items: ItemProps[]) => void
   onToolClick: (item: ItemProps) => void
@@ -68,6 +69,7 @@ export default (p: Props) => {
           items={props.items}
           onItemChange={onItemChange}
           onIndexChange={onIndexChange}
+          onCanvasSizeChange={props.onCanvasSizeChange}
         />
       </div>
       {props.items.length > 0 && !!current && <div className={'control'}>

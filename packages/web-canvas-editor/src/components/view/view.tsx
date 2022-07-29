@@ -29,6 +29,7 @@ type Props = {
   items?: ItemType[]
   onItemsChange?: (items: ItemProps[]) => void
   onItemChange?: (item: ItemProps) => void
+  onCanvasSizeChange?: (canvas: {width: number, height: number}) => void
 }
 export const View = (p: Props) => {
   const defaultProps = {
@@ -97,8 +98,6 @@ export const View = (p: Props) => {
     const onResizeStop = (e: any, direction: any, ref: any, d: { width: number; height: number }) => {
       onResize(d, i);
     }
-
-
     const className = `${props.currentIndex === i ? "active" : ""} `
     return <Draggable
       key={`k${i}`}
@@ -155,10 +154,25 @@ export const View = (p: Props) => {
 
   const content = initFormatItems(props.items).map((item, i) => getDraggableItem(item, i))
 
-  return <div className="web-canvas-editor-view" style={{
-    width: props.canvas.width,
-    height: props.canvas.height
-  }}>
+  return <div
+    className="web-canvas-editor-view"
+    style={{
+      width: props.canvas.width,
+      height: props.canvas.height
+    }}>
     {props.items.length > 0 && content}
+    <Draggable
+      axis="y"
+      handle='.handle'
+      position={{x: 0, y: 0}}
+      grid={[1, 1]}
+      onStop={(e: any, data: { lastX: any; lastY: any })=>{
+        props?.onCanvasSizeChange?.({
+          width:props.canvas.width,
+          height:props.canvas.height + data.lastY
+        })
+      }}>
+    <div className={'handle canvas-drag'}/>
+    </Draggable>
   </div>
 }

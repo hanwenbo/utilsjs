@@ -25,7 +25,7 @@ const defaultItems = [
 export default () => {
   const [items, setItems] = useState(defaultItems);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const canvasSize = {width: 375, height: 375}
+  const [canvasSize, setCanvasSize] = useState( {width: 375, height: 375});
   const onToolClick = (e: { type: string }) => {
     const {type} = e
     let _items = []
@@ -99,6 +99,7 @@ export default () => {
       onIndexChange={setCurrentIndex}
       onItemsChange={onItemsChange}
       onToolClick={onToolClick}
+      onCanvasSizeChange={setCanvasSize}
     />
   </>
 }
