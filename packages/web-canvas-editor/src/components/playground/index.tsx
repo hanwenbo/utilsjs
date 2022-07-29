@@ -62,25 +62,27 @@ export default (p: Props) => {
       <div className={'tool'}>
         <Tool onItemClick={props.onToolClick} />
       </div>
-      <div className={'view'}>
-        <View
-          currentIndex={props.currentIndex}
-          canvas={props.canvasSize}
-          items={props.items}
-          onItemChange={onItemChange}
-          onIndexChange={onIndexChange}
-          onCanvasSizeChange={props.onCanvasSizeChange}
-        />
+      <div className={"view-control"}>
+        <div className={'view'}>
+          <View
+            currentIndex={props.currentIndex}
+            canvas={props.canvasSize}
+            items={props.items}
+            onItemChange={onItemChange}
+            onIndexChange={onIndexChange}
+            onCanvasSizeChange={props.onCanvasSizeChange}
+          />
+        </div>
+        {props.items.length > 0 && !!current && <div className={'control'}>
+          <Control
+            current={current}
+            onItemChange={onItemChange}
+            renderLinkActionControl={props.renderLinkActionControl}
+            renderTextVariableControl={props.renderTextVariableControl}
+            onDelete={onDelete}
+          />
+        </div>}
       </div>
-      {props.items.length > 0 && !!current && <div className={'control'}>
-        <Control
-          current={current}
-          onItemChange={onItemChange}
-          renderLinkActionControl={props.renderLinkActionControl}
-          renderTextVariableControl={props.renderTextVariableControl}
-          onDelete={onDelete}
-        />
-      </div>}
     </div>
   </div>
 }

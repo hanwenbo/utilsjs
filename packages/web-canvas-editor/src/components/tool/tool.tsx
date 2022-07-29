@@ -23,14 +23,14 @@ export const Tool = (p: Props) => {
     onItemClick: (_: ToolItemType) => {}
   }
   const props = {...defaultProps, ...p}
-  return <Row gutter={[16, 16]} className={"web-canvas-editor-tool"}>
+  return <div className={"web-canvas-editor-tool"}>
     {props.items.map((item, index) => {
-      return <Col span={12} className={"item"} key={index} onClick={() => props?.onItemClick?.(item)}>
+      return <div className={"item"} key={index} onClick={() => props?.onItemClick?.(item)}>
         <Row gutter={5} justify={'center'} align={'middle'}>
           <Col span={24}>{item.icon}</Col>
           <Col span={24}>{item.label}</Col>
         </Row>
-      </Col>
+      </div>
     })}
-  </Row>
+  </div>
 }

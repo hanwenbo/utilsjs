@@ -8,6 +8,7 @@
   "scripts": {
     "build": "pnpm -r --filter @hanwenbo/* run build",
     "build:pro-components": "pnpm -r --filter @hanwenbo/pro-components run build",
+    "build:canvas": "pnpm -r --filter @hanwenbo/web-canvas-editor run build",
     "test": "walrus-test",
     "prettier": "walrus prettier",
     "lint": "walrus lint",
