@@ -36,7 +36,7 @@ export const Display = (p: Props) => {
   const renderItem = (data: ItemType[]) => {
     return Array.isArray(data) ? data.map((item) => {
       const {type, ...subProps} = item
-      return <div className={"item"}>
+      return <div className={"item"} style={subProps.style}>
         {!!elementKeys[type] ? React.createElement(elementKeys[type], subProps) : "不存在的组件"}
       </div>
     }) : null
